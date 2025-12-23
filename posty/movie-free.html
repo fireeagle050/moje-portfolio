@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ZMIENNE: Tytuł i opis wpisu -->
+    <meta name="description" content="Dlaczego płacenie za 5 serwisów streamingowych to absurd? Analiza rynku VOD, krytyka modelu subskrypcyjnego i argumenty za tym, dlaczego darmowy dostęp powinien być standardem.">
+    <title>Płatne VOD to Pułapka: Dlaczego Wybieram Darmowe Strony | Project Genesis</title>
+
+    <!-- Współdzielone style i skrypty -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/post.css"> <!-- Dedykowane style dla pojedynczego wpisu -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Prism.js CSS (motyw Okaidia dla ciemnego tła) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
+    <!-- Biblioteki do generowania PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body class="body-post"> <!-- Dedykowana klasa dla pojedynczego wpisu -->
+
+    <header>
+        <nav>
+            <div class="nav-left-items">
+                <a href="../index.html" class="nav-logo"><img src="../img/logo.png" alt="Logo"></a>
+                <!-- PRZEŁĄCZNIK MOTYWU -->
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="theme-checkbox">
+                        <input type="checkbox" id="theme-checkbox" />
+                        <div class="slider round"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></div>
+                    </label>
+                </div>
+            </div>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../o-mnie.html">O mnie</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../materialy.html">Materiały</a></li>
+                <li><a href="../kontakt.html" class="nav-contact-btn">Kontakt</a></li>
+            </ul>
+        </nav>
+        <!-- Pasek postępu czytania -->
+        <div class="reading-progress-bar"></div>
+    </header>
+
+    <main>
+        <div class="post-container container">
+            <!-- NAWIGACJA OKRUSZKOWA (BREADCRUMBS) -->
+            <nav class="breadcrumbs">
+                <a href="../index.html"><i class="fas fa-home"></i> Home</a> <span class="separator">/</span>
+                <a href="../blog.html">Blog</a> <span class="separator">/</span>
+                <span class="current">Strony z Filmami</span>
+            </nav>
+
+            <!-- ZMIENNE: Treść artykułu -->
+            <article class="post-full-content">
+                <header class="post-full-header">
+                    <div class="post-meta">
+                        <span><i class="fas fa-calendar-alt"></i> 20 Października 2025</span>
+                        <span><i class="fas fa-user"></i> Kamil</span>
+                        <span><i class="fas fa-folder-open"></i> Refleksje</span>
+                        <span><i class="fas fa-clock"></i> 10 min czytania</span>
+                    </div>
+                    <h1 class="post-full-title">Płatne VOD to Pułapka: Dlaczego "Za Darmo" to Jedyna Opcja</h1>
+                </header>
+
+                <!-- Przyciski udostępniania -->
+                <div class="post-share-buttons">
+                    <span>Udostępnij:</span>
+                    <a href="#" class="share-btn share-facebook" aria-label="Udostępnij na Facebooku"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="share-btn share-twitter" aria-label="Udostępnij na Twitterze"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="share-btn share-linkedin" aria-label="Udostępnij na LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <button id="save-pdf-btn" class="share-btn share-pdf" aria-label="Zapisz jako PDF" title="Zapisz artykuł jako PDF"><i class="fas fa-file-pdf"></i></button>
+                    <button id="print-btn" class="share-btn share-print" aria-label="Drukuj artykuł" title="Drukuj artykuł"><i class="fas fa-print"></i></button>
+                    <button id="copy-link-btn" class="share-btn share-copy" aria-label="Kopiuj link" title="Kopiuj link do schowka"><i class="fas fa-link"></i></button>
+                </div>
+
+                <figure class="post-full-image">
+                    <!-- Używamy przykładowego zdjęcia z folderu img -->
+                    <img src="../img/movies.jpg" alt="Kino domowe i streaming">
+                    <figcaption style="text-align: center; color: #888; font-size: 0.9rem; margin-top: 0.5rem;">Kiedyś płaciłeś raz i miałeś wszystko. Dziś płacisz pięć razy i nie masz nic.</figcaption>
+                </figure>
+
+                <!-- UKŁAD GRID: TREŚĆ + SIDEBAR -->
+                <div class="post-content-grid">
+                    
+                    <!-- KOLUMNA GŁÓWNA -->
+                    <div class="post-main-column">
+                        <section class="post-full-body">
+                            
+                            <!-- Sekcja "W skrócie" -->
+                            <div class="key-takeaways">
+                                <h3><i class="fas fa-lightbulb"></i> W skrócie</h3>
+                                <ul>
+                                    <li><strong>Abonamentowe piekło:</strong> Konieczność posiadania 5 kont VOD to antykonsumencki absurd.</li>
+                                    <li><strong>Iluzja wyboru:</strong> Legalne "darmowe" serwisy oferują ochłapy i reklamy, a nie prawdziwą rozrywkę.</li>
+                                    <li><strong>Prawo do kultury:</strong> Dostęp do filmów nie powinien być luksusem dla bogatych.</li>
+                                    <li><strong>Wygoda wygrywa:</strong> Nieoficjalne strony oferują lepszy UX niż płatni giganci.</li>
+                                </ul>
+                            </div>
+
+                            <p class="lead"><span class="drop-cap">M</span>iało być tak pięknie. Netflix obiecywał koniec piractwa, dając nam dostęp do wszystkiego za cenę dwóch kaw. A jak jest dzisiaj? Rynek VOD to rozdrobniony chaos, w którym każda korporacja buduje swój własny, płatny mur. Chcesz obejrzeć jeden serial? Płać. Chcesz inny? Płać znowu, komuś innemu. W tym systemie jedynym rozsądnym wyjściem staje się powrót do korzeni – darmowych stron, które jako jedyne szanują czas i portfel widza.</p>
+
+                            <p>Czy to kontrowersyjne? Być może. Ale czy sprawiedliwe jest żądanie od nas kilkuset złotych miesięcznie za dostęp do kultury, która powinna być powszechna?</p>
+                            
+                            <h2 id="section-1">1. Skok na kasę: Dlaczego płatne VOD to oszustwo</h2>
+                            <p>Jeszcze kilka lat temu płaciliśmy jeden abonament. Dziś rynek jest poszatkowany między gigantów: Disney+, HBO Max, Amazon Prime, Apple TV+, SkyShowtime... Każdy z nich chce Twoich pieniędzy, oferując w zamian coraz mniej.</p>
+
+                            <div class="info-box warning">
+                                <i class="fas fa-chart-pie"></i>
+                                <div>
+                                    <strong>Matematyka chciwości:</strong> Aby mieć legalny dostęp do wszystkich topowych seriali, musisz wydawać w Polsce ponad 200-300 zł miesięcznie. To powrót do najgorszych czasów drogiej kablówki, tylko w nowym opakowaniu.
+                                </div>
+                            </div>
+
+                            <p>Co gorsza, płacąc, wcale nie jesteś właścicielem treści. Filmy znikają z dnia na dzień, bo wygasła licencja. Serwisy usuwają własne produkcje, by odpisać je od podatku (przypadek Warner Bros). Płacisz za powietrze, a korporacje śmieją się w twarz, podnosząc ceny i blokując współdzielenie kont.</p>
+
+                            <h2 id="section-2">2. "Legalne" darmowe alternatywy? Nie, dziękuję</h2>
+                            <p>Obrońcy systemu powiedzą: "przecież są darmowe serwisy z reklamami (AVOD)". Spójrzmy jednak na ich ofertę. To zazwyczaj cmentarzysko kinematografii. Filmy klasy B, zapomniane seriale sprzed dekad i produkcje, których nikt nie chciał kupić.</p>
+
+                            <h3 id="legal-list">Dlaczego oficjalne "darmowe" to strata czasu?</h3>
+                            <ul class="checklist">
+                                <li>
+                                    <i class="fas fa-times-circle checklist-icon" style="color: #e74c3c;"></i>
+                                    <div class="checklist-content">
+                                        <strong>Agresywne Reklamy</strong>
+                                        <span>Oglądanie 30-sekundowego spotu co 10 minut filmu zabija jakikolwiek klimat i immersję. Płacisz swoim czasem, który jest bezcenny.</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-times-circle checklist-icon" style="color: #e74c3c;"></i>
+                                    <div class="checklist-content">
+                                        <strong>Ograniczenia Techniczne</strong>
+                                        <span>Często brak HD, brak wyboru lektora/napisów, fatalne playery, które zacinają się przy słabszym łączu.</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-times-circle checklist-icon" style="color: #e74c3c;"></i>
+                                    <div class="checklist-content">
+                                        <strong>Biedna Biblioteka</strong>
+                                        <span>Nie znajdziesz tam nowości. To jak grzebanie w koszu z przecenami w supermarkecie.</span>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <h2 id="section-3">3. Prawdziwa opłacalność: Pełny dostęp bez barier</h2>
+                            <p>W kontrze do tego stoją serwisy, które oferują <strong>wszystko</strong>. Bez logowania, bez podpinania karty, bez limitów. To one są prawdziwą konkurencją, bo oferują lepszy produkt. Użytkownik nie szuka "piractwa" dla zasady – szuka wygody.</p>
+
+                            <blockquote>
+                                <p>Piractwo to problem obsługi klienta. Jeśli pirat oferuje produkt 24/7, na każdym urządzeniu i w lepszej jakości niż oficjalny dystrybutor, to pirat wygrywa.</p>
+                                <cite>– Gabe Newell (Valve)</cite>
+                            </blockquote>
+
+                            <!-- Pros & Cons -->
+                            <div class="pros-cons-container">
+                                <div class="pros-box">
+                                    <h3><i class="fas fa-thumbs-up"></i> Dlaczego darmowe strony wygrywają?</h3>
+                                    <ul>
+                                        <li><strong>Centralizacja:</strong> Wszystkie seriale (Netflix, HBO, Disney) w jednym miejscu.</li>
+                                        <li><strong>Brak kosztów:</strong> Kultura dostępna dla każdego, niezależnie od statusu majątkowego.</li>
+                                        <li><strong>Brak geoblokad:</strong> Oglądasz to, co chcesz, a nie to, na co pozwoliła licencja w Twoim kraju.</li>
+                                    </ul>
+                                </div>
+                                <div class="cons-box">
+                                    <h3><i class="fas fa-thumbs-down"></i> Problemy płatnych serwisów</h3>
+                                    <ul>
+                                        <li><strong>Drożyzna:</strong> Płacisz za 5 serwisów, a i tak nie masz co oglądać.</li>
+                                        <li><strong>Fragmentacja:</strong> Skakanie między aplikacjami to udręka.</li>
+                                        <li><strong>Cenzura:</strong> Usuwanie odcinków lub edycja treści pod "nowoczesne standardy".</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h2 id="section-4">4. Prawny Labirynt: Hosting, Linki i "Dobra Wola"</h2>
+                            <p>Większość darmowych stron działa w specyficznej niszy prawnej. Właściciel strony nie trzyma filmów na swoich serwerach – on tylko udostępnia "tablicę ogłoszeń". To użytkownicy, często anonimowi pasjonaci działający w dobrej wierze (chęć dzielenia się kulturą), wrzucają filmy na zewnętrzne serwery (tzw. video lockery) i wklejają linki.</p>
+
+                            <p>Dla Ciebie, jako widza w Polsce, kluczowy jest <strong>Artykuł 23 Ustawy o prawie autorskim (Dozwolony użytek osobisty)</strong>. Pozwala on na korzystanie z już rozpowszechnionego utworu. Oznacza to, że <strong>oglądanie (streaming) jest legalne</strong>. Problem prawny ma ten, kto udostępnia (uploader), a nie ten, kto ogląda.</p>
+
+                            <div class="info-box tip">
+                                <i class="fas fa-shield-alt"></i>
+                                <div>
+                                    <strong>Ważne rozróżnienie:</strong> Streaming HTTP (np. CDA, darmowe strony) jest bezpieczny dla widza. Torrenty (P2P) są ryzykowne, bo pobierając, jednocześnie udostępniasz fragmenty pliku innym – a to już jest karalne.
+                                </div>
+                            </div>
+
+                            <div class="definition-box">
+                                <h4>Stanowisko: Legalizacja Pełnego Dostępu</h4>
+                                <p>Dostęp do dóbr kultury powinien być prawem, a nie towarem luksusowym. Model, w którym wiedza i sztuka są zamykane za paywallem, jest szkodliwy społecznie. Darmowe strony pełnią funkcję nowoczesnych bibliotek, archiwizując treści, które korporacje chętnie by usunęły.</p>
+                            </div>
+
+                            <h2 id="section-5">5. Upadek Giganta: Lekcja Chomikuj.pl</h2>
+                            <p>Idealnym przykładem walki z "wolnym internetem" jest historia serwisu <strong>Chomikuj.pl</strong>. Przez lata był to bastion polskiego internetu, gdzie każdy mógł znaleźć wszystko. Dlaczego stracił na znaczeniu?</p>
+
+                            <p>Nie chodziło tylko o technologię, ale o prawo. Wydawcy książek i filmów wytoczyli procesy, które zmieniły interpretację prawa. Sądy orzekły, że serwis czerpiący zyski z piractwa nie może zasłaniać się niewiedzą. Chomikuj zostało zmuszone do <strong>aktywnego filtrowania treści</strong> (a nie tylko usuwania na zgłoszenie). To sprawiło, że znalezienie działających plików stało się trudne, a użytkownicy przenieśli się na wygodniejsze serwisy streamingowe.</p>
+
+                            <h2 id="section-6">6. Inne Rozwiązania: Agregatory i Decentralizacja</h2>
+                            <p>Rynek nie znosi próżni. Po erze Chomika i Torrentów nadeszła era <strong>Agregatorów Linków</strong>. Strony te nie hostują niczego – są tylko wyszukiwarkami, które indeksują odtwarzacze umieszczone na serwerach w krajach o liberalnym prawie (np. Rosja, Panama).</p>
+
+                            <ul class="checklist">
+                                <li>
+                                    <i class="fas fa-network-wired checklist-icon" style="color: #3498db;"></i>
+                                    <div class="checklist-content">
+                                        <strong>Agregatory VOD</strong>
+                                        <span>Strony wyglądające jak Netflix, ale będące tylko nakładką na zewnętrzne playery (MixDrop, Upstream). Właściciel strony umywa ręce ("ja tylko linkuję"), a widz dostaje darmowy film.</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-project-diagram checklist-icon" style="color: #9b59b6;"></i>
+                                    <div class="checklist-content">
+                                        <strong>Rozwiązania Zdecentralizowane</strong>
+                                        <span>Technologie takie jak IPFS czy blockchain mogą w przyszłości uniemożliwić cenzurę. Jeśli plik jest rozproszony na tysiącach komputerów, nie ma jednego serwera, który można wyłączyć pozwem sądowym.</span>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <h2 id="section-7">7. BHP Szarej Strefy: Jak przetrwać w cyfrowej dżungli</h2>
+                            <p>Korzystanie z nieoficjalnych źródeł wymaga odpowiedniego przygotowania. To jak wyprawa do dżungli – bez maczety i moskitiery zjedzą Cię insekty. W internecie tymi insektami są trackery, malware i agresywne reklamy.</p>
+
+                            <div class="pros-cons-container">
+                                <div class="pros-box">
+                                    <h3><i class="fas fa-shield-alt"></i> Niezbędnik Bezpieczeństwa</h3>
+                                    <ul>
+                                        <li><strong>Przeglądarka Brave:</strong> Twój pierwszy bastion. Domyślnie blokuje reklamy i skrypty śledzące, jest szybka i oparta na Chromium.</li>
+                                        <li><strong>uBlock Origin:</strong> Jeśli nie Brave, to Firefox/Chrome z tym dodatkiem. To nie jest zwykły adblock, to potężny filtr treści.</li>
+                                        <li><strong>VPN:</strong> Ukrywa Twój adres IP przed dostawcą internetu i stroną docelową. Niezbędny dla zachowania prywatności.</li>
+                                    </ul>
+                                </div>
+                                <div class="cons-box">
+                                    <h3><i class="fas fa-skull-crossbones"></i> Czego unikać?</h3>
+                                    <ul>
+                                        <li><strong>Klikania w "Pobierz":</strong> Na stronach streamingowych przyciski "Download" to w 99% pułapki prowadzące do malware.</li>
+                                        <li><strong>Podawania danych:</strong> Nigdy nie podawaj numeru telefonu ani karty kredytowej "w celu weryfikacji".</li>
+                                        <li><strong>Instalowania kodeków:</strong> Jeśli strona prosi o instalację "specjalnego playera", uciekaj.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h3>Walka z Wyskakującymi Oknami (Pop-ups)</h3>
+                            <p>Najbardziej irytującym elementem darmowych stron są karty otwierające się same po kliknięciu w "Play" (często prowadzące do stron hazardowych lub scamów). Oto jak je spacyfikować:</p>
+                            <ul class="checklist">
+                                <li>
+                                    <i class="fas fa-hand-pointer checklist-icon" style="color: #e74c3c;"></i>
+                                    <div class="checklist-content">
+                                        <strong>Technika "Double Click" i Odruch Ctrl+W</strong>
+                                        <span>Na wielu stronach pierwsze kliknięcie w player to "pułapka" otwierająca reklamę. Dopiero drugie kliknięcie uruchamia film. Bądź na to gotowy: jeśli po kliknięciu otwiera się nowa karta, natychmiast ją zamknij (skrót <code>Ctrl + W</code>). Nigdy nie wchodź w interakcję z taką stroną.</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-shield-virus checklist-icon" style="color: #27ae60;"></i>
+                                    <div class="checklist-content">
+                                        <strong>Popup Blocker (Strict)</strong>
+                                        <span>Zainstaluj rozszerzenie do przeglądarki dedykowane blokowaniu wyskakujących okien (np. <em>Poper Blocker</em> lub <em>Popup Blocker (strict)</em>). Działają one niezależnie od AdBlocka i są skuteczniejsze w walce z agresywnymi nowymi kartami.</span>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <h2 id="section-8">8. Jak nie dać się złowić? Rozpoznawanie Phishingu</h2>
+                            <p>Największym zagrożeniem nie jest policja, ale cyberprzestępcy, którzy tworzą fałszywe strony (klony), aby wykraść Twoje dane. Oto czerwone flagi, które powinny zapalić lampkę ostrzegawczą:</p>
+
+                            <div class="info-box warning">
+                                <i class="fas fa-user-secret"></i>
+                                <div>
+                                    <strong>Złota zasada:</strong> Jeśli strona jest "darmowa", ale prosi o podanie numeru karty kredytowej w celu "weryfikacji wieku" lub "lokalizacji" – to na 100% oszustwo (scam). Uciekaj.
+                                </div>
+                            </div>
+
+                            <ul class="checklist">
+                                <li>
+                                    <i class="fas fa-search checklist-icon" style="color: #e67e22;"></i>
+                                    <div class="checklist-content">
+                                        <strong>Podejrzany adres URL</strong>
+                                        <span>Zamiast <code>netflix.com</code> widzisz <code>netflix-free-hd.com</code> lub dziwne domeny (.xyz, .top).</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-download checklist-icon" style="color: #e74c3c;"></i>
+                                    <div class="checklist-content">
+                                        <strong>Wymagane "kodeki" lub "playery"</strong>
+                                        <span>Strona twierdzi, że nie masz wtyczki i musisz pobrać plik <code>player_setup.exe</code>. To malware. Prawdziwe strony używają HTML5.</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-bug checklist-icon" style="color: #c0392b;"></i>
+                                    <div class="checklist-content">
+                                        <strong>Fałszywe alarmy antywirusowe</strong>
+                                        <span>Wyskakujące okienko krzyczy: "Twój system jest zainfekowany! Kliknij tutaj, aby naprawić". To socjotechnika mająca wywołać panikę.</span>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <h2 id="section-9">9. Szara Strefa: Gdzie szukać? (Lista)</h2>
+                            <p>Skoro wiemy już jak się zabezpieczyć, pora na konkrety. Oto lista popularnych w Polsce serwisów, które działają na zasadzie agregatorów lub hostingu użytkowników. Pamiętaj, że adresy tych stron często się zmieniają (walka z blokadami), więc warto śledzić ich profile w mediach społecznościowych.</p>
+
+                            <div class="resource-links-grid">
+                                <!-- Filman -->
+                                <div class="resource-card blue">
+                                    <h4><i class="fas fa-search"></i> Filman</h4>
+                                    <p>Jeden z najpopularniejszych agregatorów z przejrzystym interfejsem. Agreguje linki z wielu źródeł, co zwiększa szansę na znalezienie działającego odtwarzacza. Wymaga przeglądarki Brave lub włączonego uBlocka.</p>
+                                    <div class="resource-link-box">https://filman.cc/</div>
+                                </div>   
+
+                                <!-- CDA-HD -->
+                                <div class="resource-card purple">
+                                    <h4><i class="fas fa-film"></i> CDA-HD</h4>
+                                    <p>Solidna alternatywa. Ogromna baza nowości i klasyków. Zawiera linki do przynajmniej dwóch źródeł. Wyszukiwanie nie wybacza samotnych ani pomylonych liter. Wymaga przeglądarki Brave lub włączonego uBlocka. </p>
+                                    <div class="resource-link-box">https://cda-hd.cc/</div>
+                                </div>
+
+                                <!-- Vizjer -->
+                                <div class="resource-card orange">
+                                    <h4><i class="fas fa-video"></i> Vizjer</h4>
+                                    <p>Serwis znany z szybkiego dodawania odcinków seriali. Często zmienia domeny, ale baza pozostaje ta sama.</p>
+                                    <div class="resource-link-box">https://vizjer.pl/</div>
+                                </div>
+
+                                <!-- 3filmy -->
+                                <div class="resource-card green">
+                                    <h4><i class="fas fa-play-circle"></i> 3filmy</h4>
+                                    <p>Szybki i lekki serwis z dużą bazą filmów i seriali. Często aktualizowany o nowości kinowe w dobrej jakości.</p>
+                                    <div class="resource-link-box">https://3filmy.com/</div>
+                                </div>
+
+                                <!-- E-kino -->
+                                <div class="resource-card red">
+                                    <h4><i class="fas fa-tv"></i> E-kino</h4>
+                                    <p>Klasyk wśród agregatorów. Prosty design, ale potężna baza linków do wielu hostingów zewnętrznych.</p>
+                                    <div class="resource-link-box">https://e-kino.lv/</div>
+                                </div>
+
+                                <!-- Vider -->
+                                <div class="resource-card yellow">
+                                    <h4><i class="fas fa-cloud-upload-alt"></i> Vider</h4>
+                                    <p>Serwis hostingowy, gdzie użytkownicy wrzucają własne pliki. Świetna alternatywa dla CDA, często zawiera starsze produkcje.</p>
+                                    <div class="resource-link-box">https://vider.info/</div>
+                                </div>
+
+                                <!-- Zerion -->
+                                <div class="resource-card blue">
+                                    <h4><i class="fas fa-globe"></i> Zerion</h4>
+                                    <p>Potężna wyszukiwarka VOD. Przeszukuje wiele źródeł jednocześnie, oszczędzając czas na sprawdzaniu każdej strony z osobna.</p>
+                                    <div class="resource-link-box">https://zerion.cc/</div>
+                                </div>
+
+                                <!-- Zalukaj -->
+                                <div class="resource-card pink">
+                                    <h4><i class="fas fa-heart"></i> Zalukaj</h4>
+                                    <p>Legenda polskiego internetu. Choć domeny się zmieniają, marka wciąż gwarantuje dostęp do ogromnej bazy filmów z lektorem.</p>
+                                    <div class="resource-link-box">https://zalukaj.io/</div>
+                                </div>
+
+                                <!-- Oglądaj.to -->
+                                <div class="resource-card teal">
+                                    <h4><i class="fas fa-eye"></i> Oglądaj.to</h4>
+                                    <p>Nowoczesny serwis z intuicyjnym interfejsem. Świetna alternatywa dla Filmana, często posiadająca inne źródła hostingu.</p>
+                                    <div class="resource-link-box">https://ogladaj.to/</div>
+                                </div>
+
+                                <!-- Fmovies -->
+                                <div class="resource-card indigo">
+                                    <h4><i class="fas fa-globe-americas"></i> Fmovies</h4>
+                                    <p>Gigant na skalę światową. Jeśli znasz angielski, znajdziesz tu absolutnie wszystko w jakości HD, często przed polską premierą.</p>
+                                    <div class="resource-link-box">https://fmovies.to/</div>
+                                </div>
+                            </div>
+
+                            <h2 id="summary">Podsumowanie</h2>
+                            <p>"Za darmo" to nie kradzież – to jedyna uczciwa cena w świecie, w którym korporacje próbują nas ograbić na każdym kroku. Dopóki legalne serwisy nie zrozumieją, że użytkownik potrzebuje wygody i rozsądnej ceny, dopóty "szara strefa" będzie kwitnąć. I bardzo dobrze.</p>
+                            
+                            <p>Nie daj sobie wmówić, że jesteś złym człowiekiem, bo nie chcesz płacić 300 zł miesięcznie za oglądanie telewizji. Masz prawo wyboru. Wybieraj mądrze – wybieraj wolność.</p>
+
+                            <!-- Karta Pobierania -->
+                            <div class="download-card">
+                                <div class="download-icon"><i class="fas fa-list"></i></div>
+                                <div class="download-info">
+                                    <h4>Lista Legalnych Źródeł Kultury</h4>
+                                    <p>Zestawienie ponad 50 stron z darmowymi filmami, e-bookami i muzyką. PDF, 1.2 MB</p>
+                                </div>
+                                <a href="#" class="download-btn"><i class="fas fa-download"></i> Pobierz listę</a>
+                            </div>
+
+                            <!-- SEKCJA FAQ -->
+                            <section class="faq-section">
+                                <h3><i class="fas fa-question-circle"></i> Często zadawane pytania</h3>
+                                <details>
+                                    <summary>Czy oglądanie filmów na darmowych stronach jest bezpieczne?</summary>
+                                    <p>Tak, pod warunkiem, że używasz dobrego blokera reklam (np. uBlock Origin) lub bezpiecznej przeglądarki z taką funkcją (np. Brave) i zdrowego rozsądku. Nie ściągaj plików .exe, a nic Ci nie grozi.</p>
+                                </details>
+                                <details>
+                                    <summary>Czy policja może mnie ukarać za oglądanie?</summary>
+                                    <p>W Polsce nie ma przepisu, który karałby za samo oglądanie (streaming) filmów czy seriali. Odpowiedzialność ponosi ten, kto udostępnia plik (uploaduje).</p>
+                                </details>
+                            </section>
+
+                            <!-- Tagi w stopce posta -->
+                            <div class="post-footer-tags">
+                                <span>Tagi:</span>
+                                <a href="#" class="tag">Filmy</a>
+                                <a href="#" class="tag">Streaming</a>
+                                <a href="#" class="tag">Kultura</a>
+                                <a href="#" class="tag">Wolność</a>
+                            </div>
+
+                        </section>
+
+                        <!-- NAWIGACJA MIĘDZY POSTAMI -->
+                        <nav class="post-navigation">
+                            <a href="#" class="post-nav-link prev-post">
+                                <span class="nav-subtitle"><i class="fas fa-arrow-left"></i> Poprzedni wpis</span>
+                                <span class="nav-title">Twoja Prywatność w Sieci</span>
+                            </a>
+                            <a href="#" class="post-nav-link next-post">
+                                <span class="nav-subtitle">Następny wpis <i class="fas fa-arrow-right"></i></span>
+                                <span class="nav-title">Sieci Komputerowe: Esencja</span>
+                            </a>
+                        </nav>
+
+                        <!-- NEWSLETTER -->
+                        <section class="newsletter-box">
+                            <div class="newsletter-content">
+                                <h3>Bądź na bieżąco!</h3>
+                                <p>Dołącz do newslettera i otrzymuj powiadomienia o nowych wpisach oraz ekskluzywne materiały.</p>
+                                <form class="newsletter-form">
+                                    <input type="email" placeholder="Twój adres e-mail" required>
+                                    <button type="submit" class="btn">Zapisz się</button>
+                                </form>
+                            </div>
+                        </section>
+
+                        <!-- SEKCJA O AUTORZE -->
+                        <section class="author-box">
+                            <div class="author-avatar">
+                                <img src="../img/avatar.png" alt="Avatar autora">
+                            </div>
+                            <div class="author-content">
+                                <h3 class="author-name">Kamil [Nazwisko]</h3>
+                                <p class="author-bio">Pasjonat technologii, student informatyki i twórca tego bloga. Na co dzień eksploruję świat kodu, AI i designu, dzieląc się swoimi odkryciami i przemyśleniami.</p>
+                                <div class="author-socials">
+                                    <a href="https://github.com/fireeagle050" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                    <a href="https://www.linkedin.com/in/kamil-dziedzic-6aa0ba30b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="../o-mnie.html" class="author-more-btn">Więcej o mnie</a>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- KOMENTARZE -->
+                        <section class="comments-section">
+                            <h3>Komentarze (0)</h3>
+                            <form class="comment-form">
+                                <textarea placeholder="Zostaw komentarz..." rows="4"></textarea>
+                                <button type="submit" class="btn-secondary">Opublikuj</button>
+                            </form>
+                        </section>
+                    </div>
+
+                    <!-- SIDEBAR (SPIS TREŚCI) -->
+                    <aside class="post-sidebar">
+                        <div class="toc-widget">
+                            <h3>Spis treści</h3>
+                            <nav class="toc-nav">
+                                <ul>
+                                    <li><a href="#section-1">1. Abonamentowe Piekło</a></li>
+                                    <li><a href="#section-2">2. Fikcja "Legalnych" Opcji</a></li>
+                                    <li><a href="#section-3">3. Prawdziwa Wolność</a></li>
+                                    <li><a href="#section-4">4. Prawny Labirynt</a></li>
+                                    <li><a href="#section-5">5. Lekcja Chomikuj.pl</a></li>
+                                    <li><a href="#section-6">6. Agregatory i Przyszłość</a></li>
+                                    <li><a href="#section-7">7. BHP Szarej Strefy</a></li>
+                                    <li><a href="#section-8">8. Rozpoznawanie Phishingu</a></li>
+                                    <li><a href="#section-9">9. Gdzie szukać?</a></li>
+                                    <li><a href="#summary">Podsumowanie</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </aside>
+
+                </div> <!-- Koniec Grid -->
+            </article>
+
+            <!-- SEKCJA POWIĄZANYCH ARTYKUŁÓW -->
+            <section class="related-posts">
+                <h2 class="related-posts-title">Przeczytaj również</h2>
+                <div class="related-posts-grid">
+                    <!-- Przykładowy powiązany post 1 -->
+                    <a href="#" class="related-post-card">
+                        <div class="related-post-image">
+                            <img src="../img/movies.jpg" alt="Miniatura posta o darmowych filmach">
+                        </div>
+                        <div class="related-post-content">
+                            <span class="related-post-category">Refleksje</span>
+                            <h3>Twoja Prywatność w Sieci: Co Musisz Wiedzieć?</h3>
+                        </div>
+                    </a>
+                    <!-- Przykładowy powiązany post 2 -->
+                    <a href="#" class="related-post-card">
+                        <div class="related-post-image">
+                            <img src="../img/cyberpunk.jpg" alt="Miniatura posta o Cyberpunku">
+                        </div>
+                        <div class="related-post-content">
+                            <span class="related-post-category">Refleksje</span>
+                            <h3>Cyberpunk: Czy Dożyjemy Czasów Cyborgów?</h3>
+                        </div>
+                    </a>
+                    <!-- Przykładowy powiązany post 3 -->
+                    <a href="#" class="related-post-card">
+                        <div class="related-post-image">
+                            <img src="../img/design.jpg" alt="Miniatura posta o designie">
+                        </div>
+                        <div class="related-post-content">
+                            <span class="related-post-category">Design</span>
+                            <h3>Design i UI: Gdzie Sztuka Spotyka Technologię</h3>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Kamil [Nazwisko]. Wszelkie prawa zastrzeżone.</p>
+            <div class="footer-socials">
+                <a href="https://github.com/fireeagle050" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/kamil-dziedzic-6aa0ba30b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js" defer></script>
+    <script src="../js/blog.js" defer></script>
+    <!-- Skrypty Prism.js do podświetlania składni -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js" defer></script>
+</body>
+</html>

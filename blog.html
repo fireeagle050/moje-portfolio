@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dziennik technologiczny w ramach projektu Genesis. Odkryj artykuły, przemyślenia i tutoriale ze świata kodu, sztucznej inteligencji, cyberbezpieczeństwa i designu.">
+    <title>Blog | Project Genesis</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <!-- Biblioteka do animacji przy przewijaniu (AOS) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Ikony (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+</head>
+<body class="body-blog">
+
+    <!-- Kontener na kinowe punkty świetlne -->
+    <div id="light-orbs-container"></div>
+
+    <header>
+        <nav>
+            <div class="nav-left-items">
+                <a href="index.html" class="nav-logo"><img src="img/logo.png" alt="Logo"></a>
+                <!-- PRZEŁĄCZNIK MOTYWU -->
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="theme-checkbox">
+                        <input type="checkbox" id="theme-checkbox" />
+                        <div class="slider round"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></div>
+                    </label>
+                </div>
+            </div>
+            <button class="mobile-nav-toggle" aria-label="Otwórz menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="o-mnie.html">O mnie <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="o-mnie.html#o-mnie">O mnie</a></li>
+                        <li><a href="o-mnie.html#doswiadczenie">Doświadczenie</a></li>
+                        <li><a href="o-mnie.html#edukacja">Edukacja</a></li>
+                        <li><a href="o-mnie.html#osiagniecia">Osiągnięcia</a></li>
+                        <li><a href="o-mnie.html#projekty">Projekty</a></li>
+                        <li><a href="o-mnie.html#technologie">Technologie</a></li>
+                    </ul>
+                </li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="materialy.html">Materiały</a></li>
+                <li><a href="kontakt.html" class="nav-contact-btn">Kontakt</a></li>
+        </nav>
+    </header>
+
+    <main>
+        <div class="blog-container container">
+            <div class="blog-header" data-aos="fade-down"> 
+                <h1 class="gradient-text">Dziennik Technologiczny</h1>
+                <p>Moje przemyślenia, analizy i tutoriale ze świata kodu, AI i designu.</p>
+            </div>
+
+            <!-- Wyróżniony post -->
+            <section class="featured-post card" data-aos="fade-up">
+                <div class="featured-post-image">
+                    <img src="img/aination.jpg" alt="Miniatura posta o historii AI" loading="lazy">
+                    <div class="post-category featured">Wyróżnione</div>
+                </div>
+                <div class="featured-post-content">
+                    <h2><a href="posty/historia-ai.html">Historia AI: Od Maszyny Turinga do Sieci Neuronowych</a></h2>
+                    <p>Podróż przez kluczowe momenty, które ukształtowały sztuczną inteligencję. Od teoretycznych koncepcji, przez pierwsze algorytmy, aż po rewolucję deep learningu, która dzieje się na naszych oczach.</p>
+                    <div class="post-meta">
+                        <span><i class="fas fa-calendar-alt" aria-hidden="true"></i> 24 Grudnia 2025</span>
+                        <span><i class="fas fa-clock" aria-hidden="true"></i> 12 min czytania</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="blog-layout">
+                <!-- Siatka z postami -->
+                <section class="posts-grid" id="posts-container">
+                    <article class="post-card card" data-category="Selfdevelopment" data-tags="selfdevelopment,zarządzanie czasem,lider,produktywność,psychologia,perswazja" data-aos="fade-up" data-aos-delay="100">
+                        <div class="post-image">
+                            <img src="img/leader.jpg" alt="Miniatura posta o samorozwoju" loading="lazy">
+                            <div class="post-category" data-category="Selfdevelopment">Selfdevelopment</div>
+                        </div>
+                        <div class="post-content">
+                            <h3><a href="posty/selfdevelopment-leader.html">Selfdevelopment - jak wykształcić cechy lidera?</a></h3>
+                            <p>Kompleksowy przewodnik po nowoczesnym przywództwie. Dowiedz się, jak zarządzać ego, stosować psychologię wpływu i budować autorytet w zespole.</p>
+                            <div class="post-meta">
+                                <span><i class="fas fa-calendar-alt" aria-hidden="true"></i> 20 Grudnia 2025</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card card" data-category="Refleksje" data-tags="prywatność,bezpieczeństwo,cookies,śledzenie,adblock" data-aos="fade-up" data-aos-delay="300">
+                        <div class="post-image">
+                            <img src="img/private.jpg" alt="Miniatura posta o prywatności w sieci" loading="lazy">
+                            <div class="post-category" data-category="Refleksje">Refleksje</div>
+                        </div>
+                        <div class="post-content">
+                            <h3><a href="posty/web-private.html">Twoja Prywatność w Sieci: Co Musisz Wiedzieć?</a></h3>
+                            <p>Pliki cookie, boty, śledzenie... Co widzi Twój dostawca internetu i jak chronić swoje dane? Przewodnik po bezpiecznym przeglądaniu sieci.</p>
+                            <div class="post-meta">
+                                <span><i class="fas fa-calendar-alt" aria-hidden="true"></i> 15 Grudnia 2025</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card card" data-category="Refleksje" data-tags="cyberpunk,przyszłość,technologia" data-aos="fade-up" data-aos-delay="100">
+                        <div class="post-image">
+                            <img src="img/cyberpunk.jpg" alt="Miniatura posta o Cyberpunku" loading="lazy">
+                            <div class="post-category" data-category="Refleksje">Refleksje</div>
+                        </div>
+                        <div class="post-content">
+                            <h3><a href="posty/cyberpunk-future.html">Cyberpunk: Czy Dożyjemy Czasów Cyborgów?</a></h3>
+                            <p>Analiza wizji przyszłości znanych z literatury i gier. Jak blisko jesteśmy technologicznych implantów, latających aut i neonowych metropolii?</p>
+                            <div class="post-meta">
+                                <span><i class="fas fa-calendar-alt" aria-hidden="true"></i> 12 Grudnia 2025</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card card" data-category="Design" data-tags="design,ui,ux,figma" data-aos="fade-up" data-aos-delay="200">
+                        <div class="post-image">
+                            <img src="img/design.jpg" alt="Miniatura posta o designie" loading="lazy">
+                            <div class="post-category" data-category="Design">Design</div>
+                        </div>
+                        <div class="post-content">
+                            <h3><a href="posty/design-ui.html">Design i UI: Gdzie Sztuka Spotyka Technologię</a></h3>
+                            <p>Dobre UI to nie tylko ładne obrazki. Odkryj podstawowe zasady projektowania interfejsów, które sprawiają, że aplikacje są intuicyjne i przyjemne w obsłudze.</p>
+                            <div class="post-meta">
+                                <span><i class="fas fa-calendar-alt" aria-hidden="true"></i> 10 Grudnia 2025</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card card" data-category="Refleksje" data-tags="filmy,darmowe,streaming,kultura" data-aos="fade-up" data-aos-delay="200">
+                        <div class="post-image">
+                            <img src="img/movies.jpg" alt="Miniatura posta o darmowych filmach" loading="lazy">
+                            <div class="post-category" data-category="Refleksje">Refleksje</div>
+                        </div>
+                        <div class="post-content">
+                            <h3><a href="posty/movie-free.html">Strony z Filmami: Za Darmo to Uczciwa Cena</a></h3>
+                            <p>Refleksja nad dostępnością kultury w erze cyfrowej. Gdzie leży granica między darmowym dostępem a wspieraniem twórców? Przegląd legalnych alternatyw.</p>
+                            <div class="post-meta">
+                                <span><i class="fas fa-calendar-alt" aria-hidden="true"></i> 5 Grudnia 2025</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card card" data-category="Cyberbezpieczeństwo" data-tags="hacking,cyberbezpieczeństwo,ataki,bezpieczeństwo" data-aos="fade-up" data-aos-delay="100">
+                        <div class="post-image">
+                            <img src="img/virus.jpg" alt="Miniatura posta o rodzajach ataków" loading="lazy">
+                            <div class="post-category" data-category="Cyberbezpieczeństwo">Cyberbezpieczeństwo</div>
+                        </div>
+                        <div class="post-content">
+                            <h3><a href="#">Hacking, Cyberbezpieczeństwo i Czarna Magia - rodzaje ataków i wszystko co musisz wiedzieć.</a></h3>
+                            <p>Poznaj najpopularniejsze rodzaje ataków hakerskich, od phishingu po ransomware. Zrozum, jak działają i naucz się technik samoobrony w cyfrowym świecie.</p>
+                            <div class="post-meta">
+                                <span><i class="fas fa-calendar-alt" aria-hidden="true"></i> 2 Grudnia 2025</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card card" data-category="Cyberbezpieczeństwo" data-tags="hacking,bezpieczeństwo,poradnik,ciemna strona" data-aos="fade-up" data-aos-delay="100">
+                        <div class="post-image">
+                            <img src="img/hacker.jpg" alt="Miniatura posta o hakowaniu" loading="lazy">
+                            <div class="post-category" data-category="Cyberbezpieczeństwo">Cyberbezpieczeństwo</div>
+                        </div>
+                        <div class="post-content">
+                            <h3><a href="#">Hacking: Przewodnik po Ciemnej Stronie Mocy</a></h3>
+                            <p>Poprowadzę Cię w głąb mroku. Przewodnik po narzędziach używanych przez hakerów. Ścieżka kariery w etycznym hackingu? - red i blue team.</p>
+                            <div class="post-meta">
+                                <span><i class="fas fa-calendar-alt" aria-hidden="true"></i> 28 Listopada 2025</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card card" data-category="Cyberbezpieczeństwo" data-tags="cyberbezpieczeństwo,hacking,bezpieczeństwo,psychologia" data-aos="fade-up" data-aos-delay="100">
+                        <div class="post-image">
+                            <img src="img/cybersec.jpg" alt="Miniatura posta o cyberbezpieczeństwie" loading="lazy">
+                            <div class="post-category" data-category="Cyberbezpieczeństwo">Cyberbezpieczeństwo</div>
+                        </div>
+                        <div class="post-content">
+                            <h3><a href="#">Cyberbezpieczeństwo: Wilk w owczej skórze</a></h3>
+                            <p>Wejdź w umysł hakera, aby zrozumieć jego motywacje i metody. Analiza psychologicznych i socjologicznych aspektów cyberataków, oraz jak skuteczniej się bronić.</p>
+                            <div class="post-meta">
+                                <span><i class="fas fa-calendar-alt" aria-hidden="true"></i> 25 Listopada 2025</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card card" data-category="Programowanie" data-tags="programowanie,nauka,tutoriale,javascript,python" data-aos="fade-up" data-aos-delay="200">
+                        <div class="post-image">
+                            <img src="img/programowanie.jpg" alt="Miniatura posta o programowaniu" loading="lazy">
+                            <div class="post-category" data-category="Programowanie">Programowanie</div>
+                        </div>
+                        <div class="post-content">
+                            <h3><a href="#">Programowanie: Ścieżka Języków i Gdzie Szukać Wiedzy?</a></h3>
+                            <p>Jaki język wybrać na start? Gdzie znaleźć najlepsze kursy i materiały do nauki? Praktyczny przewodnik dla początkujących programistów.</p>
+                            <div class="post-meta">
+                                <span><i class="fas fa-calendar-alt" aria-hidden="true"></i> 20 Listopada 2025</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card card" data-category="Tutoriale" data-tags="serwer,linux,devops,self-hosting" data-aos="fade-up" data-aos-delay="100">
+                        <div class="post-image">
+                            <img src="img/serwer.jpg" alt="Miniatura posta o własnym serwerze" loading="lazy">
+                            <div class="post-category" data-category="Tutoriale">Tutoriale</div>
+                        </div>
+                        <div class="post-content">
+                            <h3><a href="#">Własny Serwer: Twoje Centrum Dowodzenia w Sieci</a></h3>
+                            <p>Krok po kroku, jak postawić własny serwer domowy. Od hostingu stron, przez chmurę na pliki, po serwer gier dla znajomych.</p>
+                            <div class="post-meta">
+                                <span><i class="fas fa-calendar-alt" aria-hidden="true"></i> 15 Listopada 2025</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card card" data-category="AI" data-tags="ai,research,modele,sieci neuronowe" data-aos="fade-up" data-aos-delay="300">
+                        <div class="post-image">
+                            <img src="img/aiworld.jpg" alt="Miniatura posta o modelach AI" loading="lazy">
+                            <div class="post-category" data-category="AI">AI</div>
+                        </div>
+                        <div class="post-content">
+                            <h3><a href="#">Wiodące Modele AI i Budowa Sieci Neuronowych</a></h3>
+                            <p>Przegląd wiodących modeli AI wg zastosowań (np. NLP, wizja komputerowa). Zobacz, gdzie są wykorzystywane i jak wygląda ich podstawowa budowa oraz działanie.</p>
+                            <div class="post-meta">
+                                <span><i class="fas fa-calendar-alt" aria-hidden="true"></i> 1 Listopada 2025</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card card" data-category="Tutoriale" data-tags="sieci,inf.02,egzamin,protokoły,networking" data-aos="fade-up" data-aos-delay="100">
+                        <div class="post-image">
+                            <img src="img/networking.jpg" alt="Miniatura posta o sieciach komputerowych" loading="lazy">
+                            <div class="post-category" data-category="Tutoriale">Tutoriale</div>
+                        </div>
+                        <div class="post-content">
+                            <h3><a href="#">Sieci Komputerowe: Esencja</a></h3>
+                            <p>Kompendium wiedzy o budowie i działaniu sieci. Od modelu ISO/OSI, przez adresację IP, po konfigurację urządzeń – wszystko, co musisz wiedzieć.</p>
+                            <div class="post-meta">
+                                <span><i class="fas fa-calendar-alt" aria-hidden="true"></i> 25 Października 2025</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Komunikat o braku wyników -->
+                    <div id="no-results" class="no-results">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <h3>Brak wyników</h3>
+                        <p>Nie znaleziono postów pasujących do Twojego zapytania.</p>
+                    </div>
+                </section>
+
+                <!-- Panel boczny -->
+                <aside class="sidebar" data-aos="fade-left" data-aos-delay="300"> 
+                    <div class="widget search-widget">
+                        <h3 class="widget-title">Szukaj</h3>
+                        <div class="search-box">
+                            <input type="text" id="searchInput" placeholder="Wpisz frazę...">
+                            <button id="clearSearchBtn" class="search-clear-btn" aria-label="Wyczyść"><i class="fas fa-times"></i></button>
+                            <button class="search-btn" aria-label="Szukaj"><i class="fas fa-search" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                    <div class="widget categories-widget card">
+                        <h3 class="widget-title">Kategorie</h3>
+                        <ul>
+                            <li><a href="#" data-filter="all" class="active-filter">Wszystkie <span>(13)</span></a></li>
+                            <li><a href="#" data-filter="AI">Sztuczna Inteligencja <span>(2)</span></a></li>
+                            <li><a href="#" data-filter="Refleksje">Refleksje <span>(3)</span></a></li>
+                            <li><a href="#" data-filter="Programowanie">Programowanie <span>(1)</span></a></li>
+                            <li><a href="#" data-filter="Tutoriale">Tutoriale <span>(2)</span></a></li>
+                            <li><a href="#" data-filter="Design">Design <span>(1)</span></a></li>
+                            <li><a href="#" data-filter="Cyberbezpieczeństwo">Cyberbezpieczeństwo <span>(3)</span></a></li>
+                            <li><a href="#" data-filter="Selfdevelopment">Selfdevelopment <span>(1)</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="widget tags-widget card">
+                        <h3 class="widget-title">Tagi</h3>
+                        <div class="tags-container">
+                            <a href="#" class="tag" data-filter="selfdevelopment">selfdevelopment</a>
+                            <a href="#" class="tag" data-filter="zarządzanie czasem">zarządzanie czasem</a>
+                            <a href="#" class="tag" data-filter="lider">lider</a>
+                            <a href="#" class="tag" data-filter="produktywność">produktywność</a>
+                            <a href="#" class="tag" data-filter="ai">AI</a>
+                            <a href="#" class="tag" data-filter="research">research</a>
+                            <a href="#" class="tag" data-filter="hacking">hacking</a>
+                            <a href="#" class="tag" data-filter="psychologia">psychologia</a>
+                            <a href="#" class="tag" data-filter="cyberpunk">cyberpunk</a>
+                            <a href="#" class="tag" data-filter="programowanie">programowanie</a>
+                            <a href="#" class="tag" data-filter="poradnik">poradnik</a>
+                            <a href="#" class="tag" data-filter="nauka">nauka</a>
+                            <a href="#" class="tag" data-filter="serwer">serwer</a>
+                            <a href="#" class="tag" data-filter="devops">devops</a>
+                            <a href="#" class="tag" data-filter="design">design</a>
+                            <a href="#" class="tag" data-filter="ui">ui</a>
+                            <a href="#" class="tag" data-filter="ux">ux</a>
+                            <a href="#" class="tag" data-filter="modele">modele</a>
+                            <a href="#" class="tag" data-filter="sieci neuronowe">sieci neuronowe</a>
+                            <a href="#" class="tag" data-filter="sieci">sieci</a>
+                            <a href="#" class="tag" data-filter="inf.02">inf.02</a>
+                            <a href="#" class="tag" data-filter="egzamin">egzamin</a>
+                            <a href="#" class="tag" data-filter="protokoły">protokoły</a>
+                            <a href="#" class="tag" data-filter="networking">networking</a>
+                            <a href="#" class="tag" data-filter="filmy">filmy</a>
+                            <a href="#" class="tag" data-filter="darmowe">darmowe</a>
+                            <a href="#" class="tag" data-filter="streaming">streaming</a>
+                            <a href="#" class="tag" data-filter="kultura">kultura</a>
+                            <a href="#" class="tag" data-filter="prywatność">prywatność</a>
+                            <a href="#" class="tag" data-filter="bezpieczeństwo">bezpieczeństwo</a>
+                            <a href="#" class="tag" data-filter="cookies">cookies</a>
+                            <a href="#" class="tag" data-filter="śledzenie">śledzenie</a>
+                            <a href="#" class="tag" data-filter="adblock">adblock</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer style="margin-top: 0;">
+        <div class="footer-content">
+            <p>&copy; 2025 Kamil [Nazwisko]. Wszelkie prawa zastrzeżone.</p>
+            <div class="footer-socials">
+                <a href="https://github.com/fireeagle050" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/kamil-dziedzic-6aa0ba30b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/blog.js" defer></script>
+</body>
+</html>

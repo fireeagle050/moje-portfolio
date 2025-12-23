@@ -1,0 +1,672 @@
+/* --- ZMIENNE I RESETOWANIE --- */
+:root {
+    --primary-color: #6a11cb;
+    --secondary-color: #2575fc;
+    --background-color: #121212;
+    --surface-color: #1e1e1e;
+    --text-color: #e0e0e0;
+    --text-secondary-color: #a0a0a0;
+}
+
+/* Zmienne dla motywu jasnego */
+body[data-theme="light"] {
+    --primary-color: #0077b6;      /* Nowy główny kolor (biznesowy błękit) */
+    --secondary-color: #00b4d8;    /* Nowy drugi kolor (jasny turkus) */
+    --background-color: #f8f9fa;   /* Bardzo jasne, neutralne tło */
+    --surface-color: #ffffff;
+    --text-color: #212529;         /* Ciemniejszy tekst dla lepszego kontrastu */
+    --text-secondary-color: #6c757d; /* Stonowany szary dla opisów */
+}
+
+body[data-theme="light"] header,
+body[data-theme="light"] .dropdown-menu {
+    background: rgba(255, 255, 255, 0.856);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    transition: background-color 0.3s ease, color 0.2s ease, border-color 0.3s ease; /* Globalna animacja zmiany motywu */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    position: relative; /* Niezbędne dla pozycjonowania pseudo-elementu */
+    overflow-x: hidden; /* Zapobiega przewijaniu na boki i ukrywa dolny suwak */
+    width: 100%;
+}
+
+/* Globalny odstęp dla głównej treści, aby nie chowała się pod stałym nagłówkiem */
+main {
+    padding-top: 120px; /* Wartość dopasowana do wysokości nagłówka */
+}
+
+
+body[data-theme="light"] {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* --- DEDYKOWANE TŁA DLA POSZCZEGÓLNYCH STRON --- */
+
+/* Wspólna podstawa dla teł */
+.body-index::before,
+.body-omnie::before,
+.body-blog::before,
+.body-kontakt::before,
+.body-materialy::before,
+.body-post::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-color: var(--background-color); /* Dodajemy tło do pseudo-elementu */
+    background-position: center;
+    opacity: 0.50; /* Zwiększona przezroczystość dla lepszego efektu tła */
+}
+/* W motywie jasnym tła są bardziej subtelne */
+body[data-theme="light"] .body-index::before,
+body[data-theme="light"] .body-omnie::before,
+body[data-theme="light"] .body-blog::before,
+body[data-theme="light"] .body-kontakt::before,
+body[data-theme="light"] .body-post::before { opacity: 0.15; }
+
+/* Indywidualne obrazy tła */
+.body-index::before, .body-omnie::before, .body-blog::before, .body-kontakt::before, .body-post::before { z-index: -2; }
+
+/* Domyślne tła (skompresowane JPG) dla przeglądarek bez wsparcia dla WebP */
+/* KROK 1: Ustawiamy JPG jako domyślne tło dla WSZYSTKICH przeglądarek */
+.body-index::before { background-image: url('../img/index_bg.jpg'); }
+.body-omnie::before { background-image: url('../img/o-mnie_bg.jpg'); }
+.body-blog::before { background-image: url('../img/blog_bg.jpg'); }
+.body-kontakt::before { background-image: url('../img/kontakt_bg.jpg'); }
+.body-materialy::before { background-image: url('../img/materialy_bg.jpg'); z-index: -2; } 
+.body-post::before { background-image: url('../img/content_blog_bg.jpg'); }
+
+/* --- TŁO PARTICLES.JS --- */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -2; /* Tło musi być na samym spodzie, pod obrazem */
+}
+
+/* Dedykowane tło dla strony "O mnie" */
+#omnie-canvas {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -2; /* Umieszcza animację pod obrazem tła */
+}
+
+/* --- NAGŁÓWEK I NAWIGACJA --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(18, 18, 18, 0.856); /* tło na starcie */
+    z-index: 100;
+    padding: 1rem 5%;
+    border-bottom: 2px solid #333; /* Ukryta ramka na starcie */
+    transition: background-color 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease;
+}
+
+header.scrolled {
+    background: rgba(18, 18, 18, 0.205); /* Półprzezroczyste tło po przewinięciu */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #333;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25); /* Dodany cień */
+    padding: 0.5rem 5%; /* Zmniejszenie wysokości nagłówka przy przewijaniu */
+}
+
+body[data-theme="light"] header.scrolled {
+    background: rgba(255, 255, 255, 0.7);
+    border-bottom-color: #ddd;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left-items {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Odstęp między logo a przełącznikiem */
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-decoration: none;
+    position: relative; /* Niezbędne do pozycjonowania podświetlenia */
+    z-index: 1; /* Upewnia się, że tekst logo jest nad podświetleniem */
+}
+
+.nav-logo img {
+    height: 70px; /* Zmniejszono dla lepszego dopasowania */
+    transition: transform 0.3s ease, filter 0.3s ease, height 0.3s ease;
+    will-change: transform;
+}
+
+/* Estetyczne podświetlenie logo od spodu */
+.nav-logo::after {
+    content: '';
+    position: absolute;
+    bottom: -10px; /* Pozycjonuje podświetlenie pod tekstem */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 15px;
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+    border-radius: 50%;
+    z-index: -1; /* Umieszcza podświetlenie za tekstem logo */
+}
+
+/* Zmniejszenie logo przy przewijaniu */
+header.scrolled .nav-logo img {
+    height: 50px;
+}
+
+.nav-logo:hover img {
+    transform: scale(1.05); /* Mikrointerakcja po najechaniu */
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul a {
+    position: relative; /* Potrzebne do pozycjonowania pseudo-elementu */
+    color: var(--text-secondary-color);
+    text-decoration: none;
+    padding: 5px 0; /* Dodatkowy padding dla lepszego wyglądu */
+    transition: color 0.3s ease;
+}
+
+/* Efekt podkreślenia przy najechaniu */
+nav ul a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transition: width 0.3s ease-in-out;
+}
+
+nav ul a:hover::after {
+    width: 100%;
+}
+
+nav ul a:hover {
+    color: var(--primary-color);
+}
+
+nav .nav-contact-btn {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    color: var(--text-color);
+    transition: background 0.4s ease, color 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav .nav-contact-btn:hover {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(106, 17, 203, 0.3);
+    border-color: transparent;
+}
+
+body[data-theme="light"] nav .nav-contact-btn {
+    color: var(--text-color);
+    border-color: var(--primary-color);
+}
+
+/* --- PRZYCISK HAMBURGERA DLA MOBILNYCH --- */
+.mobile-nav-toggle {
+    display: none; /* Ukryty na desktopie */
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 1001; /* Musi być nad wszystkim innym */
+}
+
+/* --- PRZEŁĄCZNIK MOTYWU --- */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #333;
+    border: 1px solid #444; /* Dodajemy ramkę do tła */
+    transition: .4s;
+    border-radius: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6px;
+}
+
+.slider i {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: rotate(0deg) scale(1); /* Początkowy stan */
+}
+
+.slider .fa-sun { color: #f39c12; } /* Kolor słońca */
+.slider .fa-moon { color: #95a5a6; } /* Kolor księżyca */
+.slider .fa-moon {
+    color: #95a5a6; /* Bardziej stonowany kolor księżyca */
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 24px; /* Lekko mniejszy, aby pasował do ramki */
+    width: 24px;
+    left: 4px;
+    bottom: 4px; /* Wyśrodkowanie w pionie */
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); /* Gradientowe tło pokrętła */
+    transition: .4s;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(106, 17, 203, 0.5); /* Subtelna poświata */
+}
+
+/* Animacja ikon */
+input:checked + .slider .fa-moon {
+    opacity: 1;
+    transform: rotate(360deg) scale(1);
+}
+input:not(:checked) + .slider .fa-sun {
+    opacity: 1;
+    transform: rotate(-360deg) scale(1);
+}
+/* Ukrywanie i resetowanie nieaktywnej ikony */
+input:checked + .slider {
+    background-color: var(--surface-color); /* Tło w trybie jasnym */
+    border-color: #ddd;
+}
+input:checked + .slider:before { transform: translateX(26px); box-shadow: 0 0 10px rgba(0, 119, 182, 0.6); }
+input:checked + .slider .fa-sun { opacity: 0; transform: rotate(0deg) scale(0.8); }
+input:not(:checked) + .slider .fa-moon { opacity: 0; transform: rotate(0deg) scale(0.8); }
+
+/* --- ROZWIJANE MENU --- */
+.dropdown {
+    position: relative;
+}
+
+.dropdown > a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dropdown > a .fa-chevron-down {
+    font-size: 0.7em;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover > a .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--surface-color);
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    list-style: none;
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    padding: 0.75rem 1.5rem;
+    display: block;
+}
+
+/* --- OGÓLNE STYLE SEKCJI --- */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 2rem; /* Zmniejszony padding dla lepszego wyglądu z przezroczystością */
+    background: rgba(18, 18, 18, 0.65); /* Półprzezroczyste tło */
+    backdrop-filter: blur(8px);
+    position: relative; /* Potrzebne, aby sekcje były nad tłem */
+    border-radius: 15px; /* Zaokrąglone rogi dla spójności */
+    margin-top: 4rem; /* Dodatkowy margines, aby sekcje się nie nakładały */
+    margin-bottom: 4rem;
+}
+
+body[data-theme="light"] .container {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #e0e0e0;
+}
+
+
+.container h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    background-clip: text;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- PRZYCISKI --- */
+.btn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+    display: inline-block;
+    margin-top: 2rem; /* Wyrównanie z głównym przyciskiem */
+    padding: 0.8rem 2rem; /* Dopasowanie paddingu do głównego przycisku */
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 50px; /* Dopasowanie zaokrąglenia do głównego przycisku */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+/* --- LISTY UMIEJĘTNOŚCI --- */
+.skills-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Style dla siatki i elementów umiejętności (współdzielone) */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.skill-item {
+    position: relative;
+    background: rgba(28, 28, 32, 0.65);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.2rem 1.8rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 15px rgba(106, 17, 203, 0.5), 0 0 25px rgba(37, 117, 252, 0.3);
+}
+
+.skill-item i {
+    font-size: 1.5rem;
+    background-clip: text;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- STYLE IKON W SEKCJI HOBBY (O-MNIE.HTML) --- */
+.hobby-chapter {
+    text-align: center; /* Wyśrodkowanie zawartości rozdziału, w tym ikony */
+}
+
+.hobby-chapter i {
+    font-size: 2.5rem; /* Rozmiar ikony */
+    margin-bottom: 1rem; /* Odstęp od tytułu */
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block; /* Niezbędne do poprawnego działania gradientu */
+    filter: drop-shadow(0 0 5px rgba(106, 17, 203, 0.4)); /* Subtelna poświata */
+    transition: transform 0.3s ease;
+}
+
+
+
+
+
+/* --- PRZYCISK POWROTU DO GÓRY --- */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100px);
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+.back-to-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top-btn:hover {
+    box-shadow: 0 0 15px rgba(106, 17, 203, 0.6);
+}
+
+/* --- STOPKA --- */
+footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: rgba(18, 18, 18, 0.65); /* Półprzezroczyste tło */
+    backdrop-filter: blur(8px); /* Efekt rozmycia dla spójności */
+    color: var(--text-secondary-color);
+    position: relative;
+    z-index: 1;
+    margin-top: 4rem; /* Odstęp od ostatniej sekcji */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtelna linia oddzielająca */
+}
+
+body[data-theme="light"] footer {
+    background: rgba(255, 255, 255, 0.8);
+    border-top-color: #ddd;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 2rem;
+    margin: 0.5rem 0;
+}
+
+.footer-socials a {
+    color: var(--text-secondary-color);
+    font-size: 1.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+/* --- RESPONSIVE NAVIGATION --- */
+@media (max-width: 992px) {
+    nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Start outside of the screen */
+        width: 300px;
+        height: 100vh;
+        background: var(--surface-color);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 6rem 2rem 2rem;
+        gap: 1.5rem;
+        transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+        box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+    }
+
+    body[data-theme="light"] nav ul {
+        background: var(--surface-color);
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    }
+
+    /* Przeniesienie przełącznika motywu w trybie mobilnym */
+    nav ul .theme-switch-wrapper {
+        display: none; /* Ukrywamy przełącznik w menu mobilnym, bo jest już obok logo */
+    }
+
+    nav ul.nav-active {
+        right: 0; /* Slide in */
+    }
+
+    nav ul a {
+        font-size: 1.2rem;
+    }
+
+    .dropdown-menu {
+        position: static;
+        display: none; /* Ukryte domyślnie */
+        background: none;
+        border: none;
+        box-shadow: none;
+        padding-left: 1rem; /* Wcięcie dla sub-linków */
+        min-width: auto;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: none; /* Wyłączamy hover na mobilnych */
+    }
+
+    .dropdown.open .dropdown-menu {
+        display: block; /* Pokazujemy po kliknięciu */
+    }
+
+    .dropdown > a .fa-chevron-down {
+        transition: transform 0.3s ease;
+    }
+
+    .dropdown.open > a .fa-chevron-down {
+        transform: rotate(180deg);
+    }
+
+    .mobile-nav-toggle { display: block; }
+}
+/* --- OPTYMALIZACJA WYDAJNOŚCI NA URZĄDZENIACH MOBILNYCH --- */
+@media (max-width: 1024px) {
+    /* Wyłączamy zasobożerne animacje tła na mniejszych ekranach */
+    #particles-js,
+    #omnie-canvas,
+    #matrix-canvas,
+    #light-orbs-container {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 2rem 1.5rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .nav-logo img {
+        height: 50px;
+    }
+
+    main {
+        padding-top: 90px;
+    }
+}

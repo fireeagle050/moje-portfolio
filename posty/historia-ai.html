@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ZMIENNE: Tytuł i opis wpisu -->
+    <meta name="description" content="Fascynująca podróż przez historię sztucznej inteligencji. Od testu Turinga, przez zimy AI, aż po rewolucję generatywną i modele GPT. Zobacz, jak maszyny nauczyły się myśleć.">
+    <title>Historia AI: Od Maszyny Turinga do ChatGPT | Project Genesis</title>
+
+    <!-- Współdzielone style i skrypty -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/post.css"> <!-- Dedykowane style dla pojedynczego wpisu -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Prism.js CSS (motyw Okaidia dla ciemnego tła) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
+    <!-- Biblioteki do generowania PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body class="body-post"> <!-- Dedykowana klasa dla pojedynczego wpisu -->
+
+    <header>
+        <nav>
+            <div class="nav-left-items">
+                <a href="../index.html" class="nav-logo"><img src="../img/logo.png" alt="Logo"></a>
+                <!-- PRZEŁĄCZNIK MOTYWU -->
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="theme-checkbox">
+                        <input type="checkbox" id="theme-checkbox" />
+                        <div class="slider round"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></div>
+                    </label>
+                </div>
+            </div>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../o-mnie.html">O mnie</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../materialy.html">Materiały</a></li>
+                <li><a href="../kontakt.html" class="nav-contact-btn">Kontakt</a></li>
+            </ul>
+        </nav>
+        <!-- Pasek postępu czytania -->
+        <div class="reading-progress-bar"></div>
+    </header>
+
+    <main>
+        <div class="post-container container">
+            <!-- NAWIGACJA OKRUSZKOWA (BREADCRUMBS) -->
+            <nav class="breadcrumbs">
+                <a href="../index.html"><i class="fas fa-home"></i> Home</a> <span class="separator">/</span>
+                <a href="../blog.html">Blog</a> <span class="separator">/</span>
+                <span class="current">Historia AI</span>
+            </nav>
+
+            <!-- ZMIENNE: Treść artykułu -->
+            <article class="post-full-content">
+                <header class="post-full-header">
+                    <div class="post-meta">
+                        <span><i class="fas fa-calendar-alt"></i> 10 Grudnia 2025</span>
+                        <span><i class="fas fa-user"></i> Kamil</span>
+                        <span><i class="fas fa-folder-open"></i> Sztuczna Inteligencja</span>
+                        <span><i class="fas fa-clock"></i> 12 min czytania</span>
+                    </div>
+                    <h1 class="post-full-title">Historia AI: Od Maszyny Turinga do Generatywnej Rewolucji</h1>
+                </header>
+
+                <!-- Przyciski udostępniania -->
+                <div class="post-share-buttons">
+                    <span>Udostępnij:</span>
+                    <a href="#" class="share-btn share-facebook" aria-label="Udostępnij na Facebooku"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="share-btn share-twitter" aria-label="Udostępnij na Twitterze"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="share-btn share-linkedin" aria-label="Udostępnij na LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <button id="save-pdf-btn" class="share-btn share-pdf" aria-label="Zapisz jako PDF" title="Zapisz artykuł jako PDF"><i class="fas fa-file-pdf"></i></button>
+                    <button id="print-btn" class="share-btn share-print" aria-label="Drukuj artykuł" title="Drukuj artykuł"><i class="fas fa-print"></i></button>
+                    <button id="copy-link-btn" class="share-btn share-copy" aria-label="Kopiuj link" title="Kopiuj link do schowka"><i class="fas fa-link"></i></button>
+                </div>
+
+                <figure class="post-full-image">
+                    <!-- Używamy przykładowego zdjęcia z folderu img -->
+                    <img src="../img/aination.jpg" alt="Wizualizacja sieci neuronowej i historii AI">
+                    <figcaption style="text-align: center; color: #888; font-size: 0.9rem; margin-top: 0.5rem;">Ewolucja od prostych algorytmów do złożonych sieci neuronowych.</figcaption>
+                </figure>
+
+                <!-- UKŁAD GRID: TREŚĆ + SIDEBAR -->
+                <div class="post-content-grid">
+                    
+                    <!-- KOLUMNA GŁÓWNA -->
+                    <div class="post-main-column">
+                        <section class="post-full-body">
+                            
+                            <!-- Sekcja "W skrócie" -->
+                            <div class="key-takeaways">
+                                <h3><i class="fas fa-lightbulb"></i> Czego się dowiesz?</h3>
+                                <ul>
+                                    <li><strong>Korzenie:</strong> Od automatów starożytności po twierdzenia Gödla.</li>
+                                    <li><strong>Symboliczna AI:</strong> Czym były systemy eksperckie i dlaczego upadły.</li>
+                                    <li><strong>Przełomy:</strong> Jak Deep Blue i AlphaGo zmieniły postrzeganie maszyn.</li>
+                                    <li><strong>Filozofia:</strong> Argument Chińskiego Pokoju – czy AI naprawdę "rozumie"?</li>
+                                    <li><strong>Technologia:</strong> Rodzaje uczenia maszynowego i architektury (RNN, CNN, Transformery).</li>
+                                    <li><strong>Sekret ChatGPT:</strong> Czym jest RLHF i dlaczego zmieniło wszystko.</li>
+                                    <li><strong>Wyzwania:</strong> Open Source vs Closed Source, regulacje i AGI.</li>
+                                </ul>
+                            </div>
+
+                            <p class="lead"><span class="drop-cap">C</span>zy maszyny mogą myśleć? To pytanie, zadane przez Alana Turinga<sup class="footnote-ref"><a href="#fn1" id="ref1">[1]</a></sup> w 1950 roku, zapoczątkowało jedną z najbardziej fascynujących podróży w historii ludzkości. Od prostych algorytmów grających w warcaby po modele językowe piszące poezję – historia sztucznej inteligencji to opowieść o wzlotach, upadkach i nieustannym dążeniu do stworzenia cyfrowego umysłu.</p>
+
+                            <p>Dziś, gdy korzystamy z ChatGPT czy generujemy obrazy w Midjourney, łatwo zapomnieć, że jeszcze dekadę temu takie możliwości wydawały się science fiction. Zapraszam Cię w podróż przez dekady innowacji, które ukształtowały nasz dzisiejszy świat.</p>
+
+                            <h2 id="section-1">1. Prehistoria: Od Mitów do Matematyki</h2>
+                            <p>Marzenie o stworzeniu sztucznego życia towarzyszy ludzkości od zarania dziejów. W mitologii żydowskiej mamy <strong>Golema</strong>, a w starożytnej Grecji inżynierowie tacy jak Heron z Aleksandrii budowali mechaniczne automaty. Jednak kluczowe pytanie filozoficzne zadał <strong>Kartezjusz</strong>: czy umysł jest czymś odrębnym od ciała (dualizm), czy też myślenie jest czysto mechanicznym procesem?</p>
+                            <p>Fundament pod formalne myślenie położył jednak znacznie wcześniej <strong>Arystoteles</strong>, tworząc sylogizmy – pierwsze systemy logicznego wnioskowania. To on pokazał, że rozumowanie można zamknąć w sztywnych regułach, co wieki później stało się podstawą kodu komputerowego.</p>
+                            <p>Zanim powstały komputery, musieliśmy nauczyć się formalizować myślenie. W XVII wieku <strong>Blaise Pascal</strong> i <strong>Gottfried Wilhelm Leibniz</strong> zbudowali pierwsze mechaniczne kalkulatory. Leibniz marzył o "rachunku uniwersalnym", który pozwoliłby rozstrzygać spory filozoficzne za pomocą obliczeń ("Obliczmy to!"). To doprowadziło do powstania algebry Boole'a – języka zer i jedynek.</p>
+
+                            <h3>Fundamenty: Gödel, Cybernetyka i Teoria Informacji</h3>
+                            <p>Wszystko nabrało tempa, gdy <strong>David Hilbert</strong> rzucił wyzwanie matematykom, pytając o granice systemów formalnych. Odpowiedź była druzgocąca. W latach 30. XX wieku <strong>Kurt Gödel</strong> wstrząsnął światem nauki, udowadniając swoje <em>Twierdzenia o niezupełności</em>. Wykazał, że w każdym systemie logicznym istnieją prawdy, których nie da się udowodnić.</p>
+                            
+                            <p>To paradoksalnie otworzyło drogę dla <strong>Alana Turinga</strong>. Jego koncepcja "Maszyny Turinga" – abstrakcyjnego modelu komputera operującego na nieskończonej taśmie – zdefiniowała granice tego, co w ogóle jest obliczalne, dając początek informatyce, jaką znamy.</p>
+
+                            <p>Równolegle rodziła się <strong>Cybernetyka</strong> (Norbert Wiener) – nauka o sterowaniu w maszynach i organizmach żywych, oraz <strong>Teoria Informacji</strong> Claude'a Shannona, która pozwoliła traktować logikę jako sygnały elektryczne.</p>
+
+                            <!-- Boks Definicji -->
+                            <div class="definition-box">
+                                <h4>Definicja: Test Turinga</h4>
+                                <p>Eksperyment myślowy mający na celu określenie zdolności maszyny do posługiwania się językiem naturalnym w sposób nieodróżnialny od człowieka. Jeśli sędzia nie potrafi odróżnić, czy rozmawia z maszyną, czy z człowiekiem, maszynę uznaje się za inteligentną.</p>
+                            </div>
+
+                            <p>Punktem zwrotnym był rok <strong>1956</strong> i konferencja w Dartmouth. To tam John McCarthy ukuł termin "Sztuczna Inteligencja". Uczestnicy wierzyli, że każdy aspekt uczenia się można tak precyzyjnie opisać, że maszyna będzie w stanie go symulować.</p>
+
+                            <div class="info-box tip">
+                                <i class="fas fa-lightbulb"></i>
+                                <div>
+                                    <strong>Ciekawostka:</strong> W 1958 roku Frank Rosenblatt zaprezentował <em>Perceptron</em> – pierwszą sieć neuronową (hardware'ową!). "New York Times" pisał wtedy o "zarodku komputera, który będzie w stanie chodzić, mówić, widzieć i być świadomym swojego istnienia".
+                                </div>
+                            </div>
+
+                            <h2 id="section-2">2. Symboliczna AI i Zima (1957-1990)</h2>
+                            <p>Lata 60. przyniosły pierwsze spektakularne sukcesy, które rozpaliły wyobraźnię. Joseph Weizenbaum stworzył <strong>ELIZĘ</strong> – program, który parodiował psychoterapeutę, odbijając pytania użytkownika. Choć ELIZA nie "rozumiała" ani słowa, wielu ludzi wierzyło, że rozmawia z istotą czującą.</p>
+
+                            <!-- Okno Terminala - ELIZA -->
+                            <div class="terminal-window">
+                                <div class="terminal-header">
+                                    <span class="terminal-dot red"></span>
+                                    <span class="terminal-dot yellow"></span>
+                                    <span class="terminal-dot green"></span>
+                                    <span class="terminal-title">ELIZA (1966)</span>
+                                </div>
+                                <div class="terminal-body">
+                                    <span class="command-line">Hello, I am Eliza.</span>
+                                    <span class="command-output">> I am feeling sad today.</span>
+                                    <span class="command-line">Why do you think you are feeling sad?</span>
+                                    <span class="command-output">> Because my code won't compile.</span>
+                                    <span class="command-line">Does that trouble you?</span>
+                                </div>
+                            </div>
+
+                            <p>W tym okresie dominowała tzw. <strong>Symboliczna AI (GOFAI)</strong>. Opierała się ona na logice i regułach "jeśli-to". Powstały języki takie jak <strong>LISP</strong> (stworzony przez McCarthy'ego w 1958) czy deklaratywny <strong>Prolog</strong> (1972). Programiści wierzyli, że jeśli uda się zapisać całą wiedzę świata w postaci reguł logicznych (logika predykatów), maszyna stanie się inteligentna.</p>
+
+                            <p>Szczytem tego podejścia były <strong>Systemy Eksperckie</strong> w latach 80. – programy, które miały zastąpić lekarzy czy inżynierów, posiadając w bazie tysiące reguł. Okazały się one jednak "kruche" – nie potrafiły radzić sobie z niepewnością i sytuacjami, których programista nie przewidział.</p>
+
+                            <!-- ELEMENT: ZA I PRZECIW (Symboliczna AI) -->
+                            <div class="pros-cons-container">
+                                <div class="pros-box">
+                                    <h3><i class="fas fa-check"></i> Zalety Symbolicznej AI</h3>
+                                    <ul>
+                                        <li><strong>Wyjaśnialność:</strong> Dokładnie wiemy, dlaczego program podjął daną decyzję (śledzenie reguł).</li>
+                                        <li><strong>Logika:</strong> Doskonała do zadań matematycznych i formalnych.</li>
+                                        <li><strong>Brak potrzeby danych:</strong> Nie wymaga milionów przykładów, wystarczy wiedza eksperta.</li>
+                                    </ul>
+                                </div>
+                                <div class="cons-box">
+                                    <h3><i class="fas fa-times"></i> Wady i Ograniczenia</h3>
+                                    <ul>
+                                        <li><strong>Kruchość:</strong> Błędne dane wejściowe często powodują załamanie się systemu.</li>
+                                        <li><strong>Brak uczenia się:</strong> System nie ewoluuje sam; człowiek musi dopisać nowe reguły.</li>
+                                        <li><strong>Problem "Zdrowego Rozsądku":</strong> Trudno zapisać w regułach intuicję (np. jak rozpoznać twarz).</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <p>Niestety, wczesne algorytmy radziły sobie świetnie w zamkniętych, logicznych światach (jak warcaby), ale kompletnie zawodziły w zderzeniu z chaosem rzeczywistości. Co gorsza, w 1969 roku Marvin Minsky i Seymour Papert opublikowali książkę "Perceptrons", w której matematycznie udowodnili ograniczenia ówczesnych sieci neuronowych (m.in. niemożność rozwiązania problemu XOR).</p>
+                            
+                            <div class="info-box warning">
+                                <i class="fas fa-snowflake"></i>
+                                <div>
+                                    <strong>Zima AI (AI Winter):</strong> To okresy (lata 70. i późne 80.), w których finansowanie badań nad AI zostało drastycznie obcięte z powodu niespełnionych obietnic. "Sztuczna inteligencja" stała się terminem, którego naukowcy unikali, by nie odstraszyć grantodawców.
+                                </div>
+                            </div>
+
+                            <!-- Filozoficzne wtrącenie -->
+                            <div class="definition-box">
+                                <h4>Filozofia: Argument Chińskiego Pokoju (John Searle, 1980)</h4>
+                                <p>Wyobraź sobie człowieka w zamkniętym pokoju, który ma księgę reguł pozwalającą mu odpowiadać na pytania w języku chińskim (manipulując symbolami), mimo że nie zna chińskiego. Dla obserwatora na zewnątrz wygląda to na inteligentną rozmowę. Searle argumentował, że tak samo działają komputery – <strong>symulują rozumienie, ale nie rozumieją</strong> (składnia bez semantyki).</p>
+                            </div>
+
+                            <div class="info-box tip">
+                                <i class="fas fa-balance-scale"></i>
+                                <div>
+                                    <strong>Ważne rozróżnienie: Silna vs Słaba AI</strong><br>
+                                    Większość dzisiejszych systemów (w tym ChatGPT) to <strong>Słaba AI (Narrow AI)</strong> – mistrzowie w jednej dziedzinie, ale bez świadomości. <strong>Silna AI (AGI)</strong> to hipotetyczna maszyna o inteligencji ogólnej, dorównująca lub przewyższająca człowieka w każdym zadaniu intelektualnym.
+                                </div>
+                            </div>
+
+                            <h2 id="section-3">3. Cicha Rewolucja: Statystyka i Machine Learning (1990-2010)</h2>
+                            <p>Podczas gdy "klasyczne AI" oparte na symbolach i regułach traciło impet, badacze zaczęli stosować podejście probabilistyczne. Zamiast uczyć komputer "co to jest kot" za pomocą definicji (ma uszy, wąsy, ogon), karmili go tysiącami zdjęć i pozwalali algorytmom statystycznym znaleźć wzorce.</p>
+
+                            <p>To czas powrotu pragmatyzmu. Rozwinęły się <strong>algorytmy heurystyczne</strong> i metody przeszukiwania (kluczowe dla szachów). W uczeniu maszynowym królowały klasyczne metody: <strong>Drzewa Decyzyjne</strong>, <strong>k-NN</strong> (k-najbliższych sąsiadów) czy <strong>SVM</strong>. Były skuteczne, matematycznie uzasadnione i działały na mniejszych zbiorach danych.</p>
+                            
+                            <p>Wtedy też ugruntował się podział uczenia maszynowego:</p>
+
+                            <div class="info-box tip">
+                                <i class="fas fa-graduation-cap"></i>
+                                <div>
+                                    <strong>Mini-Lekcja: Rodzaje Uczenia Maszynowego</strong>
+                                    <ul style="margin-top: 0.5rem; margin-bottom: 0;">
+                                        <li><strong>Nadzorowane (Supervised):</strong> Mamy dane i etykiety (np. zdjęcia kotów z podpisem "kot"). Model uczy się mapowania.</li>
+                                        <li><strong>Nienadzorowane (Unsupervised):</strong> Mamy tylko dane. Model sam szuka struktur i klastrów (np. segmentacja klientów).</li>
+                                        <li><strong>Ze Wzmocnieniem (Reinforcement):</strong> Agent działa w środowisku i otrzymuje nagrody/kary za swoje akcje (np. gra w szachy).</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h3 id="comparison">Symboliczne AI vs Uczenie Maszynowe</h3>
+                            <p>Warto zrozumieć fundamentalną zmianę paradygmatu, która wtedy zaszła.</p>
+
+                            <div class="table-responsive">
+                                <table class="comparison-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Cecha</th>
+                                            <th>Symboliczne AI (GOFAI)</th>
+                                            <th>Machine Learning (ML)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Zasada działania</strong></td>
+                                            <td>Sztywne reguły (If-Then) pisane przez ludzi</td>
+                                            <td>Algorytm sam znajduje reguły w danych</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Przykład</strong></td>
+                                            <td>Systemy eksperckie, Deep Blue (szachy)</td>
+                                            <td>Filtry spamu, rekomendacje Netflixa</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Wada</strong></td>
+                                            <td>Kruchość (nie radzi sobie z wyjątkami)</td>
+                                            <td>Wymaga dużej ilości danych</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Oś Czasu (Timeline) -->
+                            <div class="timeline-container">
+                                <h3 class="timeline-title">Kamienie Milowe AI</h3>
+                                <div class="timeline">
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                            <span class="timeline-date">1950</span>
+                                            <h4>Test Turinga</h4>
+                                            <p>Alan Turing proponuje test na inteligencję maszyn.</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                            <span class="timeline-date">1997</span>
+                                            <h4>Deep Blue vs Kasparow</h4>
+                                            <p>Triumf "brutalnej siły" obliczeniowej i algorytmów przeszukiwania drzew (nie sieci neuronowych!).</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                            <span class="timeline-date">2012</span>
+                                            <h4>AlexNet (ImageNet)</h4>
+                                            <p>Moment zwrotny: Deep Learning wygrywa konkurs rozpoznawania obrazów z ogromną przewagą.</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                            <span class="timeline-date">2016</span>
+                                            <h4>AlphaGo</h4>
+                                            <p>AI pokonuje mistrza świata w Go, wykonując ruchy, które ludzie uznali za "kreatywne".</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                            <span class="timeline-date">2017</span>
+                                            <h4>Transformery</h4>
+                                            <p>Publikacja "Attention Is All You Need" otwiera drogę do modeli językowych (LLM).</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                            <span class="timeline-date">2022</span>
+                                            <h4>ChatGPT & Midjourney</h4>
+                                            <p>AI trafia "pod strzechy". Premiera ChatGPT wywołuje globalny wyścig zbrojeń i dyskusję o AGI.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h2 id="section-4">4. Deep Learning: Powrót Sieci Neuronowych (2010-2020)</h2>
+                            <p>Dlaczego sieci neuronowe, wymyślone w latach 50., nagle zaczęły działać? Odpowiedź brzmi: <strong>Dane (Big Data), GPU i Backpropagation</strong> (wsteczna propagacja błędu). Wzrost popularności gier komputerowych napędził rozwój kart graficznych (GPU), które idealnie nadają się do równoległych obliczeń macierzowych.</p>
+
+                            <div class="info-box tip">
+                                <i class="fas fa-info-circle"></i>
+                                <div>
+                                    <strong>Kluczowy moment:</strong> W 2012 roku (konkurs ImageNet) zespół Geoffreya Hintona wykorzystał GPU do trenowania głębokiej sieci neuronowej (AlexNet). Zredukowali błąd rozpoznawania obrazów z 26% do 15%, deklasując konkurencję. To był "Wielki Wybuch" Deep Learningu.
+                                </div>
+                            </div>
+
+                            <!-- Wykres: Postęp ImageNet -->
+                            <div class="line-chart-box">
+                                <h4>Dokładność rozpoznawania obrazów (ImageNet)</h4>
+                                <svg class="line-chart-svg" viewBox="0 0 500 250" preserveAspectRatio="xMidYMid meet">
+                                    <defs>
+                                        <linearGradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+                                            <stop offset="0%" stop-color="var(--primary-color)" />
+                                            <stop offset="100%" stop-color="transparent" />
+                                        </linearGradient>
+                                    </defs>
+                                    
+                                    <!-- Siatka tła -->
+                                    <g class="line-chart-grid">
+                                        <line x1="50" y1="200" x2="450" y2="200" /> <!-- Oś X -->
+                                        <line x1="50" y1="150" x2="450" y2="150" />
+                                        <line x1="50" y1="100" x2="450" y2="100" />
+                                        <line x1="50" y1="50" x2="450" y2="50" />
+                                    </g>
+
+                                    <!-- Obszar pod wykresem -->
+                                    <path class="line-chart-area" d="M50,200 L50,120 L180,90 L310,40 L450,20 L450,200 Z" />
+
+                                    <!-- Linia wykresu -->
+                                    <path class="line-chart-path" d="M50,120 L180,90 L310,40 L450,20" />
+
+                                    <!-- Punkty i Etykiety -->
+                                    <g><circle class="line-chart-point" cx="50" cy="120" /><text class="line-chart-value" x="50" y="105">74%</text><text class="line-chart-label" x="50" y="225">2011</text></g>
+                                    <g><circle class="line-chart-point" cx="180" cy="90" /><text class="line-chart-value" x="180" y="75">84%</text><text class="line-chart-label" x="180" y="225">2012</text></g>
+                                    <g><circle class="line-chart-point" cx="310" cy="40" /><text class="line-chart-value" x="310" y="25">96%</text><text class="line-chart-label" x="310" y="225">2015</text></g>
+                                    <g><circle class="line-chart-point" cx="450" cy="20" /><text class="line-chart-value" x="450" y="10">99%</text><text class="line-chart-label" x="450" y="225">2022</text></g>
+                                </svg>
+                            </div>
+
+                            <p>Zanim nadeszły Transformery, królowały <strong>Sieci Konwolucyjne (CNN)</strong> w analizie obrazu oraz <strong>Sieci Rekurencyjne (RNN/LSTM)</strong> w analizie tekstu i dźwięku. Te drugie miały jednak problem z "pamięcią" przy długich sekwencjach danych.</p>
+
+                            <!-- ELEMENT: STEPPER (Jak działa sieć) -->
+                            <h3 id="how-it-works">Jak uczy się sieć neuronowa? (Backpropagation)</h3>
+                            <div class="step-process">
+                                <div class="step-item">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h4>Forward Pass (Przepływ w przód)</h4>
+                                        <p>Dane wpadają do sieci. Neurony obliczają wynik na podstawie losowych na początku wag. Sieć "zgaduje" wynik (często błędnie).</p>
+                                    </div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h4>Obliczenie Błędu (Loss Function)</h4>
+                                        <p>Algorytm porównuje wynik sieci z poprawną odpowiedzią. Różnica to "Błąd" (Loss). Np. Sieć widzi kota, mówi "pies" -> duży błąd.</p>
+                                    </div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h4>Backward Pass (Wsteczna Propagacja)</h4>
+                                        <p>To jest magia. Matematyka (pochodne) mówi nam, <em>który</em> neuron zawinił. Cofamy się i korygujemy wagi, by zmniejszyć błąd w przyszłości.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3>Mini-Lekcja: Jak działa sztuczny neuron?</h3>
+                            <p>To prostsze niż myślisz. Sztuczny neuron to matematyczna funkcja, która przyjmuje dane wejściowe, mnoży je przez "wagi" (ważność danej informacji), dodaje "bias" (przesunięcie) i przepuszcza przez funkcję aktywacji.</p>
+
+                            <pre class="line-numbers"><code class="language-python">
+            # Uproszczony model neuronu w Pythonie
+            import numpy as np
+
+            def sigmoid(x):
+                return 1 / (1 + np.exp(-x))
+
+            def neuron(inputs, weights, bias):
+                # 1. Suma ważona
+                total = np.dot(inputs, weights) + bias
+                # 2. Funkcja aktywacji (czy neuron ma "wystrzelić"?)
+                return sigmoid(total)
+
+            inputs = np.array([0.5, 0.8]) # Np. jasność piksela
+            weights = np.array([0.4, 0.2]) # Czego neuron szuka?
+            bias = -0.1
+
+            output = neuron(inputs, weights, bias)
+            print(f"Aktywacja neuronu: {output:.4f}")
+                            </code></pre>
+
+                            <p>Gdy uruchomimy taki proces na tysiącach neuronów i milionach danych, wygląda to w terminalu badacza mniej więcej tak:</p>
+
+                            <!-- ELEMENT: TERMINAL LINUX (Trening) -->
+                            <div class="terminal-window linux">
+                                <div class="terminal-header">
+                                    <span class="terminal-title">training_log.py</span>
+                                </div>
+                                <div class="terminal-body">
+                                    <span class="command-line">python train_model.py --epochs 5</span>
+                                    <span class="command-output">Epoch 1/5 [==>.......] - loss: 0.8921 - acc: 0.4501</span>
+                                    <span class="command-output">Epoch 2/5 [====>.....] - loss: 0.5412 - acc: 0.7210</span>
+                                    <span class="command-output">Epoch 3/5 [======>...] - loss: 0.3105 - acc: 0.8943</span>
+                                    <span class="command-output">Model saved to /models/checkpoint.pt</span>
+                                </div>
+                            </div>
+
+                            <h2 id="section-5">5. Reinforcement Learning: Maszyny Uczą się Wygrywać</h2>
+                            <p>Równolegle do rozpoznawania obrazów, rozwijała się inna gałąź: <strong>Uczenie ze Wzmocnieniem (Reinforcement Learning)</strong>. Tutaj AI uczy się metodą prób i błędów, otrzymując nagrody za dobre decyzje.</p>
+                            
+                            <p>W 2016 roku program <strong>AlphaGo</strong> (stworzony przez DeepMind) pokonał mistrza świata w Go, Lee Sedola. W 37. ruchu drugiej partii, AlphaGo wykonał ruch tak niekonwencjonalny, że komentatorzy uznali go za błąd. Okazał się on jednak genialnym posunięciem, które zapewniło maszynie zwycięstwo. To był dowód, że AI potrafi wykazywać coś na kształt "intuicji".</p>
+
+                            <h2 id="section-6">6. Era Generatywna: Transformery i GPT</h2>
+                            <p>W 2017 roku badacze Google opublikowali pracę <em>"Attention Is All You Need"</em>. Zaproponowali architekturę <strong>Transformer</strong>, która zrewolucjonizowała przetwarzanie języka (NLP).</p>
+                            
+                            <p>Kluczem jest mechanizm <strong>Attention (Uwagi)</strong>. Wcześniejsze modele czytały tekst słowo po słowie, często "zapominając" początek długiego zdania. Transformery widzą całe zdanie naraz i potrafią zrozumieć kontekst każdego słowa w relacji do wszystkich innych. To właśnie ta technologia jest sercem modeli GPT (Generative Pre-trained Transformer).</p>
+
+                            <p>Ale sam model językowy to tylko "statystyczna papuga". Sekret sukcesu ChatGPT leży w technice <strong>RLHF (Reinforcement Learning from Human Feedback)</strong>. Model jest dostrajany przez ludzi, którzy oceniają jego odpowiedzi, ucząc go bycia pomocnym i bezpiecznym.</p>
+
+                            <blockquote>
+                                <p>Każda wystarczająco zaawansowana technologia jest nieodróżnialna od magii.</p>
+                                <cite>– Arthur C. Clarke</cite>
+                            </blockquote>
+
+                            <p>Dziś modele generatywne (GenAI) potrafią pisać kod, tworzyć fotorealistyczne obrazy (Midjourney) i prowadzić płynne konwersacje. Poniżej przykład użycia biblioteki <code>transformers</code>:</p>
+
+                            <!-- Terminal macOS: Instalacja -->
+                            <div class="terminal-window macos">
+                                <div class="terminal-header">
+                                    <div class="terminal-controls">
+                                        <span class="terminal-dot red"></span>
+                                        <span class="terminal-dot yellow"></span>
+                                        <span class="terminal-dot green"></span>
+                                    </div>
+                                    <span class="terminal-title">zsh — 80x24</span>
+                                </div>
+                                <div class="terminal-body">
+                                    <span class="command-line">pip install transformers torch accelerator</span>
+                                    <span class="command-output">Downloading transformers-4.37.2... [100%]</span>
+                                    <span class="command-output">Successfully installed transformers torch accelerator</span>
+                                    <span class="command-line">python generate_text.py</span>
+                                </div>
+                            </div>
+
+                            <pre class="line-numbers"><code class="language-python">
+            from transformers import pipeline
+
+            # Inicjalizacja generatora tekstu
+            generator = pipeline('text-generation', model='gpt2')
+
+            # Generowanie
+            prompt = "Sztuczna inteligencja w przyszłości będzie"
+            result = generator(prompt, max_length=50, num_return_sequences=1)
+
+            print(result[0]['generated_text'])
+                            </code></pre>
+
+                            <!-- ELEMENT: WYKRES (Skala modeli) -->
+                            <h3 id="scale">Eksplozja Parametrów</h3>
+                            <p>Aby zrozumieć skalę rewolucji, spójrzmy na liczbę parametrów (wirtualnych synaps) w wiodących modelach na przestrzeni lat. Oś Y jest logarytmiczna – wzrost jest wykładniczy.</p>
+                            
+                            <div class="chart-box">
+                                <h4>Liczba parametrów (w miliardach)</h4>
+                                <div class="simple-bar-chart">
+                                    <div class="chart-column">
+                                        <span class="chart-value">0.1B</span>
+                                        <div class="chart-bar" style="height: 10%;"></div>
+                                        <span class="chart-label">GPT-1 (2018)</span>
+                                    </div>
+                                    <div class="chart-column">
+                                        <span class="chart-value">1.5B</span>
+                                        <div class="chart-bar" style="height: 25%;"></div>
+                                        <span class="chart-label">GPT-2 (2019)</span>
+                                    </div>
+                                    <div class="chart-column">
+                                        <span class="chart-value">175B</span>
+                                        <div class="chart-bar" style="height: 60%;"></div>
+                                        <span class="chart-label">GPT-3 (2020)</span>
+                                    </div>
+                                    <div class="chart-column">
+                                        <span class="chart-value">1000B+</span>
+                                        <div class="chart-bar" style="height: 95%;"></div>
+                                        <span class="chart-label">GPT-4 (Est.)</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p>Warto zaznaczyć, że najnowsze modele (jak GPT-4 czy Gemini) są <strong>multimodalne</strong> – potrafią jednocześnie przetwarzać tekst, obraz i dźwięk, co zbliża je do sposobu, w jaki ludzie postrzegają świat.</p>
+
+                            <h2 id="section-practice">7. AI w Praktyce: Gdzie to działa?</h2>
+                            <p>Zanim przejdziemy do zagrożeń, warto spojrzeć, gdzie AI realnie zmienia świat, wychodząc poza chatboty:</p>
+                            <div class="skills-grid" style="margin-bottom: 2rem;">
+                                <div class="skill-item">
+                                    <i class="fas fa-heartbeat"></i> Medycyna (Diagnostyka raka, odkrywanie leków)
+                                </div>
+                                <div class="skill-item">
+                                    <i class="fas fa-car"></i> Autonomiczne pojazdy (Tesla FSD, Waymo)
+                                </div>
+                                <div class="skill-item">
+                                    <i class="fas fa-chart-line"></i> Finanse (Wykrywanie oszustw, handel algorytmiczny)
+                                </div>
+                                <div class="skill-item">
+                                    <i class="fas fa-language"></i> Tłumaczenia (DeepL, Google Translate)
+                                </div>
+                                <div class="skill-item">
+                                    <i class="fas fa-code"></i> Programowanie (GitHub Copilot)
+                                </div>
+                            </div>
+
+                            <h2 id="section-7">8. Wyzwania: Etyka, Ekologia i Geopolityka</h2>
+                            <p>Wraz z potęgą przychodzi odpowiedzialność. Rozwój AI rodzi pytania, na które wciąż szukamy odpowiedzi:</p>
+                            
+                            <ul class="checklist">
+                                <li>
+                                    <i class="fas fa-exclamation-triangle checklist-icon" style="color: #f39c12;"></i>
+                                    <div class="checklist-content">
+                                        <strong>Halucynacje</strong>
+                                        <span>Modele językowe potrafią z pełnym przekonaniem generować nieprawdziwe informacje.</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-balance-scale checklist-icon" style="color: #e74c3c;"></i>
+                                    <div class="checklist-content">
+                                        <strong>Bias (Stronniczość)</strong>
+                                        <span>AI uczy się na danych z internetu, powielając ludzkie uprzedzenia i stereotypy.</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-robot checklist-icon" style="color: #3498db;"></i>
+                                    <div class="checklist-content">
+                                        <strong>AGI (Ogólna Sztuczna Inteligencja)</strong>
+                                        <span>Czy zbliżamy się do momentu, w którym AI przewyższy ludzką inteligencję we wszystkich dziedzinach?</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-bullseye checklist-icon" style="color: #e67e22;"></i>
+                                    <div class="checklist-content">
+                                        <strong>Alignment Problem (Dopasowanie)</strong>
+                                        <span>Czy cele superinteligentnej AI będą zbieżne z celami ludzkości? (Problem "Paperclip Maximizer").</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-brain checklist-icon" style="color: #16a085;"></i>
+                                    <div class="checklist-content">
+                                        <strong>Brak Przyczynowości</strong>
+                                        <span>Współczesne AI widzi korelacje, ale nie rozumie związków przyczynowo-skutkowych (drabina Pearla).</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-briefcase checklist-icon" style="color: #7f8c8d;"></i>
+                                    <div class="checklist-content">
+                                        <strong>Automatyzacja Pracy</strong>
+                                        <span>AI nie tylko zastępuje prace fizyczne, ale wkracza w kompetencje kreatywne i analityczne.</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-user-secret checklist-icon" style="color: #2c3e50;"></i>
+                                    <div class="checklist-content">
+                                        <strong>Prywatność i Inwigilacja</strong>
+                                        <span>Systemy rozpoznawania twarzy i analiza zachowań mogą prowadzić do ery cyfrowego nadzoru.</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-lock checklist-icon" style="color: #8e44ad;"></i>
+                                    <div class="checklist-content">
+                                        <strong>Open Source vs Closed Source</strong>
+                                        <span>Czy potężne modele powinny być dostępne dla każdego (jak LLaMA Mety), czy zamknięte w laboratoriach korporacji (jak GPT-4 OpenAI)?</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-search checklist-icon" style="color: #9b59b6;"></i>
+                                    <div class="checklist-content">
+                                        <strong>Black Box (Wyjaśnialność)</strong>
+                                        <span>Często nie wiemy, dlaczego sieć neuronowa podjęła taką, a nie inną decyzję.</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-leaf checklist-icon" style="color: #27ae60;"></i>
+                                    <div class="checklist-content">
+                                        <strong>Ślad Węglowy</strong>
+                                        <span>Trenowanie dużych modeli (LLM) zużywa gigantyczne ilości energii i wody do chłodzenia serwerowni.</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-chart-line checklist-icon" style="color: #c0392b;"></i>
+                                    <div class="checklist-content">
+                                        <strong>Bańka AI?</strong>
+                                        <span>Krytycy ostrzegają przed przeszacowaniem ekonomicznym technologii w stosunku do jej realnych, obecnych możliwości.</span>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <!-- Pros & Cons: Open Source AI -->
+                            <div class="pros-cons-container">
+                                <div class="pros-box">
+                                    <h3><i class="fas fa-lock-open"></i> Open Source AI (Zalety)</h3>
+                                    <ul>
+                                        <li><strong>Transparentność:</strong> Każdy może sprawdzić kod i wagi modelu, co buduje zaufanie.</li>
+                                        <li><strong>Prywatność:</strong> Możliwość uruchomienia modelu lokalnie (offline), bez wysyłania danych do chmury.</li>
+                                        <li><strong>Demokratyzacja:</strong> Technologia dostępna dla studentów i startupów, nie tylko gigantów.</li>
+                                    </ul>
+                                </div>
+                                <div class="cons-box">
+                                    <h3><i class="fas fa-shield-alt"></i> Ryzyka i Wady</h3>
+                                    <ul>
+                                        <li><strong>Dual Use:</strong> Łatwiejszy dostęp dla przestępców (generowanie spamu, malware bez filtrów).</li>
+                                        <li><strong>Wymagania:</strong> Potrzeba drogiego sprzętu (mocne GPU) do efektywnego uruchomienia.</li>
+                                        <li><strong>Fragmentacja:</strong> Brak jednego standardu i gwarantowanego wsparcia technicznego.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <p>Nie można też ignorować aspektu <strong>geopolitycznego</strong> i prawnego. Unia Europejska wprowadza <strong>AI Act</strong> – pierwsze na świecie kompleksowe prawo regulujące sztuczną inteligencję. Jednocześnie trwa wyścig zbrojeń między USA a Chinami o dominację w dziedzinie AGI.</p>
+
+                            <h2 id="section-8">9. Przyszłość: Co dalej?</h2>
+                            <p>Czy dotarliśmy do ściany? Prawa skalowania (Scaling Laws) sugerują, że dodawanie większej mocy obliczeniowej wciąż poprawia wyniki, ale koszty rosną wykładniczo. Przyszłość może leżeć w nowych paradygmatach:</p>
+                            <ul>
+                                <li><strong>Neuromorphic Computing:</strong> Chipy budowane na wzór biologicznych neuronów (np. Intel Loihi), które są tysiące razy bardziej energooszczędne.</li>
+                                <li><strong>AI Hybrydowa:</strong> Łączenie sieci neuronowych (intuicja) z symboliczną AI (logika i fakty), aby wyeliminować halucynacje.</li>
+                                <li><strong>Bio-computing:</strong> Wykorzystanie prawdziwych komórek mózgowych (organoidów) do obliczeń – co już dzieje się w laboratoriach (np. DishBrain).</li>
+                            </ul>
+
+                            <h2 id="summary">Podsumowanie</h2>
+                            <p>Historia sztucznej inteligencji to nie tylko opowieść o technologii, ale o naszym dążeniu do zrozumienia samych siebie. Od prostych reguł logicznych Turinga, przez zimę zwątpienia, aż po sieci neuronowe naśladujące biologiczny mózg – przeszliśmy drogę od maszyn liczących do maszyn tworzących.</p>
+                            
+                            <p>Stoimy u progu nowej ery. AI nie jest już tylko narzędziem akademickim; stała się partnerem w pracy, sztuce i nauce. Pytanie Turinga "Czy maszyny mogą myśleć?" wciąż pozostaje otwarte, ale odpowiedź staje się z każdym dniem coraz bardziej złożona i fascynująca.</p>
+
+                            <!-- Karta Pobierania -->
+                            <div class="download-card">
+                                <div class="download-icon"><i class="fas fa-file-image"></i></div>
+                                <div class="download-info">
+                                    <h4>Pobierz Infografikę: Historia AI</h4>
+                                    <p>Wizualna oś czasu z najważniejszymi wydarzeniami. PNG, 4.5 MB</p>
+                                </div>
+                                <a href="#" class="download-btn"><i class="fas fa-download"></i> Pobierz teraz</a>
+                            </div>
+
+                            <!-- SŁOWNICZEK POJĘĆ -->
+                            <div class="glossary-box">
+                                <h3><i class="fas fa-book"></i> Słowniczek pojęć AI</h3>
+                                <div class="glossary-item">
+                                    <span class="glossary-term">LLM (Large Language Model)</span>
+                                    <p class="glossary-def">Wielki Model Językowy (np. GPT-4). Sieć neuronowa trenowana na ogromnych zbiorach tekstu, zdolna do generowania i rozumienia języka naturalnego.</p>
+                                </div>
+                                <div class="glossary-item">
+                                    <span class="glossary-term">Halucynacja</span>
+                                    <p class="glossary-def">Zjawisko, w którym model AI generuje odpowiedź brzmiącą pewnie i logicznie, ale całkowicie niezgodną z faktami.</p>
+                                </div>
+                                <div class="glossary-item">
+                                    <span class="glossary-term">Inferencja (Inference)</span>
+                                    <p class="glossary-def">Proces działania wytrenowanego modelu – moment, w którym AI "używa" swojej wiedzy, by odpowiedzieć na Twoje pytanie (w przeciwieństwie do treningu).</p>
+                                </div>
+                                <div class="glossary-item">
+                                    <span class="glossary-term">Token</span>
+                                    <p class="glossary-def">Podstawowa jednostka tekstu dla AI. To często część słowa (np. słowo "hamburger" może składać się z tokenów "ham", "bur", "ger").</p>
+                                </div>
+                                <div class="glossary-item">
+                                    <span class="glossary-term">RLHF (Reinforcement Learning from Human Feedback)</span>
+                                    <p class="glossary-def">Metoda dostrajania modelu, w której ludzie oceniają odpowiedzi AI, ucząc ją, które zachowania są pożądane, a które szkodliwe.</p>
+                                </div>
+                            </div>
+
+                            <!-- Sekcja Źródeł -->
+                            <div class="sources-box">
+                                <h3><i class="fas fa-book-open"></i> Źródła i warto przeczytać</h3>
+                                <ul class="sources-list">
+                                    <li><a href="#" target="_blank">Alan Turing - Computing Machinery and Intelligence <i class="fas fa-external-link-alt"></i></a></li>
+                                    <li><a href="#" target="_blank">Historia Deep Learningu (Nature) <i class="fas fa-external-link-alt"></i></a></li>
+                                    <li><a href="#" target="_blank">OpenAI Research Papers <i class="fas fa-external-link-alt"></i></a></li>
+                                </ul>
+                            </div>
+
+                            <!-- SEKCJA FAQ -->
+                            <section class="faq-section">
+                                <h3><i class="fas fa-question-circle"></i> Często zadawane pytania</h3>
+                                <details>
+                                    <summary>Kiedy oficjalnie powstała sztuczna inteligencja?</summary>
+                                    <p>Za oficjalny początek uważa się konferencję w Dartmouth w 1956 roku, gdzie John McCarthy ukuł termin "Artificial Intelligence".</p>
+                                </details>
+                                <details>
+                                    <summary>Czy obecne AI posiada świadomość?</summary>
+                                    <p>Nie, obecne modele (w tym LLM jak GPT-4) to zaawansowane systemy statystyczne, które symulują rozumienie, ale nie posiadają subiektywnych doświadczeń ani świadomości.</p>
+                                </details>
+                                <details>
+                                    <summary>Jaka jest różnica między AI a Machine Learning?</summary>
+                                    <p>AI to szerokie pojęcie maszyn wykazujących inteligencję. Machine Learning (Uczenie Maszynowe) to podzbiór AI, w którym maszyny uczą się z danych, zamiast być programowane regułowo.</p>
+                                </details>
+                            </section>
+
+                            <!-- Tagi w stopce posta -->
+                            <div class="post-footer-tags">
+                                <span>Tagi:</span>
+                                <a href="#" class="tag">Historia AI</a>
+                                <a href="#" class="tag">Turing</a>
+                                <a href="#" class="tag">Deep Learning</a>
+                                <a href="#" class="tag">Edukacja</a>
+                            </div>
+
+                            <!-- PRZYPISY DOLNE -->
+                            <div class="footnotes">
+                                <h3>Przypisy</h3>
+                                <ol>
+                                    <li id="fn1">
+                                        <strong>Alan Turing</strong> – brytyjski matematyk, kryptolog i jeden z twórców informatyki. Jego "Test Turinga" do dziś jest punktem odniesienia w dyskusjach o inteligencji maszyn. <a href="#ref1" class="footnote-back" aria-label="Wróć do treści">↩</a>
+                                    </li>
+                                </ol>
+                            </div>
+                        </section>
+
+                        <!-- NAWIGACJA MIĘDZY POSTAMI -->
+                        <nav class="post-navigation">
+                            <a href="#" class="post-nav-link prev-post">
+                                <span class="nav-subtitle"><i class="fas fa-arrow-left"></i> Wróć do bloga</span>
+                                <span class="nav-title">Zobacz wszystkie wpisy</span>
+                            </a>
+                            <a href="#" class="post-nav-link next-post">
+                                <span class="nav-subtitle">Następny wpis <i class="fas fa-arrow-right"></i></span>
+                                <span class="nav-title">Wiodące Modele AI i Budowa Sieci Neuronowych</span>
+                            </a>
+                        </nav>
+
+                        <!-- NEWSLETTER -->
+                        <section class="newsletter-box">
+                            <div class="newsletter-content">
+                                <h3>Bądź na bieżąco!</h3>
+                                <p>Dołącz do newslettera i otrzymuj powiadomienia o nowych wpisach oraz ekskluzywne materiały.</p>
+                                <form class="newsletter-form">
+                                    <input type="email" placeholder="Twój adres e-mail" required>
+                                    <button type="submit" class="btn">Zapisz się</button>
+                                </form>
+                            </div>
+                        </section>
+
+                        <!-- SEKCJA O AUTORZE -->
+                        <section class="author-box">
+                            <div class="author-avatar">
+                                <img src="../img/avatar.png" alt="Avatar autora">
+                            </div>
+                            <div class="author-content">
+                                <h3 class="author-name">Kamil [Nazwisko]</h3>
+                                <p class="author-bio">Pasjonat technologii, student informatyki i twórca tego bloga. Na co dzień eksploruję świat kodu, AI i designu, dzieląc się swoimi odkryciami i przemyśleniami.</p>
+                                <div class="author-socials">
+                                    <a href="https://github.com/fireeagle050" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                    <a href="https://www.linkedin.com/in/kamil-dziedzic-6aa0ba30b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="../o-mnie.html" class="author-more-btn">Więcej o mnie</a>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- KOMENTARZE -->
+                        <section class="comments-section">
+                            <h3>Komentarze (0)</h3>
+                            <form class="comment-form">
+                                <textarea placeholder="Zostaw komentarz..." rows="4"></textarea>
+                                <button type="submit" class="btn-secondary">Opublikuj</button>
+                            </form>
+                        </section>
+                    </div>
+
+                    <!-- SIDEBAR (SPIS TREŚCI) -->
+                    <aside class="post-sidebar">
+                        <div class="toc-widget">
+                            <h3>Spis treści</h3>
+                            <nav class="toc-nav">
+                                <ul>
+                                    <li><a href="#section-1">1. Narodziny Idei</a></li>
+                                    <li><a href="#section-2">2. Zima AI</a></li>
+                                    <li><a href="#section-3">3. Statystyka i ML</a></li>
+                                    <li><a href="#section-4">4. Deep Learning</a></li>
+                                    <li><a href="#section-5">5. AlphaGo i RL</a></li>
+                                    <li><a href="#section-6">6. Transformery</a></li>
+                                    <li><a href="#section-practice">7. AI w Praktyce</a></li>
+                                    <li><a href="#section-7">8. Wyzwania i Etyka</a></li>
+                                    <li><a href="#section-8">9. Przyszłość AI</a></li>
+                                    <li><a href="#summary">Podsumowanie</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </aside>
+
+                </div> <!-- Koniec Grid -->
+            </article>
+
+            <!-- SEKCJA POWIĄZANYCH ARTYKUŁÓW -->
+            <section class="related-posts">
+                <h2 class="related-posts-title">Przeczytaj również</h2>
+                <div class="related-posts-grid">
+                    <!-- Przykładowy powiązany post 1 -->
+                    <a href="#" class="related-post-card">
+                        <div class="related-post-image">
+                            <img src="../img/leader.jpg" alt="Miniatura posta o samorozwoju">
+                        </div>
+                        <div class="related-post-content">
+                            <span class="related-post-category">Self-development</span>
+                            <h3>Selfdevelopment - jak zarządzać swoim życiem?</h3>
+                        </div>
+                    </a>
+                    <!-- Przykładowy powiązany post 2 -->
+                    <a href="#" class="related-post-card">
+                        <div class="related-post-image">
+                            <img src="../img/cybersec.jpg" alt="Miniatura posta o cyberbezpieczeństwie">
+                        </div>
+                        <div class="related-post-content">
+                            <span class="related-post-category">Cyberbezpieczeństwo</span>
+                            <h3>Cyberbezpieczeństwo: Wilk w owczej skórze</h3>
+                        </div>
+                    </a>
+                    <!-- Przykładowy powiązany post 3 (można dodać więcej) -->
+                    <a href="#" class="related-post-card">
+                        <div class="related-post-image">
+                            <img src="../img/aination.jpg" alt="Miniatura posta o modelach AI">
+                        </div>
+                        <div class="related-post-content">
+                            <span class="related-post-category">AI</span>
+                            <h3>Wiodące Modele AI i Budowa Sieci Neuronowych</h3>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Kamil [Nazwisko]. Wszelkie prawa zastrzeżone.</p>
+            <div class="footer-socials">
+                <a href="https://github.com/fireeagle050" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/kamil-dziedzic-6aa0ba30b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js" defer></script>
+    <script src="../js/blog.js" defer></script>
+    <!-- Skrypty Prism.js do podświetlania składni -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js" defer></script>
+</body>
+</html>

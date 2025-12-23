@@ -1,0 +1,89 @@
+moje-portfolio/             # Projekt portfolio
+├── css/                    # Główne style CSS projektu
+│   ├── style.css           # Główny plik style
+│   ├── blog.css            # Style dla strony bloga
+│   ├── kontakt.css         # Style dla strony kontaktowej
+│   ├── o-mnie.css          # Style dla strony o mnie
+│   └── materialy.css       # Style dla strony z materiałami
+│ 
+├── js/                     # Główne skrypty JavaScript
+│   ├── main.js             # Główny plik JavaScript
+│   ├── index.js            # Skrypt dla strony głównej
+│   ├── materialy.js        # Skrypt dla strony z materiałami
+│   ├── blog.js             # Skrypt dla strony bloga
+│   ├── kontakt.js          # Skrypt dla strony kontaktowej
+│   ├── o-mnie.js           # Skrypt dla strony o mnie
+│   └── matrix.js           # Skrypt dla animacji
+│ 
+├── img/
+│   ├── index_bg.jpg        # Obrazek tła strony głównej
+│   ├── blog_bg.jpg         # Obrazek tła strony bloga
+│   ├── kontakt_bg.jpg      # Obrazek tła strony kontaktowej
+│   ├── o-mnie_bg.jpg       # Obrazek tła strony o mnie
+│   ├── materialy_bg.jpg    # Obrazek tła strony z materiałami
+│   ├── avatar.png          # Obrazek avatara komentarzy
+│   ├── index_me.jpg        # Obrazek profilu
+│   ├── index_me2.jpg       # Obrazek profilu
+│   ├── kontakt_me.jpg      # Obrazek profilu
+│   ├── reset.jpg           # Logo koła naukowego
+│   ├── ubb.jpg             # Logo uczelni
+│   ├── ans.jpg             # Logo firmy
+│   ├── ans.jpg             # Logo firmy
+│   ├── logo.png            # Logo strony
+│   └── posty/              # Obrazy dla wpisów blogowych
+│ 
+├── assets/
+│   └── docs/
+│       └── Curriculum Vitae.pdf # Pliki do pobrania, np. CV
+│ 
+├── projekty/
+│   ├── projekt-design-1/
+│   │   └── index.html      # Strona szczegółów projektu 1
+│   ├── projekt-web-app/
+│   │   └── index.html      # Strona szczegółów projektu 2
+│   └── projekt-ai-analiza-danych/
+│       └── index.html      # Strona szczegółów projektu 3
+|
+├── posty/                  # Folder na wszystkie wpisy blogowe
+│   ├── szablon-wpisu.html  # WZORZEC do kopiowania dla nowych wpisów
+│   ├── historia-ai.html
+│   ├── self-development-cechy-lidera.html
+│   ├── rodzaje-atakow-hakerskich.html
+│   ├── szablon.css
+│   └── szablon.js
+│
+├── materialy/
+│   ├── studia/
+│   │   └── index.html      # 
+│   ├── skrypty/
+│   │   └── index.html      # 
+│   ├── selfdevelopment/
+│   │   └── index.html      #
+│   ├── samouczki/
+│   │   └── index.html      #
+│   └── raporty/
+│       └── index.html      # 
+│ 
+├── index.html              # Główna strona portfolio (pierwsze wrażenie)
+├── o-mnie.html             # Strona o mnie
+├── blog.html               # Strona bloga
+│   ├── historiaAI             # Wpis1
+│   ├── selfdevelopment        # Wpis2
+│   ├── hacking                # Wpis3
+│   ├── hackprzewodnik         # Wpis4
+│   ├── cyberbezpieczenstwo    # Wpis5
+│   ├── cyberpunk              # Wpis6
+│
+├── materialy.html          # Strona z materiałami
+│   ├── Studia              # Zakładka 1
+│   ├── Skrypty             # Zakładka 2
+│   ├── Selfdevelopment     # Zakładka 3
+│   ├── Samouczki IT        # Zakładka 4
+│   ├── Raporty             # Zakładka 4
+│
+├── kontakt.html            # Strona kontaktowa
+│ 
+├── sitemap.xml             # Mapa stron
+├── LICENSE                 # Licencja
+├── README.md               # Informacje o projekcie
+└── struktura-projektu.txt  # Ten plik - opis struktury

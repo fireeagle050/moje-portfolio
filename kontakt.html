@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nawiążmy kontakt w ramach projektu Genesis. Znajdziesz tu formularz kontaktowy, adres e-mail oraz linki do mediów społecznościowych.">
+    <title>Kontakt | Project Genesis</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/kontakt.css">
+    <!-- Ikony (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <!-- Biblioteka do powiadomień (Notyf) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+</head>
+<body class="body-kontakt">
+
+    <header>
+        <nav>
+            <div class="nav-left-items">
+                <a href="index.html" class="nav-logo"><img src="img/logo.png" alt="Logo"></a>
+                <!-- PRZEŁĄCZNIK MOTYWU -->
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="theme-checkbox">
+                        <input type="checkbox" id="theme-checkbox" />
+                        <div class="slider round"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></div>
+                    </label>
+                </div>
+            </div>
+            <button class="mobile-nav-toggle" aria-label="Otwórz menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="o-mnie.html">O mnie <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="o-mnie.html#o-mnie">O mnie</a></li>
+                        <li><a href="o-mnie.html#doswiadczenie">Doświadczenie</a></li>
+                        <li><a href="o-mnie.html#edukacja">Edukacja</a></li>
+                        <li><a href="o-mnie.html#osiagniecia">Osiągnięcia</a></li>
+                        <li><a href="o-mnie.html#projekty">Projekty</a></li>
+                        <li><a href="o-mnie.html#technologie">Technologie</a></li>
+                    </ul>
+                </li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="materialy.html">Materiały</a></li>
+                <li><a href="kontakt.html" class="nav-contact-btn">Kontakt</a></li>
+        </nav>
+    </header>
+
+    <main class="contact-container">
+        <div class="contact-wrapper content-box">
+            <div class="contact-header">
+                <h1 class="gradient-text">Nawiążmy kontakt</h1>
+                <p>Masz pytanie, propozycję lub po prostu chcesz się przywitać? Wypełnij formularz.</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="photo-frame">
+                        <img src="img/kontakt_me.jpg" alt="Zdjęcie Kamila" class="contact-photo">
+                    </div>
+                    <h3>Informacje kontaktowe</h3>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> fireeagle050@gmail.com</p>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i> +48 123 456 789</p>
+                    <div class="social-links">
+                        <a href="https://github.com/fireeagle050" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/kamil-dziedzic-6aa0ba30b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.youtube.com/" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contact-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name" class="form-label">
+                            <input type="text" id="name" name="name" required placeholder=" ">
+                            <span>Twoje imię</span>
+                        </label>
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">
+                            <input type="email" id="email" name="email" required placeholder=" ">
+                            <span>Twój e-mail</span>
+                        </label>
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">
+                            <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
+                            <span>Twoja wiadomość</span>
+                        </label>
+                        <div class="error-message"></div>
+                    </div>
+                    <button type="submit" class="btn-submit">Wyślij wiadomość <i class="fas fa-paper-plane" aria-hidden="true"></i></button>
+                </form>
+
+                <!-- Element potwierdzenia wysłania (początkowo ukryty) -->
+                <div class="success-message" id="success-message">
+                    <div class="success-icon-wrapper">
+                        <i class="fas fa-check-circle" aria-hidden="true"></i>
+                    </div>
+                    <h2>Wiadomość wysłana!</h2>
+                    <p>Dziękuję za kontakt. Odpowiem najszybciej, jak to możliwe.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/kontakt.js" defer></script>
+</body>
+</html>

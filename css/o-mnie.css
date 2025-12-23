@@ -1,0 +1,405 @@
+/* --- SEKCJA PROJEKTY --- */
+.projekty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.projekt-card {
+    background: var(--surface-color);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #333;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.projekt-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(106, 17, 203, 0.3);
+}
+
+.projekt-image-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.projekt-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.projekt-card:hover img {
+    transform: scale(1.05);
+}
+
+.projekt-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(18, 18, 18, 0.8) 0%, transparent 50%);
+    opacity: 0.8;
+    transition: opacity 0.4s ease;
+}
+
+.projekt-card:hover .projekt-overlay {
+    opacity: 1;
+}
+
+.projekt-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Sprawia, że ten kontener wypełnia dostępną przestrzeń */
+}
+
+.projekt-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+}
+
+.projekt-content p {
+    color: var(--text-secondary-color);
+    flex-grow: 1; /* Opis rozciąga się, wypychając przycisk na dół */
+    margin-bottom: 1.5rem;
+}
+
+.projekt-technologie {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.projekt-technologie span {
+    background: rgba(106, 17, 203, 0.15);
+    color: var(--primary-color);
+    font-weight: 500;
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(106, 17, 203, 0.4);
+}
+
+.projekt-content .btn-secondary {
+    margin-top: auto; /* Automatyczny margines wypycha przycisk na sam dół */
+    align-self: flex-start; /* Wyrównuje przycisk do lewej */
+}
+
+/* --- SEKCJA O MNIE (OPIS) --- */
+.o-mnie-content {
+    text-align: center; /* Wyśrodkowanie tekstu i przycisku */
+}
+
+/* --- SEKCJA W LICZBACH (STATYSTYKI) --- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.stat-item {
+    background: var(--surface-color);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.stat-item i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+/* --- STYLIZOWANA OŚ CZASU (EDUKACJA I DOŚWIADCZENIE) --- */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Centralna linia osi czasu */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+    border-radius: 2px;
+    z-index: -1; /* Umieszcza linię pod ikonami */
+    box-shadow: 0 0 10px rgba(106, 17, 203, 0.5);
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+}
+
+/* Ikona na osi czasu */
+.timeline-icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: var(--background-color);
+    border: 4px solid var(--primary-color);
+    top: 25px;
+    border-radius: 50%;
+    z-index: 1;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.timeline-item:hover .timeline-icon {
+    transform: scale(1.2);
+    border-color: var(--secondary-color);
+}
+
+/* Elementy po lewej stronie */
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+/* Elementy po prawej stronie */
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+/* Pozycjonowanie ikon */
+.timeline-item:nth-child(odd) .timeline-icon {
+    right: -20px;
+}
+
+.timeline-item:nth-child(even) .timeline-icon {
+    left: -20px;
+}
+
+.timeline-content {
+    background: var(--surface-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #333;
+    position: relative;
+}
+
+.timeline-content h3 {
+    color: var(--text-color);
+    font-size: 1.3rem;
+}
+
+.timeline-content h4 {
+    color: var(--text-secondary-color);
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content ul {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.timeline-date {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-top: 0.5rem;
+    display: block;
+}
+
+/* --- SEKCJA OSIĄGNIĘCIA --- */
+.osiagniecia-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.osiagniecie-item {
+    background: var(--surface-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.osiagniecie-item i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+/* --- SEKCJA KOMPETENCJE --- */
+.kompetencje-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.kompetencja-item {
+    background: var(--surface-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #333;
+}
+
+.kompetencja-item h3 {
+    margin-bottom: 0.5rem;
+}
+
+/* --- SEKCJA HOBBY --- */
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+}
+
+.principle-card {
+    background: rgba(28, 28, 32, 0.7);
+    border: 1px solid #444;
+    padding: 2rem;
+    border-radius: 10px;
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    text-align: center;
+}
+
+.principle-card h4 {
+    font-family: 'Segoe UI', sans-serif;
+    font-style: normal;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.principle-card p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-secondary-color);
+}
+
+.hobby-story {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hobby-chapter {
+    margin-bottom: 2.5rem;
+}
+
+.hobby-chapter h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+}
+
+/* --- POZOSTAŁE STYLE DLA STRONY "O MNIE" --- */
+.doswiadczenie-item {
+    background: var(--surface-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+/* --- STYLE DLA MOTYWU JASNEGO --- */
+body.light-mode .projekt-card,
+body.light-mode .stat-item,
+body.light-mode .timeline-content,
+body.light-mode .osiagniecie-item,
+body.light-mode .kompetencja-item,
+body.light-mode .doswiadczenie-item {
+    background: #fff;
+    border-color: #e0e0e0;
+    color: #333;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .principle-card {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: #ccc;
+}
+
+body.light-mode .projekt-content h3,
+body.light-mode .stat-number,
+body.light-mode .timeline-content h3,
+body.light-mode .hobby-chapter h3 {
+    color: #333;
+}
+
+body.light-mode .projekt-content p,
+body.light-mode .timeline-content p,
+body.light-mode .principle-card p,
+body.light-mode .hobby-chapter p,
+body.light-mode .kompetencja-item p {
+    color: #555;
+}
+
+body.light-mode .timeline-icon {
+    background-color: #f5f5f5;
+}
+
+/* --- RESPONSYWNOŚĆ OSI CZASU (MOBILE) --- */
+@media (max-width: 768px) {
+    .timeline::after {
+        left: 30px; /* Oś po lewej stronie */
+        right: auto;
+        margin-left: 0;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px; /* Miejsce na ikonę po lewej */
+        padding-right: 25px;
+    }
+
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        text-align: left;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-icon,
+    .timeline-item:nth-child(even) .timeline-icon {
+        left: 10px; /* Wyśrodkowanie ikony na osi */
+        right: auto;
+    }
+}

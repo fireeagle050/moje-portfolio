@@ -1,0 +1,377 @@
+/* --- GŁÓWNY KONTENER I NAGŁÓWEK BLOGA --- */
+.blog-container {
+    padding-bottom: 4rem;
+}
+
+.blog-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.blog-header h1 {
+    font-size: 3rem;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.blog-header p {
+    font-size: 1.2rem;
+    color: var(--text-secondary-color);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- WYRÓŻNIONY POST --- */
+.featured-post {
+    margin-bottom: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    transition: box-shadow 0.3s ease;
+    background: var(--surface-color);
+    border: 1px solid #333;
+    border-radius: 12px;
+}
+
+.featured-post:hover {
+    box-shadow: 0 0 30px rgba(106, 17, 203, 0.3);
+}
+
+/* --- KOMUNIKAT BRAK WYNIKÓW --- */
+.no-results {
+    grid-column: 1 / -1; /* Rozciąga się na całą szerokość siatki */
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--text-secondary-color);
+    display: none; /* Domyślnie ukryty */
+    background: var(--surface-color);
+    border: 1px dashed #333;
+    border-radius: 12px;
+}
+
+.no-results i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+    opacity: 0.5;
+}
+
+.no-results h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.featured-post-image {
+    position: relative;
+}
+
+.featured-post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.featured-post-content {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.featured-post-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.featured-post-content h2 a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.featured-post-content h2 a:hover {
+    color: var(--primary-color);
+}
+
+.featured-post-content p {
+    color: var(--text-secondary-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+/* --- GŁÓWNY UKŁAD (POSTY + SIDEBAR) --- */
+.blog-layout {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 3rem;
+}
+
+/* --- SIATKA Z POSTAMI --- */
+.posts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
+.post-card.hidden {
+    transform: scale(0.9);
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.post-card {
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+    background: var(--surface-color);
+    border: 1px solid #333;
+    border-radius: 12px;
+}
+
+.post-card:hover {
+    transform: translateY(-10px) rotateX(5deg) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+.post-card:hover .post-image img {
+    transform: scale(1.05);
+}
+
+
+
+.post-image {
+    position: relative;
+}
+
+.post-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
+
+}
+
+.post-category {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.post-category.featured {
+    background: #ffc107;
+    color: #121212;
+}
+
+.post-content {
+    padding: 1.5rem;
+}
+
+.post-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+}
+
+.post-content h3 a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.post-content h3 a:hover {
+    color: var(--primary-color);
+}
+
+/* Styl dla podświetlonej frazy w wyszukiwarce */
+.highlight {
+    background-color: rgba(106, 17, 203, 0.4);
+    color: #fff;
+    padding: 0 2px;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(106, 17, 203, 0.4);
+}
+
+.post-content p {
+    color: var(--text-secondary-color);
+    font-size: 0.95rem;
+}
+
+.post-meta {
+    margin-top: 1rem;
+    color: var(--text-secondary-color);
+    font-size: 0.85rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.post-meta i {
+    margin-right: 0.5rem;
+    color: var(--primary-color);
+}
+
+/* --- PANEL BOCZNY (SIDEBAR) --- */
+.sidebar .widget {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    background: var(--surface-color);
+    border: 1px solid #333;
+    border-radius: 12px;
+}
+
+.widget-title {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.widget-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+/* Widgety */
+.search-box { display: flex; position: relative; }
+.search-box input { width: 100%; background: #2a2a2a; border: 1px solid #444; color: #e0e0e0; padding: 0.7rem 2.5rem 0.7rem 0.7rem; border-radius: 5px 0 0 5px; outline: none; transition: border-color 0.3s ease; }
+.search-box input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(106, 17, 203, 0.5);
+}
+.search-box .search-btn { background: var(--primary-color); border: none; color: #fff; padding: 0 1rem; border-radius: 0 5px 5px 0; cursor: pointer; transition: background-color 0.3s ease; }
+.search-box .search-btn:hover {
+    background: var(--secondary-color);
+}
+
+/* Przycisk czyszczenia (X) */
+.search-box .search-clear-btn {
+    position: absolute;
+    right: 3.5rem; /* Pozycja przed przyciskiem szukania */
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    display: none;
+    padding: 5px;
+    z-index: 2;
+}
+.search-box .search-clear-btn:hover { color: #fff; }
+.search-box .search-clear-btn.visible { display: block; }
+
+.categories-widget ul { list-style: none; }
+.categories-widget li a { color: var(--text-secondary-color); text-decoration: none; display: flex; justify-content: space-between; padding: 0.5rem 0; transition: color 0.3s, transform 0.3s; }
+.categories-widget li a:hover { color: var(--primary-color); transform: translateX(5px); transition: color 0.3s ease, transform 0.3s ease; }
+.categories-widget li a.active-filter { /* Zmieniono kolor tekstu aktywnego filtra kategorii */
+    color: #fff;
+    font-weight: bold;
+}
+
+.tags-container { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.tag { background: #333; color: var(--text-secondary-color); padding: 0.4rem 0.8rem; border-radius: 5px; text-decoration: none; font-size: 0.85rem; transition: all 0.3s; }
+.tag:hover { background: var(--primary-color); color: #fff; }
+.tag.active-filter, .categories-widget a.active-filter {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    box-shadow: 0 0 10px rgba(106, 17, 203, 0.5);
+    transform: scale(1.05);
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 992px) {
+    .blog-layout { 
+        grid-template-columns: 1fr; 
+    }
+    .sidebar { 
+        order: -1; /* Przeniesienie panelu bocznego na górę */
+        margin-top: 0;
+        margin-bottom: 3rem;
+    }
+
+    /* --- ZWIJANIE PANELU BOCZNEGO NA MOBILKACH --- */
+    .sidebar .widget-title {
+        cursor: pointer;
+        position: relative;
+    }
+
+    /* Ikona strzałki (chevron) */
+    .sidebar .widget-title::before {
+        content: '\f078'; /* fa-chevron-down */
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar .widget.active .widget-title::before {
+        transform: rotate(180deg);
+    }
+
+    /* Ukrywanie zawartości widgetu, gdy nie jest aktywny (tylko na mobilkach) */
+    .sidebar .widget:not(.active) > *:not(.widget-title) {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .featured-post { grid-template-columns: 1fr; }
+    .featured-post-content { padding: 2rem; }
+}
+
+/* --- KINOWE PUNKTY ŚWIETLNE --- */
+#light-orbs-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3; /* Umieszcza orby pod obrazem tła (który ma z-index: -2) */
+    overflow: hidden;
+}
+
+.light-orb {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+    /* Efekt rozmycia i poświaty */
+    filter: blur(100px);
+    /* Animacja pojawiania się, pulsowania i znikania */
+    animation: pulseAndFade 15s infinite ease-in-out;
+}
+
+@keyframes pulseAndFade {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    20%, 70% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
+    80% {
+        opacity: 0.4;
+    }
+}

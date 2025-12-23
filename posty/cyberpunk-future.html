@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Szczegółowa analiza postępu technologicznego. Kiedy pojawią się androidy, latające samochody i implanty mózgowe? Przewidywania oparte na danych historycznych.">
+    <title>Cyberpunk: Czy Dożyjemy Czasów Cyborgów? | Project Genesis</title>
+    <link rel="canonical" href="https://fireeagle050.github.io/kamil-portfolio/posty/cyberpunk-future.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://fireeagle050.github.io/kamil-portfolio/posty/cyberpunk-future.html">
+    <meta property="og:title" content="Cyberpunk: Czy Dożyjemy Czasów Cyborgów? | Project Genesis">
+    <meta property="og:description" content="Szczegółowa analiza postępu technologicznego. Kiedy pojawią się androidy, latające samochody i implanty mózgowe? Przewidywania oparte na danych historycznych.">
+    <meta property="og:image" content="https://fireeagle050.github.io/kamil-portfolio/img/cyberpunk.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://fireeagle050.github.io/kamil-portfolio/posty/cyberpunk-future.html">
+    <meta property="twitter:title" content="Cyberpunk: Czy Dożyjemy Czasów Cyborgów? | Project Genesis">
+    <meta property="twitter:description" content="Szczegółowa analiza postępu technologicznego. Kiedy pojawią się androidy, latające samochody i implanty mózgowe? Przewidywania oparte na danych historycznych.">
+    <meta property="twitter:image" content="https://fireeagle050.github.io/kamil-portfolio/img/cyberpunk.jpg">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Cyberpunk: Czy Dożyjemy Czasów Cyborgów?",
+      "image": ["https://fireeagle050.github.io/kamil-portfolio/img/cyberpunk.jpg"],
+      "datePublished": "2025-12-05",
+      "author": { "@type": "Person", "name": "Kamil" }
+    }
+    </script>
+
+    <!-- Współdzielone style i skrypty -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/post.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
+    <!-- Biblioteki do generowania PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body class="body-post">
+
+    <header>
+        <nav>
+            <div class="nav-left-items">
+                <a href="../index.html" class="nav-logo"><img src="../img/logo.png" alt="Logo"></a>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="theme-checkbox">
+                        <input type="checkbox" id="theme-checkbox" />
+                        <div class="slider round"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></div>
+                    </label>
+                </div>
+            </div>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../o-mnie.html">O mnie</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../materialy.html">Materiały</a></li>
+                <li><a href="../kontakt.html" class="nav-contact-btn">Kontakt</a></li>
+            </ul>
+        </nav>
+        <div class="reading-progress-bar"></div>
+    </header>
+
+    <main>
+        <div class="post-container container">
+            <nav class="breadcrumbs">
+                <a href="../index.html"><i class="fas fa-home"></i> Home</a> <span class="separator">/</span>
+                <a href="../blog.html">Blog</a> <span class="separator">/</span>
+                <span class="current">Cyberpunk i Przyszłość</span>
+            </nav>
+
+            <article class="post-full-content">
+                <header class="post-full-header">
+                    <div class="post-meta">
+                        <span><i class="fas fa-calendar-alt"></i> 5 Grudnia 2025</span>
+                        <span><i class="fas fa-user"></i> Kamil</span>
+                        <span><i class="fas fa-folder-open"></i> Refleksje</span>
+                        <span><i class="fas fa-clock"></i> 20 min czytania</span>
+                    </div>
+                    <h1 class="post-full-title">Cyberpunk: Czy Dożyjemy Czasów Cyborgów? Analiza Przyszłości</h1>
+                </header>
+
+                <div class="post-share-buttons">
+                    <span>Udostępnij:</span>
+                    <a href="#" class="share-btn share-facebook" aria-label="Udostępnij na Facebooku"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="share-btn share-twitter" aria-label="Udostępnij na Twitterze"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="share-btn share-linkedin" aria-label="Udostępnij na LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <button id="save-pdf-btn" class="share-btn share-pdf" aria-label="Zapisz jako PDF" title="Zapisz artykuł jako PDF"><i class="fas fa-file-pdf"></i></button>
+                    <button id="print-btn" class="share-btn share-print" aria-label="Drukuj artykuł" title="Drukuj artykuł"><i class="fas fa-print"></i></button>
+                    <button id="copy-link-btn" class="share-btn share-copy" aria-label="Kopiuj link" title="Kopiuj link do schowka"><i class="fas fa-link"></i></button>
+                </div>
+
+                <figure class="post-full-image">
+                    <img src="../img/cyberpunk.jpg" alt="Futurystyczne miasto w stylu cyberpunk">
+                    <figcaption style="text-align: center; color: #888; font-size: 0.9rem; margin-top: 0.5rem;">Wizja przyszłości: High Tech, Low Life?</figcaption>
+                </figure>
+
+                <div class="post-content-grid">
+                    <div class="post-main-column">
+                        <section class="post-full-body">
+                            <div class="key-takeaways">
+                                <h3><i class="fas fa-lightbulb"></i> W skrócie</h3>
+                                <ul>
+                                    <li>Postęp technologiczny przyspiesza wykładniczo, nie liniowo.</li>
+                                    <li>Cyborgizacja już trwa (rozruszniki, implanty ślimakowe), ale pełna integracja mózg-komputer to kwestia dekad.</li>
+                                    <li>Latające samochody (eVTOL) są technicznie możliwe, ale blokowane przez regulacje i infrastrukturę.</li>
+                                    <li>Androidy z AGI mogą pojawić się szybciej niż myślimy (lata 30. XXI wieku).</li>
+                                </ul>
+                            </div>
+
+                            <p class="lead"><span class="drop-cap">N</span>eonowe światła, deszcz, latające samochody i ludzie z bionicznymi ramionami. Wizja Cyberpunka, spopularyzowana przez "Blade Runnera" czy grę "Cyberpunk 2077", fascynuje i przeraża. Ale ile w tym fikcji, a ile realnej prognozy? Analizując tempo rozwoju technologii od rewolucji przemysłowej po erę AI, spróbujemy odpowiedzieć na pytanie: kiedy fikcja stanie się faktem?</p>
+
+                            <h2 id="geneza">1. Geneza: Dlaczego Cyberpunk?</h2>
+                            <p>Cyberpunk narodził się w latach 80. jako reakcja na erę Reagana, zimną wojnę i gwałtowny rozwój komputerów osobistych. William Gibson w "Neuromancerze" (1984) nie pisał o statkach kosmicznych, ale o brudnych ulicach, hakerach i korporacjach potężniejszych niż rządy.</p>
+                            
+                            <div class="definition-box">
+                                <h4>Definicja: High Tech, Low Life</h4>
+                                <p>Rdzeń ideologii cyberpunka. Zaawansowana technologia (AI, cybernetyka) współistnieje z głębokim rozwarstwieniem społecznym, biedą i upadkiem struktur państwowych.</p>
+                            </div>
+
+                            <h2 id="miasto">2. Miasto Przyszłości: Pionowe Slumsy</h2>
+                            <p>Zapomnij o przedmieściach. Przyszłość to megamiasta (Megacities). Urbanizacja pójdzie w górę, tworząc warstwy społeczne dosłownie i w przenośni. Bogaci mieszkają w chmurach (powietrze jest czystsze), biedni na poziomie ulicy, w cieniu drapaczy chmur.</p>
+                            <ul>
+                                <li><strong>Kowloon Walled City:</strong> Historyczny pierwowzór cyberpunkowego miasta – gęstość zaludnienia, brak prawa, samowystarczalność.</li>
+                                <li><strong>Smart City czy Panoptikon?</strong> Inteligentne miasta to wygoda, ale też totalna inwigilacja. Każdy krok, zakup i spotkanie są rejestrowane przez miejski system operacyjny (ctOS).</li>
+                            </ul>
+
+                            <h2 id="historia-postepu">3. Lekcja Historii: Wykładniczy Wzrost</h2>
+                            <p>Ludzki mózg ma tendencję do myślenia liniowego. Jeśli w ciągu ostatnich 10 lat zrobiliśmy X postępu, zakładamy, że w kolejnych 10 zrobimy tyle samo. To błąd. Technologia rozwija się wykładniczo (Prawo Moore'a<sup class="footnote-ref"><a href="#fn1" id="ref1">[1]</a></sup>, Prawo Kurzweila<sup class="footnote-ref"><a href="#fn2" id="ref2">[2]</a></sup>).</p>
+                            
+                            <div class="chart-box">
+                                <h4>Moc obliczeniowa (Operacje na sekundę za 1000$)</h4>
+                                <div class="simple-bar-chart">
+                                    <div class="chart-column">
+                                        <span class="chart-value">Mózg Owada</span>
+                                        <div class="chart-bar" style="height: 20%;"></div>
+                                        <span class="chart-label">2000</span>
+                                    </div>
+                                    <div class="chart-column">
+                                        <span class="chart-value">Mózg Myszy</span>
+                                        <div class="chart-bar" style="height: 40%;"></div>
+                                        <span class="chart-label">2010</span>
+                                    </div>
+                                    <div class="chart-column">
+                                        <span class="chart-value">Mózg Człowieka</span>
+                                        <div class="chart-bar" style="height: 80%;"></div>
+                                        <span class="chart-label">2025 (Est.)</span>
+                                    </div>
+                                    <div class="chart-column">
+                                        <span class="chart-value">Wszyscy Ludzie</span>
+                                        <div class="chart-bar" style="height: 100%;"></div>
+                                        <span class="chart-label">2050 (Est.)</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h2 id="cyborgizacja">4. Cyborgizacja: Kiedy staniemy się maszynami?</h2>
+                            <p>Definicja cyborga jest prosta: organizm, którego procesy życiowe są wspomagane lub kontrolowane przez urządzenia techniczne. W tym sensie, osoba z rozrusznikiem serca już jest cyborgiem.</p>
+                            
+                            <h3>Interfejsy Mózg-Komputer (BCI)</h3>
+                            <p>Firmy takie jak Neuralink<sup class="footnote-ref"><a href="#fn3" id="ref3">[3]</a></sup> Elona Muska pracują nad bezpośrednim połączeniem kory mózgowej z cyfrowym światem. Obecnie jesteśmy na etapie sterowania kursorem myszy za pomocą myśli (dla osób sparaliżowanych). Kiedy będziemy mogli "wgrywać" wiedzę jak w Matrixie?</p>
+
+                            <div class="timeline-container">
+                                <h3 class="timeline-title">Prognoza: Ewolucja BCI</h3>
+                                <div class="timeline">
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                            <span class="timeline-date">2024</span>
+                                            <h4>Telepatia Podstawowa</h4>
+                                            <p>Sterowanie prostymi urządzeniami (kursor, wózek inwalidzki) przez implanty.</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                            <span class="timeline-date">2035</span>
+                                            <h4>Rozszerzona Pamięć</h4>
+                                            <p>Implanty wspomagające pamięć krótkotrwałą (hipokamp) dla chorych na Alzheimera.</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                            <span class="timeline-date">2050+</span>
+                                            <h4>Pełna Symbioza</h4>
+                                            <p>Szybki transfer danych mózg-chmura. Możliwość komunikacji "telepatycznej" między użytkownikami.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3>Biohacking: Cyborgi z wyboru (Grinders)</h3>
+                            <p>Podczas gdy naukowcy pracują nad BCI, subkultura "biohackerów" (zwanych Grinders) bierze sprawy w swoje ręce – dosłownie. Nie czekają na rok 2077, by ulepszyć swoje ciała dostępną elektroniką. To ruch DIY (Do It Yourself), który zaciera granicę między biologią a technologią już dziś.</p>
+                            
+                            <div class="info-box tip">
+                                <i class="fas fa-microchip"></i>
+                                <div>
+                                    <strong>Co ludzie wszczepiają sobie dzisiaj?</strong>
+                                    <ul style="margin-top: 0.5rem; margin-bottom: 0;">
+                                        <li><strong>Implanty NFC/RFID:</strong> Czipy wielkości ziarenka ryżu, wszczepiane w dłoń (zazwyczaj między kciuk a palec wskazujący). Pozwalają otwierać drzwi biura, odblokowywać telefon, logować się do komputera czy udostępniać wizytówkę jednym dotknięciem.</li>
+                                        <li><strong>Magnesy neodymowe:</strong> Wszczepiane w opuszki palców. Dają "szósty zmysł" – pozwalają wyczuwać pola elektromagnetyczne (np. czy kabel jest pod napięciem lub czy dysk twardy pracuje).</li>
+                                        <li><strong>North Sense:</strong> Egzotyczny implant mocowany do klatki piersiowej, który wibruje, gdy użytkownik zwraca się na północ, dając mu instynktowną orientację w terenie.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p>Firmy takie jak <strong>Dangerous Things</strong> czy <strong>VivoKey</strong> sprzedają zestawy do bezpiecznej implantacji. W Szwecji tysiące ludzi używa implantów zamiast biletów kolejowych. Przyszłość nie nadchodzi – ona już tu jest, tylko nierówno rozłożona.</p>
+
+                            <h3>Smart Drugs: Chemiczny Upgrade Mózgu</h3>
+                            <p>Biohacking to nie tylko elektronika. To także chemia. Nootropiki ("smart drugs") to substancje mające na celu poprawę funkcji poznawczych: pamięci, kreatywności czy motywacji. W świecie Cyberpunka "dragi" bojowe są normą, ale w naszej rzeczywistości Dolina Krzemowa eksperymentuje z czymś subtelniejszym.</p>
+
+                            <div class="pros-cons-container">
+                                <div class="pros-box">
+                                    <h3><i class="fas fa-flask"></i> Popularne Środki</h3>
+                                    <ul>
+                                        <li><strong>Kofeina + L-teanina:</strong> Klasyczny stack dla skupienia bez "roztrzęsienia".</li>
+                                        <li><strong>Modafinil:</strong> Lek na narkolepsję używany przez programistów do pracy przez 20h bez snu (off-label).</li>
+                                        <li><strong>Mikrodawkowanie:</strong> Przyjmowanie sub-percepcyjnych dawek psychodelików w celu zwiększenia kreatywności (kontrowersyjne i często nielegalne).</li>
+                                    </ul>
+                                </div>
+                                <div class="cons-box">
+                                    <h3><i class="fas fa-exclamation-triangle"></i> Ryzyko</h3>
+                                    <ul>
+                                        <li><strong>Brak badań długofalowych:</strong> Nie wiemy, jak te środki wpływają na mózg po 20 latach stosowania.</li>
+                                        <li><strong>Uzależnienie psychiczne:</strong> Przekonanie, że "bez pigułki nie napiszę kodu".</li>
+                                        <li><strong>Efekt Placebo:</strong> Wiele suplementów działa tylko dlatego, że w nie wierzymy.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h2 id="androidy">5. Androidy i Robotyka</h2>
+                            <p>Boston Dynamics od lat pokazuje roboty robiące salto. Ale prawdziwa rewolucja dzieje się w połączeniu robotyki z LLM (Large Language Models). Robot, który nie tylko chodzi, ale <em>rozumie</em> polecenia w języku naturalnym.</p>
+                            
+                            <div class="pros-cons-container">
+                                <div class="pros-box">
+                                    <h3><i class="fas fa-check"></i> Dlaczego to się uda?</h3>
+                                    <ul>
+                                        <li><strong>AI:</strong> Modele wizyjne i językowe pozwalają robotom "widzieć" i "rozumieć" świat.</li>
+                                        <li><strong>Baterie:</strong> Gęstość energii w ogniwach rośnie (solid-state batteries).</li>
+                                        <li><strong>Demografia:</strong> Starzejące się społeczeństwa potrzebują opiekunów.</li>
+                                    </ul>
+                                </div>
+                                <div class="cons-box">
+                                    <h3><i class="fas fa-times"></i> Przeszkody</h3>
+                                    <ul>
+                                        <li><strong>Koszt:</strong> Precyzyjne siłowniki są wciąż bardzo drogie.</li>
+                                        <li><strong>Dolina Niesamowitości<sup class="footnote-ref"><a href="#fn4" id="ref4">[4]</a></sup>:</strong> Ludzie czują dyskomfort patrząc na "prawie ludzkie" twarze.</li>
+                                        <li><strong>Bezpieczeństwo:</strong> Ryzyko zhakowania robota domowego.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h2 id="latajace-samochody">6. Latające Samochody (eVTOL)</h2>
+                            <p>Marzenie o latających autach to w rzeczywistości marzenie o eVTOL<sup class="footnote-ref"><a href="#fn5" id="ref5">[5]</a></sup> (electric Vertical Take-Off and Landing). Technologia już istnieje (np. Joby Aviation, EHang). Problemem nie jest inżynieria, ale fizyka i prawo.</p>
+                            
+                            <div class="info-box warning">
+                                <i class="fas fa-plane-slash"></i>
+                                <div>
+                                    <strong>Problem Hałasu i Bezpieczeństwa:</strong> Setki dronów pasażerskich nad miastem generują hałas i ryzyko kolizji. Prawdopodobnie "latające taksówki" będą działać na sztywnych trasach (jak autobusy), a nie jako wolne pojazdy dla każdego.
+                                </div>
+                            </div>
+
+                            <h2 id="ai-control">7. Sztuczna Inteligencja: Niewidzialny Władca</h2>
+                            <p>W cyberpunku AI to nie tylko roboty. To powietrze, którym oddycha miasto. Algorytmy sterują sygnalizacją świetlną, giełdą, a nawet tym, kogo policja zatrzyma do kontroli (Predictive Policing).</p>
+                            
+                            <h3>Algorytmy Władzy</h3>
+                            <p>Gdy decyzje o kredycie, ubezpieczeniu czy wyroku sądowym podejmuje "czarna skrzynka", tracimy kontrolę nad własnym losem. Nierówność dostępu do "inteligencji obliczeniowej" może stać się nowym wyznacznikiem statusu społecznego – bogaci będą mieli asystentów AI optymalizujących ich życie, biedni będą zarządzani przez algorytmy.</p>
+
+                            <div class="info-box warning">
+                                <i class="fas fa-server"></i>
+                                <div>
+                                    <strong>Autonomia Maszyn:</strong> Zagrożeniem nie jest "zła" AI, ale AI zbyt skuteczna w realizacji źle zdefiniowanych celów. System optymalizujący ruch uliczny może uznać, że najprostszym sposobem na korki jest... zakazanie ludziom wychodzenia z domów.
+                                </div>
+                            </div>
+
+                            <h2 id="transport-alternatywny">8. Transport Przyszłości: Bez Fantazji</h2>
+                            <p>Jeśli nie latające auta, to co? Cyberpunk często pomija nudną, ale efektywną rzeczywistość:</p>
+                            <ul>
+                                <li><strong>Autonomiczne Kapsuły:</strong> Zamiast posiadać auto, zamawiasz autonomiczną kapsułę, która zawozi Cię do celu. To koniec korków i parkingów.</li>
+                                <li><strong>Infrastruktura Podziemna:</strong> Elon Musk (The Boring Company) wierzy w wielopoziomowe tunele. To tańsze i bezpieczniejsze niż latanie nad głowami przechodniów.</li>
+                                <li><strong>Logistyka Dronowa:</strong> Niebo będzie pełne, ale nie aut, lecz dronów dostawczych. Kurierzy znikną, paczki będą lądować na balkonach.</li>
+                            </ul>
+
+                            <h2 id="vr-metaverse">9. VR i Metaverse: Ucieczka do Cyfrowego Raju?</h2>
+                            <p>Jeśli świat fizyczny staje się zbyt trudny lub zniszczony (dystopia), alternatywą jest ucieczka do świata wirtualnego. Koncepcja <strong>Metaverse</strong>, spopularyzowana przez "Snow Crash" Neala Stephensona, to nie tylko gra, ale równoległa rzeczywistość ekonomiczna i społeczna.</p>
+
+                            <div class="pros-cons-container">
+                                <div class="pros-box">
+                                    <h3><i class="fas fa-vr-cardboard"></i> Immersja (Zanurzenie)</h3>
+                                    <ul>
+                                        <li><strong>Wzrok i Słuch:</strong> Gogle VR (jak Apple Vision Pro) oferują już rozdzielczość bliską ludzkiemu oku.</li>
+                                        <li><strong>Dotyk:</strong> Kombinezony haptyczne (np. TeslaSuit) pozwalają czuć uderzenia, temperaturę czy deszcz.</li>
+                                        <li><strong>Ruch:</strong> Bieżnie wielokierunkowe umożliwiają nieskończony spacer w miejscu.</li>
+                                    </ul>
+                                </div>
+                                <div class="cons-box">
+                                    <h3><i class="fas fa-unlink"></i> Izolacja</h3>
+                                    <ul>
+                                        <li><strong>Zanik relacji fizycznych:</strong> "Hikikomori" przyszłości mogą nigdy nie opuszczać swoich kapsuł.</li>
+                                        <li><strong>Atrofia mięśni:</strong> Brak ruchu w świecie fizycznym (chyba że VR wymaga wysiłku).</li>
+                                        <li><strong>Korporacyjna kontrola:</strong> W Metaverse właścicielem "ziemi" i praw fizyki jest korporacja.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h3>Neural VR: Ostateczna Granica</h3>
+                            <p>Prawdziwy "Matrix" nie potrzebuje gogli. Wymaga bezpośredniej stymulacji kory wzrokowej. To technologia, która łączy BCI (Brain-Computer Interfaces) z VR. Jeśli uda się "oszukać" mózg, że sygnał cyfrowy jest sygnałem z oka, granica między prawdą a fikcją przestanie istnieć.</p>
+
+                            <h2 id="popkultura">10. Popkultura vs Rzeczywistość</h2>
+                            <p>Filmy science-fiction ukształtowały nasze wyobrażenia o przyszłości. Często traktujemy je jako proroctwa, ale inżynieria rządzi się prawami fizyki, a nie scenariusza. Sprawdźmy, na ile realne są wizje z wielkiego ekranu.</p>
+
+                            <h3>Terminator i Skynet (Bunt Maszyn)</h3>
+                            <p>Wizja AI, która zyskuje świadomość i postanawia zniszczyć ludzkość, to klasyczny motyw "egzystencjalnego ryzyka". Współczesne LLM (jak GPT-4) nie mają intencji, uczuć ani świadomości. Problemem nie jest jednak zła wola maszyny, ale tzw. <strong>Alignment Problem</strong> – jak zapewnić, że cele superinteligentnej AI będą zawsze idealnie zgodne z naszymi wartościami?</p>
+                            <div class="info-box warning">
+                                <i class="fas fa-robot"></i>
+                                <div>
+                                    <strong>Werdykt:</strong> Bunt w stylu Skynetu (wojna nuklearna) jest mało prawdopodobny w najbliższych dekadach. Bardziej realnym zagrożeniem jest wykorzystanie AI do cyberataków lub dezinformacji przez ludzi.
+                                </div>
+                            </div>
+
+                            <h3>Matrix (Symulacja i BCI)</h3>
+                            <p>Matrix to ostateczna forma interfejsu mózg-komputer. Neuralink to dopiero niemowlęcy krok w tę stronę. Aby stworzyć pełną symulację ("zanurzenie"), musielibyśmy nie tylko czytać sygnały z mózgu, ale też precyzyjnie je <em>zapisywać</em>, stymulując każdy zmysł (wzrok, dotyk, zapach) bezpośrednio w korze mózgowej. To inżynieria na poziomie pojedynczych neuronów, która może zająć stulecia.</p>
+
+                            <h3>Gwiezdne Wojny (Hologramy i Droidy)</h3>
+                            <p>Droidy takie jak C-3PO są coraz bliżej (patrz: sekcja o Androidach). A co z hologramami? Fizyka światła utrudnia wyświetlanie obrazu w "powietrzu" bez nośnika (dymu, pary). Przyszłością nie są projektory R2-D2, ale <strong>Augmented Reality (AR)</strong>. Zamiast patrzeć na hologram na stole, będziemy widzieć go przez inteligentne soczewki kontaktowe lub okulary (jak Apple Vision Pro).</p>
+
+                            <h3>Łowca Androidów (Sztuczne Życie)</h3>
+                            <p>Replikanci z "Blade Runnera" byli biologiczni, inżynierowani genetycznie. To prowadzi nas do <strong>CRISPR</strong> i edycji genów. Technologia ta rozwija się równolegle do AI. Dylemat "co czyni nas ludźmi" stanie się kluczowy, gdy zaczniemy projektować "ulepszonych" ludzi odpornych na choroby czy starzenie.</p>
+
+                            <h2 id="etyka">11. Etyka Transhumanizmu: Gdzie jest granica?</h2>
+                            <p>Gdy technologia pozwoli nam wymieniać oczy na lepsze kamery, a pamięć rozszerzać o dyski w chmurze, staniemy przed pytaniami, które dotąd zadawali tylko filozofowie. Transhumanizm to ruch intelektualny postulujący użycie nauki do poprawy ludzkich możliwości, ale czy jesteśmy gotowi na konsekwencje?</p>
+
+                            <div class="pros-cons-container">
+                                <div class="pros-box">
+                                    <h3><i class="fas fa-hand-holding-heart"></i> Potencjał (Utopia)</h3>
+                                    <ul>
+                                        <li><strong>Eliminacja chorób:</strong> Koniec z rakiem, demencją czy niepełnosprawnością.</li>
+                                        <li><strong>Dłuższe życie:</strong> Radykalne wydłużenie "healthspan" (życia w zdrowiu).</li>
+                                        <li><strong>Wyrównanie szans:</strong> Technologia może niwelować biologiczne nierówności.</li>
+                                    </ul>
+                                </div>
+                                <div class="cons-box">
+                                    <h3><i class="fas fa-skull-crossbones"></i> Zagrożenia (Dystopia)</h3>
+                                    <ul>
+                                        <li><strong>Nierówności 2.0:</strong> Bogaci staną się "nadludźmi", biedni pozostaną "biologiczni".</li>
+                                        <li><strong>Utrata prywatności:</strong> Jeśli Twój mózg jest podłączony do sieci, kto ma dostęp do Twoich myśli?</li>
+                                        <li><strong>Zależność od korporacji:</strong> Czy chcesz płacić abonament za funkcjonowanie własnej ręki?</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h3>Dylemat Statku Tezeusza</h3>
+                            <p>Jeśli wymienisz w statku wszystkie deski na nowe, czy to wciąż ten sam statek? Jeśli wymienisz swoje kończyny, organy, a w końcu część neuronów na syntetyczne odpowiedniki – w którym momencie przestajesz być sobą? To pytanie o ciągłość świadomości w świecie cyfrowym.</p>
+
+                            <h2 id="ekonomia">12. Ekonomia Przyszłości: Krypto i UBI</h2>
+                            <p>W świecie, w którym roboty wykonują większość pracy fizycznej, a AI przejmuje zadania umysłowe, tradycyjny model "praca za wynagrodzenie" może przestać działać. Jak będzie wyglądać portfel i pasek wypłaty w 2050 roku?</p>
+
+                            <h3>Bezwarunkowy Dochód Podstawowy (UBI)</h3>
+                            <p>Gdy automatyzacja osiągnie poziom krytyczny, praca ludzka stanie się towarem luksusowym lub zbędnym. Aby gospodarka nie runęła (roboty nie kupują samochodów), rządy mogą wprowadzić UBI – stałą pensję dla każdego obywatela.</p>
+                            <div class="info-box tip">
+                                <i class="fas fa-robot"></i>
+                                <div>
+                                    <strong>Podatek od robotów:</strong> Koncepcja promowana m.in. przez Billa Gatesa. Jeśli robot zastępuje pracownika, firma powinna płacić podatek równoważny podatkowi dochodowemu tego pracownika, by sfinansować UBI.
+                                </div>
+                            </div>
+
+                            <h3>Kryptowaluty: Pieniądz Suwerenny</h3>
+                            <p>W cyberpunkowych wizjach korporacje często emitują własne waluty (scrip). W naszej rzeczywistości rolę niezależnego pieniądza przejmują kryptowaluty. Bitcoin jako cyfrowe złoto i Ethereum jako paliwo dla <strong>Smart Contracts</strong> – samowykonujących się umów, które eliminują pośredników (banki, notariuszy).</p>
+
+                            <h2 id="cyberbezpieczenstwo">13. Cyberbezpieczeństwo Osobiste: Życie w Szklanym Domu</h2>
+                            <p>W świecie, gdzie każda latarnia ma kamerę, a każdy smartfon skanuje twarz, prywatność staje się dobrem luksusowym. Cyberpunk to nie tylko neony, to także wszechobecna inwigilacja korporacji i rządów.</p>
+
+                            <h3>Biometria i Rozpoznawanie Twarzy</h3>
+                            <p>Systemy takie jak chiński Social Credit System pokazują, jak technologia może służyć do kontroli społecznej. Twoja twarz jest Twoim hasłem, ale też Twoim numerem katalogowym. W przeciwieństwie do hasła, twarzy nie możesz zmienić po wycieku danych.</p>
+
+                            <div class="info-box warning">
+                                <i class="fas fa-user-secret"></i>
+                                <div>
+                                    <strong>Walka o prywatność:</strong> Powstają ubrania i makijaże "anty-AI" (CV Dazzle), które mają na celu oszukanie algorytmów rozpoznawania twarzy poprzez asymetryczne wzory i fryzury.
+                                </div>
+                            </div>
+
+                            <h3>Cyfrowy Ślad i Data Brokers</h3>
+                            <p>Nie musisz mieć wszczepionego czipa, by być śledzonym. Twój telefon generuje więcej danych niż jakikolwiek implant. Korporacje (Data Brokers) handlują profilami psychologicznymi użytkowników, przewidując ich zachowania lepiej niż oni sami.</p>
+
+                            <h2 id="tozsamosc">14. Cyfrowa Tożsamość: Awatary i Reputacja</h2>
+                            <p>W sieci nikt nie wie, że jesteś psem – to stare powiedzenie przestaje być aktualne. W przyszłości Twoja cyfrowa tożsamość może być ważniejsza niż fizyczna.</p>
+
+                            <h3>Reputacja jako Waluta</h3>
+                            <p>Systemy oceny (jak w "Black Mirror") mogą decydować o Twojej zdolności kredytowej, dostępie do mieszkań czy pracy. Twoja historia w sieci staje się Twoim kapitałem. Utrata reputacji to cyfrowa śmierć.</p>
+
+                            <h3>Awatary i Wiele "Ja"</h3>
+                            <p>W Metaverse nie jesteś ograniczony biologią. Możesz mieć wiele tożsamości – jedną do pracy, inną dla znajomych, inną w grach. Pytanie brzmi: które "ja" jest prawdziwe? I co się stanie, gdy ktoś ukradnie Twój cyfrowy wizerunek (Identity Theft 2.0)?</p>
+
+                            <h2 id="przestepczosc">15. Przestępczość Przyszłości: Hakerzy i Darknet</h2>
+                            <p>Haker to archetyp cyberpunka – współczesny rewolwerowiec, który kodem walczy z systemem. Ale w rzeczywistości cyberprzestępczość to nie romantyczna walka, lecz brutalny biznes.</p>
+
+                            <h3>Kradzież Tożsamości Biologicznej</h3>
+                            <p>Co się stanie, gdy ktoś ukradnie nie Twoje hasło, ale Twój wzór siatkówki lub DNA? Ransomware przyszłości może zablokować nie Twój komputer, ale Twój rozrusznik serca lub implant neuralny, żądając okupu w krypto.</p>
+
+                            <h3>Broń Cyfrowa</h3>
+                            <p>Wirusy komputerowe (jak Stuxnet<sup class="footnote-ref"><a href="#fn6" id="ref6">[6]</a></sup>) mogą niszczyć fizyczną infrastrukturę. W świecie podłączonym do sieci, linijka kodu może wysadzić elektrownię lub wykoleić pociąg.</p>
+
+                            <h2 id="wojny">16. Wojny Przyszłości: Drony i Cyberwojna</h2>
+                            <p>Pole bitwy przyszłości nie będzie ograniczone do fizycznych frontów. Cyberpunkowe konflikty toczą się w sieci, w powietrzu i w umysłach obywateli. To wojna asymetryczna, gdzie jeden haker może wyrządzić więcej szkód niż dywizja pancerna.</p>
+
+                            <h3>Autonomiczne Drony (Slaughterbots)</h3>
+                            <p>Tanie, małe drony wyposażone w ładunek wybuchowy i system rozpoznawania twarzy to przerażająca wizja "slaughterbotów". Mogą one autonomicznie wyszukiwać i eliminować cele bez ludzkiej interwencji. To już nie jest science-fiction – prototypy takich systemów są testowane na poligonach.</p>
+
+                            <div class="info-box warning">
+                                <i class="fas fa-crosshairs"></i>
+                                <div>
+                                    <strong>Cyberwojna i Infrastruktura Krytyczna:</strong> Największym zagrożeniem nie jest atak na wojsko, ale na cywilów. Paraliż sieci energetycznej, wodociągów czy systemów bankowych za pomocą cyberataku może zdestabilizować całe państwo bez jednego wystrzału.
+                                </div>
+                            </div>
+
+                            <h3>Wojna Informacyjna</h3>
+                            <p>Za pomocą deepfake'ów i botów można wywołać panikę na giełdzie, sfałszować wypowiedź polityka lub skłócić ze sobą grupy społeczne. W tej wojnie amunicją jest dezinformacja, a celem – zaufanie publiczne.</p>
+
+                            <h2 id="nierownosci">17. Społeczeństwo Nierówności: Cyfrowy Podział</h2>
+                            <p>Cyberpunk to "High Tech, Low Life". Technologia nie jest wielkim wyrównywaczem szans – często pogłębia podziały.</p>
+
+                            <div class="pros-cons-container">
+                                <div class="pros-box">
+                                    <h3><i class="fas fa-crown"></i> Elity Technologiczne</h3>
+                                    <ul>
+                                        <li>Dostęp do najnowszych terapii genowych i implantów (dłuższe życie, wyższe IQ).</li>
+                                        <li>Kontrola nad algorytmami i kapitałem.</li>
+                                        <li>Życie w bezpiecznych enklawach (Gated Communities).</li>
+                                    </ul>
+                                </div>
+                                <div class="cons-box">
+                                    <h3><i class="fas fa-users-slash"></i> Klasa Nieulepszonych</h3>
+                                    <ul>
+                                        <li>Wykluczenie cyfrowe z powodu braku dostępu do technologii.</li>
+                                        <li>Biologiczna "niższość" wobec zmodyfikowanych ludzi.</li>
+                                        <li>Praca w zawodach zagrożonych automatyzacją.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h2 id="sztuka-ai">18. Sztuka w erze AI: Generatywna Rewolucja</h2>
+                            <p>Cyberpunk zawsze miał swoją unikalną estetykę – neonowe miasta, deszcz, chrom. Dziś ta wizja jest masowo produkowana przez algorytmy. Modele takie jak Midjourney czy Stable Diffusion potrafią wygenerować "cyberpunkowe miasto" w kilka sekund.</p>
+
+                            <h3>Śmierć Artysty czy Nowe Narzędzie?</h3>
+                            <p>Dla wielu grafików koncepcyjnych AI to zagrożenie egzystencjalne. Skoro algorytm potrafi stworzyć wariację postaci w stylu "Ghost in the Shell" szybciej i taniej, jaka jest rola człowieka? Z drugiej strony, AI staje się potężnym narzędziem dla twórców niezależnych, pozwalając im wizualizować swoje opowieści bez budżetu Hollywood.</p>
+
+                            <div class="info-box tip">
+                                <i class="fas fa-palette"></i>
+                                <div>
+                                    <strong>Estetyka Glitchu:</strong> Paradoksalnie, błędy generowane przez AI (dziwne dłonie, artefakty) idealnie wpisują się w cyberpunkową estetykę "glitch artu" i rozpadającej się rzeczywistości cyfrowej.
+                                </div>
+                            </div>
+
+                            <h3>Deepfakes i Prawda</h3>
+                            <p>W świecie Cyberpunka informacja jest bronią. Generatywne wideo i audio (Deepfakes) sprawiają, że nie możemy już ufać własnym oczom i uszom. To realizacja dystopijnej wizji, w której prawda jest tylko jedną z opcji w menu rzeczywistości.</p>
+
+                            <h2 id="moda">19. Moda i Styl: Techwear</h2>
+                            <p>Cyberpunk to także unikalny styl. "High-tech, low-life" przejawia się w modzie użytkowej. <strong>Techwear</strong> to ubrania wykonane z zaawansowanych materiałów (Gore-Tex), pełne kieszeni, pasków i elementów odblaskowych. To moda na apokalipsę – funkcjonalna, wodoodporna i gotowa na miejską walkę.</p>
+                            <div class="info-box tip">
+                                <i class="fas fa-tshirt"></i>
+                                <div>
+                                    <strong>Wearables:</strong> Inteligentne zegarki to dopiero początek. Nadchodzą ubrania zmieniające kolor, buty wiążące się same (jak w "Powrocie do przyszłości") i okulary AR zastępujące ekrany smartfonów.
+                                </div>
+                            </div>
+
+                            <h2 id="religie">20. Religie Przyszłości: Dataizm i Kult AI</h2>
+                            <p>W świecie, w którym algorytmy znają nas lepiej niż my sami, a technologia oferuje nieśmiertelność (cyfrową), tradycyjne religie mogą ustąpić miejsca nowym wierzeniom. Czy Bóg to po prostu najpotężniejszy system operacyjny?</p>
+
+                            <h3>Dataizm: Wszechświat jako Przepływ Danych</h3>
+                            <p>Koncepcja spopularyzowana przez Yuvala Noaha Harariego. Dataizm zakłada, że najwyższą wartością jest swobodny przepływ informacji. Grzechem jest blokowanie danych, a cnotą – podłączanie wszystkiego do sieci. W tej wizji ludzie są tylko procesorami, które z czasem staną się przestarzałe wobec wydajniejszych algorytmów.</p>
+
+                            <div class="info-box tip">
+                                <i class="fas fa-database"></i>
+                                <div>
+                                    <strong>Nowe Przykazanie:</strong> "Dziel się wszystkim". Prywatność w dataizmie jest egoizmem, ponieważ pozbawia system cennych danych, które mogłyby ulepszyć życie ogółu.
+                                </div>
+                            </div>
+
+                            <h3>Deus Ex Machina: Bóg z Maszyny</h3>
+                            <p>Anthony Levandowski (były inżynier Google) założył "Way of the Future" – organizację religijną, której celem było stworzenie i czczenie bóstwa opartego na AI. Choć projekt upadł, idea pozostaje żywa: jeśli stworzymy byt wszechwiedzący i wszechmogący, czyż nie będzie on dla nas Bogiem?</p>
+
+                            <h3>Cyfrowe Niebo</h3>
+                            <p>Obietnica życia wiecznego przenosi się z chmur na serwery. Uploading świadomości (Mind Uploading) to technologiczna wersja zbawienia. Zamiast duszy mamy plik .exe, a zamiast raju – symulację o nieskończonych możliwościach.</p>
+
+                            <h2 id="megakorporacje">21. Megakorporacje: Nowi Władcy Świata</h2>
+                            <p>W klasycznym cyberpunku (William Gibson, Philip K. Dick) państwa narodowe są słabe, a realną władzę sprawują globalne konglomeraty. Arasaka, Tyrell Corporation czy Weyland-Yutani to nie tylko firmy – to mocarstwa. Czy zmierzamy w stronę świata, w którym logo firmy jest ważniejsze niż flaga?</p>
+
+                            <h3>Eksterytorialność i Prywatne Armie</h3>
+                            <p>Już dziś największe korporacje technologiczne mają budżety większe niż PKB średniej wielkości państw. W przyszłości mogą one tworzyć "Smart Cities" – strefy z własnym prawem, podatkami i prywatną policją. To powrót do feudalizmu, gdzie obywatele stają się pracownikami-poddanymi.</p>
+
+                            <div class="info-box warning">
+                                <i class="fas fa-building"></i>
+                                <div>
+                                    <strong>Abonament na Życie (Subscription Life):</strong> W świecie rządzonym przez korporacje, nie posiadasz niczego na własność. Mieszkanie, samochód, a nawet implanty w Twoim ciele są usługą. Jeśli przestaniesz płacić subskrypcję, firma może zdalnie wyłączyć Twoje "ulepszenia".
+                                </div>
+                            </div>
+
+                            <h3>Algorytmiczna Władza</h3>
+                            <p>Wpływ na politykę nie wymaga już walizek z pieniędzmi. Wystarczy kontrola nad algorytmami. Korporacje zarządzające mediami społecznościowymi i wyszukiwarkami mają moc kształtowania opinii publicznej i wyników wyborów na skalę, o jakiej dyktatorzy XX wieku mogli tylko marzyć.</p>
+
+                            <h2 id="ekologia">22. Ekologia w Cyberpunku: Betonowa Dżungla bez Drzew</h2>
+                            <p>Wizje przyszłości rzadko są zielone. Zazwyczaj dominują w nich stal, szkło i beton, a natura jest tylko wspomnieniem lub towarem luksusowym. Zmiany klimatyczne nie są już zagrożeniem – są codziennością.</p>
+
+                            <h3>Syntetyczne Jedzenie i Farmy Pionowe</h3>
+                            <p>Gdy tradycyjne rolnictwo upada przez susze i wyjałowienie gleby, jedzenie przenosi się do laboratoriów. Mięso hodowane komórkowo (lab-grown meat) czy batony proteinowe z owadów to nie fanaberia, ale konieczność. Prawdziwy stek staje się symbolem statusu, dostępnym tylko dla elity.</p>
+
+                            <div class="info-box tip">
+                                <i class="fas fa-leaf"></i>
+                                <div>
+                                    <strong>Rolnictwo 4.0:</strong> Już dziś powstają wertykalne farmy w centrach miast, gdzie rośliny rosną bez gleby (aeroponika), oświetlane fioletowym światłem LED, zużywając 95% mniej wody niż tradycyjne uprawy.
+                                </div>
+                            </div>
+
+                            <h3>Klimatyzacja jako System Podtrzymywania Życia</h3>
+                            <p>W świecie "Blade Runnera" ciągle pada kwaśny deszcz. W rzeczywistości grożą nam raczej ekstremalne upały. W niektórych regionach świata temperatura mokrego termometru (wet-bulb temperature) może przekraczać granice ludzkiej wytrzymałości, czyniąc klimatyzację niezbędną do przeżycia, a nie tylko komfortu.</p>
+
+                            <h2 id="reality-check">23. Czy Cyberpunk już się wydarzył?</h2>
+                            <p>William Gibson powiedział: "Przyszłość już tu jest, tylko nierówno rozłożona". Spójrzmy prawdzie w oczy – żyjemy w cyberpunku, tylko mniej "cool" niż w filmach.</p>
+                            <ul>
+                                <li><strong>Co się sprawdziło:</strong> Wszechobecność sieci, potęga korporacji, hakerzy wpływający na geopolitykę, protezy sterowane myślą.</li>
+                                <li><strong>Co było błędem:</strong> Nie mamy latających aut (mamy korki), nie mamy neonów wszędzie (mamy ekrany LED), a cyberprzestrzeń to nie kolorowy tunel, ale płaski ekran smartfona.</li>
+                                <li><strong>Rzeczywistość:</strong> Jest mniej efektowna wizualnie, ale bardziej inwazyjna. Inwigilacja jest cicha, a dystopia nudna (boring dystopia).</li>
+                            </ul>
+
+                            <h2 id="scenariusze">24. Scenariusze Przyszłości</h2>
+                            <p>Dokąd zmierzamy? Cyberpunk nie jest monolitem. Możemy wyróżnić dwa główne kierunki ewolucji naszej rzeczywistości:</p>
+                            <ul>
+                                <li><strong>Soft Cyberpunk (Model Chiński):</strong> Świat czysty, bezpieczny i wygodny, ale pozbawiony prywatności. Kontrola społeczna odbywa się przez algorytmy, Social Credit i wszechobecne kamery. Bunt jest niemożliwy, bo jest niewygodny.</li>
+                                <li><strong>Hard Cyberpunk (Model Korporacyjny):</strong> Świat chaotyczny, brudny i niebezpieczny, ale dający iluzję wolności. Rządzą korporacje, technologia jest inwazyjna (wszczepy), a jednostka musi walczyć o przetrwanie na własną rękę.</li>
+                            </ul>
+
+                            <h2 id="rola-czlowieka">25. Rola Człowieka: Jak przetrwać?</h2>
+                            <p>W świecie zdominowanym przez technologię, najważniejszą kompetencją staje się... bycie człowiekiem. Czego nie zastąpi AI?</p>
+                            <ul>
+                                <li><strong>Autonomia:</strong> Umiejętność krytycznego myślenia i odłączenia się od algorytmu.</li>
+                                <li><strong>Adaptacja:</strong> Szybkie uczenie się nowych narzędzi (reskilling).</li>
+                                <li><strong>Współpraca:</strong> Budowanie relacji w świecie rzeczywistym, poza zasięgiem cyfrowego nadzoru.</li>
+                            </ul>
+
+                            <h2 id="podsumowanie">Podsumowanie: Kiedy nadejdzie przyszłość?</h2>
+                            <p>Cyberpunk to nie przepowiednia, to ostrzeżenie. Wiele z jego elementów już stało się naszą codziennością.</p>
+                            <ul>
+                                <li><strong>Cyborgi:</strong> Tak, ale nierówno dostępne (dla bogatych i chorych).</li>
+                                <li><strong>Androidy:</strong> Będą, ale jako niszowi pomocnicy, a nie obywatele.</li>
+                                <li><strong>Latające samochody:</strong> Pozostaną symbolem niespełnionych marzeń lub zabawką dla miliarderów.</li>
+                            </ul>
+                            <p>Pytanie nie brzmi "czy dożyjemy", ale "w jakiej formie" przetrwamy jako ludzie w świecie maszyn.</p>
+
+                            <!-- SŁOWNICZEK POJĘĆ -->
+                            <div class="glossary-box">
+                                <h3><i class="fas fa-book"></i> Słowniczek Cyberpunka</h3>
+                                <div class="glossary-item">
+                                    <span class="glossary-term">ICE (Intrusion Countermeasures Electronics)</span>
+                                    <p class="glossary-def">Oprogramowanie zabezpieczające korporacyjne serwery przed hakerami. "Czarny Lód" (Black ICE) to wersja ofensywna, która może uszkodzić sprzęt lub mózg intruza.</p>
+                                </div>
+                                <div class="glossary-item">
+                                    <span class="glossary-term">Deck (Cyberdeck)</span>
+                                    <p class="glossary-def">Przenośny komputer służący do bezpośredniego podłączenia układu nerwowego do cyberprzestrzeni (Matrixa). Narzędzie pracy każdego netrunnera.</p>
+                                </div>
+                                <div class="glossary-item">
+                                    <span class="glossary-term">Simstim (Simulation Stimulation)</span>
+                                    <p class="glossary-def">Technologia pozwalająca na odtwarzanie nagranych doświadczeń zmysłowych innej osoby. Pozwala "czuć" to, co czuł nagrywający (wzrok, dotyk, emocje).</p>
+                                </div>
+                                <div class="glossary-item">
+                                    <span class="glossary-term">Construct (Konstrukt)</span>
+                                    <p class="glossary-def">Cyfrowa kopia osobowości i wspomnień człowieka, zapisana na nośniku (ROM). Często używana do "ożywiania" zmarłych ekspertów.</p>
+                                </div>
+                                <div class="glossary-item">
+                                    <span class="glossary-term">Sprawl (Rozlewisko)</span>
+                                    <p class="glossary-def">Gigantyczna, niekontrolowana aglomeracja miejska, powstała z połączenia wielu miast (np. BAMA - Boston-Atlanta Metropolitan Axis).</p>
+                                </div>
+                            </div>
+
+                            <!-- Źródła -->
+                            <div class="sources-box">
+                                <h3><i class="fas fa-book-open"></i> Polecane lektury</h3>
+                                <ul class="sources-list">
+                                    <li><a href="#" target="_blank">Ray Kurzweil - Nadchodzi Osobliwość <i class="fas fa-external-link-alt"></i></a></li>
+                                    <li><a href="#" target="_blank">Michio Kaku - Jak stworzyć umysł <i class="fas fa-external-link-alt"></i></a></li>
+                                    <li><a href="#" target="_blank">William Gibson - Neuromancer <i class="fas fa-external-link-alt"></i></a></li>
+                                    <li><a href="#" target="_blank">Dmitry Glukhovsky - Futu.re <i class="fas fa-external-link-alt"></i></a></li>
+                                    <li><a href="#" target="_blank">Philip K. Dick - Czy androidy śnią o elektrycznych owcach? <i class="fas fa-external-link-alt"></i></a></li>
+                                    <li><a href="#" target="_blank">Raporty Boston Dynamics i Neuralink <i class="fas fa-external-link-alt"></i></a></li>
+                                </ul>
+                            </div>
+
+                            <!-- SEKCJA FAQ -->
+                            <section class="faq-section">
+                                <h3><i class="fas fa-question-circle"></i> Często zadawane pytania</h3>
+                                <details>
+                                    <summary>Czy implanty mózgowe są bezpieczne?</summary>
+                                    <p>Każda operacja neurochirurgiczna niesie ryzyko. Obecnie technologia jest w fazie eksperymentalnej i stosowana tylko w przypadkach medycznych.</p>
+                                </details>
+                                <details>
+                                    <summary>Ile kosztuje humanoidalny robot?</summary>
+                                    <p>Obecnie prototypy kosztują setki tysięcy dolarów. Elon Musk przewiduje, że Tesla Optimus może kosztować mniej niż samochód (ok. 20 000 USD) przy masowej produkcji.</p>
+                                </details>
+                                <details>
+                                    <summary>Czy transfer świadomości (Mind Uploading) jest możliwy?</summary>
+                                    <p>Teoretycznie tak, ale wymagałoby to zeskanowania mózgu z dokładnością do pojedynczych synaps. Niektórzy futurolodzy (jak Ray Kurzweil) przewidują taką możliwość około 2045 roku, ale wielu neurobiologów pozostaje sceptycznych co do natury samej świadomości.</p>
+                                </details>
+                                <details>
+                                    <summary>Czy grozi nam technologiczne bezrobocie?</summary>
+                                    <p>Automatyzacja z pewnością zlikwiduje wiele zawodów, ale stworzy też nowe. Wyzwaniem nie jest brak pracy, ale konieczność szybkiego przekwalifikowania się (reskilling) i adaptacji do współpracy z AI. Możliwe, że niezbędne stanie się wprowadzenie Dochodu Podstawowego (UBI).</p>
+                                </details>
+                            </section>
+
+                            <!-- Tagi w stopce posta -->
+                            <div class="post-footer-tags">
+                                <span>Tagi:</span>
+                                <a href="#" class="tag">Cyberpunk</a>
+                                <a href="#" class="tag">Przyszłość</a>
+                                <a href="#" class="tag">Technologia</a>
+                                <a href="#" class="tag">AI</a>
+                                <a href="#" class="tag">Robotyka</a>
+                            </div>
+
+                            <!-- PRZYPISY DOLNE -->
+                            <div class="footnotes">
+                                <h3>Przypisy</h3>
+                                <ol>
+                                    <li id="fn1">
+                                        <strong>Prawo Moore'a</strong> – Empiryczne prawo, według którego liczba tranzystorów w układzie scalonym podwaja się co około 24 miesiące, co przekłada się na wykładniczy wzrost mocy obliczeniowej. <a href="#ref1" class="footnote-back" aria-label="Wróć do treści">↩</a>
+                                    </li>
+                                    <li id="fn2">
+                                        <strong>Prawo Kurzweila</strong> – Prawo Przyspieszających Zwrotów, sugerujące, że tempo zmian technologicznych rośnie wykładniczo, prowadząc do Osobliwości (Singularity). <a href="#ref2" class="footnote-back" aria-label="Wróć do treści">↩</a>
+                                    </li>
+                                    <li id="fn3">
+                                        <strong>Neuralink</strong> – Firma neurotechnologiczna założona przez Elona Muska, pracująca nad wszczepialnymi interfejsami mózg-komputer (BCI). <a href="#ref3" class="footnote-back" aria-label="Wróć do treści">↩</a>
+                                    </li>
+                                    <li id="fn4">
+                                        <strong>Dolina Niesamowitości (Uncanny Valley)</strong> – Zjawisko psychologiczne, w którym robot lub animacja komputerowa przypominająca człowieka wywołuje u obserwatorów dyskomfort, gdy jest bardzo realistyczna, ale wciąż posiada drobne nienaturalne cechy. <a href="#ref4" class="footnote-back" aria-label="Wróć do treści">↩</a>
+                                    </li>
+                                    <li id="fn5">
+                                        <strong>eVTOL</strong> – electric Vertical Take-Off and Landing. Elektryczne statki powietrzne pionowego startu i lądowania, często nazywane "latającymi taksówkami". <a href="#ref5" class="footnote-back" aria-label="Wróć do treści">↩</a>
+                                    </li>
+                                    <li id="fn6">
+                                        <strong>Stuxnet</strong> – Złośliwe oprogramowanie komputerowe odkryte w 2010 roku, zaprojektowane do atakowania systemów sterowania przemysłowego (SCADA), użyte m.in. przeciwko irańskiemu programowi nuklearnemu. <a href="#ref6" class="footnote-back" aria-label="Wróć do treści">↩</a>
+                                    </li>
+                                </ol>
+                            </div>
+                        </section>
+
+                        <!-- NAWIGACJA MIĘDZY POSTAMI -->
+                        <nav class="post-navigation">
+                            <a href="selfdevelopment-leader.html" class="post-nav-link prev-post">
+                                <span class="nav-subtitle"><i class="fas fa-arrow-left"></i> Poprzedni wpis</span>
+                                <span class="nav-title">Selfdevelopment: Jak wykształcić cechy lidera?</span>
+                            </a>
+                            <a href="#" class="post-nav-link next-post">
+                                <span class="nav-subtitle">Następny wpis <i class="fas fa-arrow-right"></i></span>
+                                <span class="nav-title">Hacking: Przewodnik po Ciemnej Stronie Mocy</span>
+                            </a>
+                        </nav>
+
+                        <!-- NEWSLETTER -->
+                        <section class="newsletter-box">
+                            <div class="newsletter-content">
+                                <h3>Bądź na bieżąco z przyszłością!</h3>
+                                <p>Dołącz do newslettera i otrzymuj analizy trendów technologicznych prosto na maila.</p>
+                                <form class="newsletter-form">
+                                    <input type="email" placeholder="Twój adres e-mail" required>
+                                    <button type="submit" class="btn">Zapisz się</button>
+                                </form>
+                            </div>
+                        </section>
+
+                        <!-- SEKCJA O AUTORZE -->
+                        <section class="author-box">
+                            <div class="author-avatar">
+                                <img src="../img/avatar.png" alt="Avatar autora">
+                            </div>
+                            <div class="author-content">
+                                <h3 class="author-name">Kamil [Nazwisko]</h3>
+                                <p class="author-bio">Pasjonat technologii, student informatyki i twórca tego bloga. Na co dzień eksploruję świat kodu, AI i designu, dzieląc się swoimi odkryciami i przemyśleniami.</p>
+                                <div class="author-socials">
+                                    <a href="https://github.com/fireeagle050" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                    <a href="https://www.linkedin.com/in/kamil-dziedzic-6aa0ba30b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="../o-mnie.html" class="author-more-btn">Więcej o mnie</a>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- KOMENTARZE -->
+                        <section class="comments-section">
+                            <h3>Komentarze (0)</h3>
+                            <form class="comment-form">
+                                <textarea placeholder="Zostaw komentarz..." rows="4"></textarea>
+                                <button type="submit" class="btn-secondary">Opublikuj</button>
+                            </form>
+                        </section>
+                    </div>
+
+                    <!-- SIDEBAR (SPIS TREŚCI) -->
+                    <aside class="post-sidebar">
+                        <div class="toc-widget">
+                            <h3>Spis treści</h3>
+                            <nav class="toc-nav">
+                                <ul>
+                                    <li><a href="#geneza">1. Geneza Cyberpunku</a></li>
+                                    <li><a href="#miasto">2. Miasto Przyszłości</a></li>
+                                    <li><a href="#historia-postepu">3. Wykładniczy Wzrost</a></li>
+                                    <li><a href="#cyborgizacja">4. Cyborgizacja</a></li>
+                                    <li><a href="#androidy">5. Androidy i Robotyka</a></li>
+                                    <li><a href="#latajace-samochody">6. Latające Samochody</a></li>
+                                    <li><a href="#ai-control">7. Sztuczna Inteligencja</a></li>
+                                    <li><a href="#transport-alternatywny">8. Transport Alternatywny</a></li>
+                                    <li><a href="#vr-metaverse">9. VR i Metaverse</a></li>
+                                    <li><a href="#popkultura">10. Popkultura vs Realia</a></li>
+                                    <li><a href="#etyka">11. Etyka Transhumanizmu</a></li>
+                                    <li><a href="#ekonomia">12. Ekonomia Przyszłości</a></li>
+                                    <li><a href="#cyberbezpieczenstwo">13. Cyberbezpieczeństwo</a></li>
+                                    <li><a href="#tozsamosc">14. Cyfrowa Tożsamość</a></li>
+                                    <li><a href="#przestepczosc">15. Przestępczość</a></li>
+                                    <li><a href="#wojny">16. Wojny Przyszłości</a></li>
+                                    <li><a href="#nierownosci">17. Nierówności</a></li>
+                                    <li><a href="#sztuka-ai">18. Sztuka i AI</a></li>
+                                    <li><a href="#moda">19. Moda i Styl</a></li>
+                                    <li><a href="#religie">20. Religie Przyszłości</a></li>
+                                    <li><a href="#megakorporacje">21. Megakorporacje</a></li>
+                                    <li><a href="#ekologia">22. Ekologia</a></li>
+                                    <li><a href="#reality-check">23. Reality Check</a></li>
+                                    <li><a href="#scenariusze">24. Scenariusze</a></li>
+                                    <li><a href="#rola-czlowieka">25. Rola Człowieka</a></li>
+                                    <li><a href="#podsumowanie">Podsumowanie</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </aside>
+
+                </div> <!-- Koniec Grid -->
+            </article>
+
+            <!-- SEKCJA POWIĄZANYCH ARTYKUŁÓW -->
+            <section class="related-posts">
+                <h2 class="related-posts-title">Przeczytaj również</h2>
+                <div class="related-posts-grid">
+                    <a href="historia-ai.html" class="related-post-card">
+                        <div class="related-post-image">
+                            <img src="../img/aination.jpg" alt="Miniatura posta o AI">
+                        </div>
+                        <div class="related-post-content">
+                            <span class="related-post-category">AI</span>
+                            <h3>Historia AI: Od Maszyny Turinga</h3>
+                        </div>
+                    </a>
+                    <a href="selfdevelopment-leader.html" class="related-post-card">
+                        <div class="related-post-image">
+                            <img src="../img/leader.jpg" alt="Miniatura posta o liderze">
+                        </div>
+                        <div class="related-post-content">
+                            <span class="related-post-category">Selfdevelopment</span>
+                            <h3>Selfdevelopment: Jak być liderem?</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="related-post-card">
+                        <div class="related-post-image">
+                            <img src="../img/cybersec.jpg" alt="Miniatura posta o cyberbezpieczeństwie">
+                        </div>
+                        <div class="related-post-content">
+                            <span class="related-post-category">Cyberbezpieczeństwo</span>
+                            <h3>Cyberbezpieczeństwo: Wilk w owczej skórze</h3>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Kamil [Nazwisko]. Wszelkie prawa zastrzeżone.</p>
+            <div class="footer-socials">
+                <a href="https://github.com/fireeagle050" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/kamil-dziedzic-6aa0ba30b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js" defer></script>
+    <script src="../js/blog.js" defer></script>
+    <!-- Skrypty Prism.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js" defer></script>
+</body>
+</html>

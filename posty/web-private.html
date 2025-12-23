@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ZMIENNE: Tytuł i opis wpisu -->
+    <meta name="description" content="Kompendium prywatności: Co wie o Tobie dostawca internetu (ISP), jak śledzi Cię Big Tech (Google, Meta) i co wysyła Twój system operacyjny. Analiza i ochrona.">
+    <title>Prywatność w internecie - ISP, Big Tech i Twoje dane | Project Genesis</title>
+
+    <!-- Współdzielone style i skrypty -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/post.css"> <!-- Dedykowane style dla pojedynczego wpisu -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Prism.js CSS (motyw Okaidia dla ciemnego tła) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
+    <!-- Biblioteki do generowania PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body class="body-post"> <!-- Dedykowana klasa dla pojedynczego wpisu -->
+
+    <header>
+        <nav>
+            <div class="nav-left-items">
+                <a href="../index.html" class="nav-logo"><img src="../img/logo.png" alt="Logo"></a>
+                <!-- PRZEŁĄCZNIK MOTYWU -->
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="theme-checkbox">
+                        <input type="checkbox" id="theme-checkbox" />
+                        <div class="slider round"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></div>
+                    </label>
+                </div>
+            </div>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../o-mnie.html">O mnie</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../materialy.html">Materiały</a></li>
+                <li><a href="../kontakt.html" class="nav-contact-btn">Kontakt</a></li>
+            </ul>
+        </nav>
+        <!-- Pasek postępu czytania -->
+        <div class="reading-progress-bar"></div>
+    </header>
+
+    <main>
+        <div class="post-container container">
+            <!-- NAWIGACJA OKRUSZKOWA (BREADCRUMBS) -->
+            <nav class="breadcrumbs">
+                <a href="../index.html"><i class="fas fa-home"></i> Home</a> <span class="separator">/</span>
+                <a href="../blog.html">Blog</a> <span class="separator">/</span>
+                <span class="current">Prywatność w Sieci</span>
+            </nav>
+
+            <!-- ZMIENNE: Treść artykułu -->
+            <article class="post-full-content">
+                <header class="post-full-header">
+                    <div class="post-meta">
+                        <span><i class="fas fa-calendar-alt"></i> 15 Października 2025</span>
+                        <span><i class="fas fa-user"></i> Kamil</span>
+                        <span><i class="fas fa-folder-open"></i> Cyberbezpieczeństwo</span>
+                        <span><i class="fas fa-clock"></i> 20 min czytania</span>
+                    </div>
+                    <h1 class="post-full-title">Prywatność w internecie – co wie o Tobie dostawca, Big Tech i Twój system?</h1>
+                </header>
+
+                <!-- Przyciski udostępniania -->
+                <div class="post-share-buttons">
+                    <span>Udostępnij:</span>
+                    <a href="#" class="share-btn share-facebook" aria-label="Udostępnij na Facebooku"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="share-btn share-twitter" aria-label="Udostępnij na Twitterze"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="share-btn share-linkedin" aria-label="Udostępnij na LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <button id="save-pdf-btn" class="share-btn share-pdf" aria-label="Zapisz jako PDF" title="Zapisz artykuł jako PDF"><i class="fas fa-file-pdf"></i></button>
+                    <button id="print-btn" class="share-btn share-print" aria-label="Drukuj artykuł" title="Drukuj artykuł"><i class="fas fa-print"></i></button>
+                    <button id="copy-link-btn" class="share-btn share-copy" aria-label="Kopiuj link" title="Kopiuj link do schowka"><i class="fas fa-link"></i></button>
+                </div>
+
+                <figure class="post-full-image">
+                    <!-- Używamy zdjęcia zdefiniowanego w blog.html -->
+                    <img src="../img/private.jpg" alt="Cyfrowe oko symbolizujące wszechobecną kontrolę i inwigilację w internecie">
+                    <figcaption style="text-align: center; color: #888; font-size: 0.9rem; margin-top: 0.5rem;">W internecie nic nie ginie, a Twoje dane są cenniejsze niż złoto.</figcaption>
+                </figure>
+
+                <!-- UKŁAD GRID: TREŚĆ + SIDEBAR -->
+                <div class="post-content-grid">
+                    
+                    <!-- KOLUMNA GŁÓWNA -->
+                    <div class="post-main-column">
+                        <section class="post-full-body">
+                            
+                            <!-- Sekcja "W skrócie" -->
+                            <div class="key-takeaways">
+                                <h3><i class="fas fa-lightbulb"></i> W skrócie</h3>
+                                <ul>
+                                    <li><strong>Jesteś towarem:</strong> Darmowe usługi płacą za siebie Twoimi danymi.</li>
+                                    <li><strong>Fingerprinting:</strong> Ciasteczka to przeżytek, teraz śledzi się unikalność Twojej przeglądarki.</li>
+                                    <li><strong>ISP widzi wiele:</strong> Twój dostawca internetu wie, jakie strony odwiedzasz (chyba że użyjesz DNS-over-HTTPS lub VPN).</li>
+                                    <li><strong>Higiena cyfrowa:</strong> Używanie odpowiednich narzędzi (uBlock, Firefox/Brave) drastycznie zwiększa bezpieczeństwo.</li>
+                                    <li><strong>ISP widzi metadane:</strong> Nawet przy HTTPS dostawca wie, z jakimi serwerami się łączysz, kiedy i jak dużo danych przesyłasz.</li>
+                                    <li><strong>Retencja danych:</strong> W Polsce operatorzy muszą przechowywać logi Twojej aktywności przez 12 miesięcy.</li>
+                                    <li><strong>DPI (Deep Packet Inspection):</strong> Zaawansowana analiza pozwala rozpoznawać typ ruchu (np. Netflix, torrenty) mimo szyfrowania.</li>
+                                    <li><strong>VPN to przesunięcie zaufania:</strong> Ukrywa dane przed ISP, ale udostępnia je dostawcy VPN.</li>
+                                </ul>
+                            </div>
+
+                            <h2 id="section-1">1. Wprowadzenie</h2>
+                            <p class="lead"><span class="drop-cap">W</span>iększość dyskusji o prywatności skupia się na Google czy Facebooku. Zapominamy jednak o podmiocie, który ma absolutnie uprzywilejowaną pozycję w obserwacji naszego cyfrowego życia – o dostawcy internetu (ISP). To on jest bramą, przez którą musi przejść każdy bit informacji wysłany z Twojego domu.</p>
+                            <p>W tym artykule rozłożymy na czynniki pierwsze to, co technicznie, prawnie i praktycznie wie o Tobie Twój operator. To nie jest teoria spiskowa – to analiza architektury sieci.</p>
+                            
+                            <h4>1.1. Mit anonimowości w sieci</h4>
+                            <p>Wiele osób wierzy, że tryb "Incognito" lub skasowanie historii przeglądarki czyni ich niewidzialnymi. To niebezpieczny mit. Twoje działania w sieci zostawiają ślady na wielu poziomach: od urządzenia, przez router, infrastrukturę ISP, aż po serwery docelowe.</p>
+                            
+                            <h4>1.2. Dostawca internetu jako „brama” do cyfrowego świata</h4>
+                            <p>ISP (Internet Service Provider) to podmiot, który fizycznie dostarcza łącze do Twojego domu. W przeciwieństwie do serwisów, które odwiedzasz wybiórczo (jak YouTube czy Netflix), ISP jest pośrednikiem w <strong>każdej</strong> Twojej aktywności online.</p>
+
+                            <h4>1.3. Dlaczego to temat realny, nie paranoja</h4>
+                            <p>Analiza danych przez ISP to nie teoria spiskowa, a model biznesowy i wymóg prawny. Zrozumienie tego mechanizmu jest kluczowe dla świadomego korzystania z sieci i ochrony własnej prywatności.</p>
+
+                            <h2 id="section-2">2. Kim jest dostawca internetu (ISP) technicznie</h2>
+                            <h4>2.1. Rola ISP w architekturze internetu</h4>
+                            <p>Internet to sieć połączonych sieci. Aby Twój komputer mógł połączyć się z serwerem w USA, sygnał musi przejść przez infrastrukturę Twojego dostawcy (Orange, UPC, Netia, lokalna radiówka). ISP dzierżawi Ci adres IP i zapewnia fizyczne łącze.</p>
+                            
+                            <h4>2.2. Ruch sieciowy krok po kroku</h4>
+                            <p>Każde zapytanie z Twojego komputera przechodzi przez router domowy, infrastrukturę lokalną ISP, aż do brzegowych routerów operatora, gdzie łączy się ze światem zewnętrznym.</p>
+
+                            <h4>2.3. Punkty styku, w których powstają dane</h4>
+                            <p>Dane są logowane na wielu etapach: na serwerach DHCP (przydział IP), serwerach DNS (rozwiązywanie nazw) oraz na bramkach wyjściowych (NAT).</p>
+
+                            <h4>2.4. ISP vs serwisy internetowe – różnice w widoczności</h4>
+                            <p>W przeciwieństwie do Google, który widzi Cię tylko tam, gdzie są jego usługi, <strong>ISP widzi cały Twój ruch sieciowy</strong>, niezależnie od tego, czy korzystasz z wyszukiwarki, poczty, czy grasz w gry online.</p>
+
+                            <h2 id="section-3">3. Jakie dane techniczne widzi ISP</h2>
+                            <p>Nawet jeśli nie logujesz się nigdzie na swoje nazwisko, sama technologia TCP/IP wymusza wymianę pewnych danych. Oto co ISP widzi "z pudełka":</p>
+                            
+                            <ul class="checklist">
+                                <li><i class="fas fa-network-wired checklist-icon"></i> <strong>3.1. Adres IP publiczny i prywatny:</strong> Twój adres (źródłowy) i adres serwera (docelowy). To mówi wprost: "Ten użytkownik łączy się z serwerami Facebooka".</li>
+                                <li><i class="fas fa-clock checklist-icon"></i> <strong>3.2. Czas połączeń i aktywność sesji:</strong> Dokładny czas rozpoczęcia i zakończenia każdej sesji oraz jej długość.</li>
+                                <li><i class="fas fa-database checklist-icon"></i> <strong>3.3. Ilość przesyłanych danych:</strong> Ile megabajtów pobrałeś i wysłałeś. Pozwala to odróżnić czytanie artykułu od streamowania wideo w 4K.</li>
+                                <li><i class="fas fa-map-marker-alt checklist-icon"></i> <strong>3.4. Lokalizacja przybliżona:</strong> Na podstawie infrastruktury kablowej, ISP zna fizyczną lokalizację zakończenia sieci.</li>
+                                <li><i class="fas fa-server checklist-icon"></i> <strong>3.5. Typ urządzeń i protokołów:</strong> Analiza nagłówków pakietów pozwala określić, czy używasz PC, konsoli czy smartfona.</li>
+                            </ul>
+                            
+                            <h2 id="section-4">4. Metadane – najcenniejsza warstwa informacji</h2>
+                            <h4>4.1. Czym są metadane</h4>
+                            <p>Większość ruchu w sieci jest dziś szyfrowana (HTTPS). Oznacza to, że ISP nie widzi treści Twoich maili ani haseł. Widzi jednak "kopertę", w której te dane są przesyłane. Te dane o danych nazywamy <strong>metadanymi</strong>.</p>
+
+                            <h4>4.2. DNS – katalog Twoich zapytań</h4>
+                            <p>Zanim połączysz się ze stroną, Twój komputer musi zamienić nazwę (np. <code>poradnia-psychologiczna.pl</code>) na adres IP. Robi to za pomocą systemu DNS. Domyślnie zapytania te trafiają do serwerów DNS Twojego dostawcy i są przesyłane otwartym tekstem.</p>
+                            
+                            <h4>4.3. SNI i nagłówki TLS</h4>
+                            <p>Dodatkowo, podczas nawiązywania szyfrowanego połączenia (TLS Handshake), przeglądarka wysyła pole <strong>SNI (Server Name Indication)</strong>, które również jest widoczne dla ISP. Dzięki temu operator wie dokładnie, jakie domeny odwiedzasz, nawet jeśli używasz zewnętrznego DNS.</p>
+
+                            <div class="terminal-window linux">
+                                <div class="terminal-header">
+                                    <span class="terminal-title">root@isp-logger: /var/logs/user_traffic</span>
+                                </div>
+                                <div class="terminal-body">
+                                    <span class="command-line">tail -f traffic.log | grep "User_ID_4921"</span>
+                                    <span class="command-output">
+                            [14:23:01] DNS_QUERY: "tinder.com" -> 104.244.42.1<br>
+                            [14:23:05] CONNECT: 104.244.42.1:443 (SNI: tinder.com) | Duration: 15m | Data: 45MB<br>
+                            [14:40:12] DNS_QUERY: "linkedin.com" -> 108.174.10.1<br>
+                            [14:40:15] CONNECT: 108.174.10.1:443 (SNI: linkedin.com) | Duration: 2m | Data: 1.2MB
+                                    </span>
+                                </div>
+                            </div>
+
+                            <h4>4.4. Analiza wzorców ruchu</h4>
+                            <p>Nawet zaszyfrowany ruch ma swoją charakterystykę – np. streaming wideo generuje inne obciążenie i rozmiar pakietów niż przeglądanie poczty czy rozmowa głosowa.</p>
+
+                            <h4>4.5. Profilowanie bez treści</h4>
+                            <p>Na podstawie samych metadanych można z dużą dokładnością określić wyznanie, orientację, stan zdrowia i poglądy polityczne użytkownika.</p>
+
+                            <h2 id="section-5">5. Treść danych – co jest widoczne, a co nie</h2>
+                            <p>Poniższa tabela pokazuje różnicę w widoczności danych w zależności od używanej technologii.</p>
+
+                            <h4>5.1. Ruch nieszyfrowany (HTTP)</h4>
+                            <p>W przypadku starego protokołu HTTP, każdy element transmisji jest widoczny jak tekst na pocztówce.</p>
+
+                            <h4>5.2. Ruch szyfrowany (HTTPS)</h4>
+                            <p>HTTPS pakuje treść w bezpieczną kopertę, ale adresat i nadawca wciąż są widoczni.</p>
+
+                            <div class="table-responsive">
+                                <table class="comparison-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Rodzaj danych</th>
+                                            <th>HTTP (Brak szyfrowania)</th>
+                                            <th>HTTPS (Standard)</th>
+                                            <th>VPN / Tor</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Adres IP serwera</strong></td>
+                                            <td class="rating-bad">Widoczny</td>
+                                            <td class="rating-bad">Widoczny</td>
+                                            <td class="rating-excellent">Ukryty (widoczny IP VPN)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Nazwa domeny (DNS/SNI)</strong></td>
+                                            <td class="rating-bad">Widoczna</td>
+                                            <td class="rating-bad">Widoczna</td>
+                                            <td class="rating-excellent">Ukryta</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Dokładny adres URL</strong></td>
+                                            <td class="rating-bad">Widoczny (np. /szukaj?q=choroba)</td>
+                                            <td class="rating-excellent">Ukryty</td>
+                                            <td class="rating-excellent">Ukryty</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Treść (hasła, wiadomości)</strong></td>
+                                            <td class="rating-bad">Widoczna</td>
+                                            <td class="rating-excellent">Ukryta</td>
+                                            <td class="rating-excellent">Ukryta</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <h4>5.3. Co szyfrowanie faktycznie ukrywa</h4>
+                            <p>Szyfrowanie (kłódka w przeglądarce) chroni treść komunikacji – nikt po drodze nie przeczyta Twojego hasła do banku ani treści maila.</p>
+
+                            <h4>5.4. Granice prywatności przy TLS</h4>
+                            <p>TLS nie ukrywa faktu połączenia, jego czasu, długości ani adresu serwera docelowego. To wciąż wystarczająco dużo informacji do profilowania.</p>
+
+                            <h2 id="section-6">6. Logowanie i retencja danych</h2>
+                            <h4>6.1. Jak długo ISP przechowuje dane</h4>
+                            <p>W Polsce kwestię przechowywania danych reguluje <strong>Prawo Telekomunikacyjne</strong>. Nakłada ono na operatorów obowiązek retencji (przechowywania) danych transmisyjnych przez <strong>12 miesięcy</strong>.</p>
+                            
+                            <h4>6.2. Logi połączeń i logi sesji</h4>
+                            <ul class="checklist">
+                                <li><i class="fas fa-file-signature checklist-icon"></i> <strong>Logi połączeń:</strong> Kto (IP), z kim (IP docelowe), kiedy (data/czas) i jak długo.</li>
+                                <li><i class="fas fa-mobile-alt checklist-icon"></i> <strong>Dane lokalizacyjne:</strong> W przypadku sieci mobilnych – numer IMEI telefonu oraz identyfikator stacji BTS.</li>
+                            </ul>
+
+                            <h4>6.3. Retencja obowiązkowa vs biznesowa</h4>
+                            <p>Oprócz retencji wymaganej prawem, operatorzy mogą przechowywać dane dłużej do celów analitycznych, billingowych czy marketingowych.</p>
+
+                            <h4>6.4. Dane historyczne a rekonstrukcja zachowań</h4>
+                            <p>Dostęp do rocznej historii połączeń pozwala na niemal idealną rekonstrukcję nawyków, znajomości i stylu życia użytkownika.</p>
+
+                            <h2 id="section-7">7. Prawo i obowiązki ISP</h2>
+                            <h4>7.1. Prawo telekomunikacyjne</h4>
+                            <p>Operatorzy są zobowiązani do zapewnienia tajemnicy telekomunikacyjnej, ale z licznymi wyjątkami na rzecz organów państwa.</p>
+
+                            <h4>7.2. RODO i ochrona danych</h4>
+                            <p>RODO chroni dane osobowe, ale dane transmisyjne (IP) są często traktowane w specyficzny sposób, a zgody marketingowe w umowach bywają sformułowane bardzo szeroko.</p>
+
+                            <h4>7.3. Dostęp służb do danych</h4>
+                            <div class="info-box warning">
+                                <i class="fas fa-balance-scale"></i>
+                                <div>
+                                    <strong>Uwaga:</strong> Dane z retencji muszą być udostępniane na żądanie uprawnionych służb (Policja, ABW, KAS, Straż Graniczna).
+                                </div>
+                            </div>
+                            
+                            <h4>7.4. Nakazy sądowe i ich zakres</h4>
+                            <p>W sprawach karnych służby mogą uzyskać dostęp do danych billingowych bez uprzedniej zgody sądu (tzw. kontrola następcza).</p>
+
+                            <h4>7.5. Granice legalnej inwigilacji</h4>
+                            <p>Teoretycznie inwigilacja powinna dotyczyć tylko poważnych przestępstw, w praktyce katalog uprawnionych służb i powodów jest bardzo szeroki.</p>
+
+                            <h2 id="section-8">8. Sprzedaż i udostępnianie danych</h2>
+                            <h4>8.1. Dane jako produkt</h4>
+                            <p>Wielu dostawców internetu traktuje dane o ruchu sieciowym jako dodatkowe źródło dochodu.</p>
+
+                            <h4>8.2. Agregacja i anonimizacja – fakty i mity</h4>
+                            <p>Choć RODO wymusza anonimizację, w praktyce dane te są często agregowane w sposób, który przy użyciu dodatkowych baz danych pozwala na reidentyfikację.</p>
+
+                            <h4>8.3. Partnerzy reklamowi i analityczni</h4>
+                            <p>Dane trafiają do brokerów danych, którzy tworzą profile konsumenckie (np. "osoba planująca kredyt", "rodzic małego dziecka").</p>
+
+                            <h4>8.4. Ryzyko deanonimizacji</h4>
+                            <p>Nawet "zanonimizowany" zbiór danych, zawierający historię lokalizacji czy odwiedzanych stron, jest często unikalny dla konkretnej osoby.</p>
+
+                            <h2 id="section-9">9. DPI – Deep Packet Inspection</h2>
+                            <h4>9.1. Czym jest DPI</h4>
+                            <p>DPI (Deep Packet Inspection) to technologia pozwalająca zaglądać głębiej w pakiety danych, analizując nie tylko nagłówki, ale i zawartość (jeśli nie jest szyfrowana) lub charakterystykę ruchu.</p>
+
+                            <h4>9.2. Legalne i nielegalne zastosowania</h4>
+                            <p>DPI służy do zarządzania ruchem (QoS), ale może być używane do cenzury lub inwigilacji.</p>
+
+                            <h4>9.3. DPI w praktyce operatorów</h4>
+                            <p>Dzięki DPI operator może np. rozpoznać, że używasz sieci BitTorrent (nawet przy szyfrowaniu) lub zidentyfikować, że oglądasz Netflixa.</p>
+
+                            <h4>9.4. Wpływ na prywatność i neutralność sieci</h4>
+                            <ul>
+                                <li>Możliwość blokowania lub spowalniania określonych typów usług narusza zasadę neutralności sieci.</li>
+                            </ul>
+
+                            <h2 id="section-10">10. Profil użytkownika tworzony przez ISP</h2>
+                            <h4>10.1. Zainteresowania i nawyki</h4>
+                            <p>Analiza odwiedzanych domen pozwala precyzyjnie określić hobby, plany zakupowe i sytuację życiową.</p>
+
+                            <h4>10.2. Godziny aktywności</h4>
+                            <p>Logi połączeń pokazują, kiedy śpisz, kiedy pracujesz i kiedy jesteś w domu.</p>
+
+                            <h4>10.3. Styl życia i rutyny</h4>
+                            <p>Regularne połączenia z serwerami siłowni, aplikacji randkowych czy serwisów streamingowych budują kompletny obraz stylu życia.</p>
+
+                            <h4>10.4. Wrażliwe korelacje danych</h4>
+                            <p>Korelacja danych (np. wizyty na stronach medycznych + lokalizacja w przychodni) ujawnia informacje wrażliwe, takie jak stan zdrowia.</p>
+
+                            <h2 id="section-11">11. Śledzenie przez Big Tech i AdTech</h2>
+                            <p>Podczas gdy ISP widzi "kopertę" (metadane), giganci tacy jak Google, Meta (Facebook) czy Amazon zaglądają do środka, analizując Twoje zachowania, kliknięcia i intencje. To tzw. <strong>Kapitalizm Inwigilacji</strong>.</p>
+
+                            <h4>11.1. Model biznesowy: Ty jesteś towarem</h4>
+                            <p>Darmowe usługi nie są darmowe. Płacisz za nie swoją uwagą i danymi. Profile tworzone przez Big Tech są znacznie bardziej szczegółowe niż te u ISP, obejmując psychometrię i predykcję zachowań.</p>
+
+                            <h4>11.2. Aukcje RTB (Real-Time Bidding)</h4>
+                            <p>W momencie wejścia na stronę, w ułamku sekundy odbywa się aukcja o Twoją uwagę. Twoje dane (wiek, lokalizacja, historia) są wysyłane do setek reklamodawców. To gigantyczny wyciek danych przy każdym kliknięciu.</p>
+
+                            <h4>11.3. Piksele śledzące i "Like" buttony</h4>
+                            <p>Nie musisz mieć konta na Facebooku, by ten Cię śledził. Przyciski "Lubię to" i niewidoczne piksele śledzące na milionach stron raportują Twoją wizytę do centrali w Menlo Park.</p>
+
+                            <h2 id="section-12">12. Telemetria systemowa i aplikacje</h2>
+                            <p>Poniżej warstwy sieciowej jest Twój sprzęt. Systemy operacyjne i aplikacje mają najwyższe uprawnienia i często wysyłają raporty o Twojej aktywności "do domu".</p>
+
+                            <h4>12.1. Windows i Advertising ID</h4>
+                            <p>Systemy Windows domyślnie generują unikalny identyfikator reklamowy, który pozwala łączyć Twoją aktywność w różnych aplikacjach w jeden profil.</p>
+
+                            <h4>12.2. Smartfon – szpieg w kieszeni</h4>
+                            <p>Android i iOS zbierają dane o lokalizacji, użyciu aplikacji i kontaktach. Często aplikacje (np. latarka czy kalkulator) żądają dostępu do danych, których nie potrzebują do działania.</p>
+
+                            <h2 id="section-13">13. Urządzenia domowe i IoT</h2>
+                            <h4>13.1. Smart home jako źródło danych</h4>
+                            <p>Urządzenia IoT (inteligentne żarówki, odkurzacze) często mają słabe zabezpieczenia i "dzwonią do domu" producenta, co widzi ISP.</p>
+
+                            <h4>13.2. Telewizory, asystenci głosowi, kamery</h4>
+                            <p>Smart TV często przesyłają informacje o oglądanych treściach. Asystenci głosowi generują specyficzny ruch sieciowy.</p>
+
+                            <h4>13.3. Ruch maszynowy vs ludzki</h4>
+                            <p>ISP łatwo odróżnia automatyczne aktualizacje sprzętu od aktywnego korzystania z sieci przez domowników.</p>
+
+                            <h4>13.4. Trwała identyfikacja gospodarstwa domowego</h4>
+                            <ul class="checklist">
+                                <li><i class="fas fa-bed checklist-icon"></i> Kiedy domownicy śpią (brak aktywności smartfonów/TV).</li>
+                                <li><i class="fas fa-door-open checklist-icon"></i> Kiedy nikogo nie ma w domu.</li>
+                            </ul>
+
+                            <div class="line-chart-box">
+                                <h4>Wzrost liczby trackerów na popularnych stronach (2015-2025)</h4>
+                                <svg class="line-chart-svg" viewBox="0 0 500 250" preserveAspectRatio="xMidYMid meet">
+                                    <defs>
+                                        <linearGradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+                                            <stop offset="0%" stop-color="var(--primary-color)" stop-opacity="0.4"/>
+                                            <stop offset="100%" stop-color="var(--primary-color)" stop-opacity="0"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <!-- Grid lines -->
+                                    <g class="line-chart-grid">
+                                        <line x1="50" y1="200" x2="450" y2="200" stroke="#333" stroke-width="1"></line>
+                                        <line x1="50" y1="150" x2="450" y2="150"></line>
+                                        <line x1="50" y1="100" x2="450" y2="100"></line>
+                                        <line x1="50" y1="50" x2="450" y2="50"></line>
+                                    </g>
+                                    <!-- Area under curve -->
+                                    <path class="line-chart-area" d="M50,180 L150,140 L250,100 L350,60 L450,30 L450,200 L50,200 Z" />
+                                    <!-- Main Line -->
+                                    <path class="line-chart-path" d="M50,180 L150,140 L250,100 L350,60 L450,30" fill="none" />
+                                    <!-- Points -->
+                                    <circle class="line-chart-point" cx="50" cy="180"><title>2015: ~5 trackerów</title></circle>
+                                    <circle class="line-chart-point" cx="150" cy="140"><title>2018: ~12 trackerów</title></circle>
+                                    <circle class="line-chart-point" cx="250" cy="100"><title>2020: ~25 trackerów</title></circle>
+                                    <circle class="line-chart-point" cx="350" cy="60"><title>2023: ~40 trackerów</title></circle>
+                                    <circle class="line-chart-point" cx="450" cy="30"><title>2025: ~60+ trackerów</title></circle>
+                                    <!-- X Axis Labels -->
+                                    <text class="line-chart-label" x="50" y="230">2015</text>
+                                    <text class="line-chart-label" x="150" y="230">2018</text>
+                                    <text class="line-chart-label" x="250" y="230">2020</text>
+                                    <text class="line-chart-label" x="350" y="230">2023</text>
+                                    <text class="line-chart-label" x="450" y="230">2025</text>
+                                    <!-- Values (animated) -->
+                                    <text class="line-chart-value" x="50" y="170">5</text>
+                                    <text class="line-chart-value" x="150" y="130">12</text>
+                                    <text class="line-chart-value" x="250" y="90">25</text>
+                                    <text class="line-chart-value" x="350" y="50">40</text>
+                                    <text class="line-chart-value" x="450" y="20">60+</text>
+                                </svg>
+                            </div>
+
+                            <h2 id="section-14">14. VPN, DNS, Tor – co faktycznie ukrywają</h2>
+                            <h4>14.1. VPN – co widzi ISP po użyciu VPN</h4>
+                            <p>VPN tworzy szyfrowany tunel. ISP widzi tylko bełkotliwy ruch do jednego serwera (VPN) oraz jego wolumen. Nie widzi stron docelowych.</p>
+
+                            <h4>14.2. Zaufanie do dostawcy VPN</h4>
+                            <p>Używając VPN, przesuwasz zaufanie z ISP na dostawcę VPN. On teraz widzi cały Twój ruch.</p>
+
+                            <h4>14.3. DNS over HTTPS / TLS</h4>
+                            <p>Szyfruje zapytania DNS w przeglądarce. ISP widzi IP docelowe, ale nie widzi zapytań o nazwy domen w formie tekstowej.</p>
+
+                            <h4>14.4. Tor i sieci anonimizujące</h4>
+                            <p>Tor zapewnia najwyższy poziom anonimowości, trasując ruch przez 3 losowe węzły, co uniemożliwia ISP poznanie celu podróży pakietu.</p>
+
+                            <h4>14.5. Fałszywe poczucie bezpieczeństwa</h4>
+                            <p>Wielu użytkowników wpada w pułapkę myślenia, że jedno narzędzie rozwiązuje wszystkie problemy. Oto zestawienie skutecznych i nieskutecznych metod.</p>
+
+                            <div class="info-box warning">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <div>
+                                    <strong>Uwaga na wycieki (Leaks):</strong> Nawet z włączonym VPN, Twoja przeglądarka może zdradzić prawdziwe IP przez <strong>WebRTC</strong> (używane do rozmów wideo) lub wysyłać zapytania DNS poza tunelem VPN (DNS Leak). Zawsze sprawdzaj szczelność swojego połączenia.
+                                </div>
+                            </div>
+
+                            <div class="pros-cons-container">
+                                <div class="pros-box">
+                                    <h3><i class="fas fa-shield-alt"></i> Skuteczne metody</h3>
+                                    <ul>
+                                        <li><strong>DNS-over-HTTPS (DoH):</strong> Ukrywa zapytania o domeny.</li>
+                                        <li><strong>VPN:</strong> Ukrywa ruch przed ISP.</li>
+                                        <li><strong>Tor:</strong> Anonimizuje źródło i cel.</li>
+                                    </ul>
+                                </div>
+                                <div class="cons-box">
+                                    <h3><i class="fas fa-times-circle"></i> Co NIE działa?</h3>
+                                    <ul>
+                                        <li><strong>Tryb Incognito:</strong> Nie ukrywa nic przed ISP. Czyści tylko historię na Twoim komputerze.</li>
+                                        <li><strong>Zmiana DNS bez szyfrowania:</strong> ISP nadal widzi zapytania w postaci jawnej.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h2 id="section-15">15. Urządzenia mobilne i sieci komórkowe</h2>
+                            <h4>15.1. Dane lokalizacyjne BTS</h4>
+                            <p>Operator sieci komórkowej (MNO) posiada dane, których nie ma dostawca stacjonarny. Dzięki logowaniu telefonu do stacji bazowych (BTS), operator może triangulować Twoją pozycję.</p>
+
+                            <h4>15.2. IMSI, IMEI i identyfikatory sieciowe</h4>
+                            <p>Każde urządzenie mobilne jest unikalnie identyfikowane przez numery IMEI oraz IMSI (karta SIM), co pozwala na trwałe śledzenie użytkownika.</p>
+
+                            <h4>15.3. Różnice między ISP stacjonarnym a mobilnym</h4>
+                            <p>W sieci mobilnej trudniej o anonimowość, ponieważ urządzenie jest ściśle powiązane z tożsamością właściciela karty SIM.</p>
+
+                            <h4>15.4. Śledzenie pasywne</h4>
+                            <p>Nawet gdy nie korzystasz z internetu, telefon komunikuje się z siecią, zdradzając Twoją lokalizację.</p>
+
+                            <h2 id="section-16">16. Ataki i wycieki danych u ISP</h2>
+                            <h4>16.1. Ryzyko naruszeń bezpieczeństwa</h4>
+                            <p>Bazy danych ISP, zawierające logi Twojej aktywności z 12 miesięcy, są łakomym kąskiem dla hakerów.</p>
+
+                            <h4>16.2. Pracownik jako wektor zagrożenia</h4>
+                            <p>Historia Twoich połączeń może wyciec przez nieuczciwego pracownika operatora, który ma dostęp do systemów billingowych.</p>
+
+                            <h4>16.3. Konsekwencje wycieków</h4>
+                            <p>Wyciek takich danych może prowadzić do szantażu, kradzieży tożsamości lub publicznego kompromitowania.</p>
+
+                            <h4>16.4. Odpowiedzialność operatora</h4>
+                            <p>Operatorzy ponoszą odpowiedzialność prawną za zabezpieczenie danych, ale kary często są nieproporcjonalnie niskie do szkód.</p>
+
+                            <h2 id="section-17">17. Prywatność a wygoda</h2>
+                            <h4>17.1. Personalizacja vs inwigilacja</h4>
+                            <p>Oddajemy prywatność w zamian za wygodę i personalizację usług, często nieświadomie.</p>
+
+                            <h4>17.2. „Jeśli nie masz nic do ukrycia” – fałszywy argument</h4>
+                            <p>Prywatność nie służy do ukrywania przestępstw, ale do ochrony naszej intymności. Każdy ma coś, czym nie chce dzielić się z całym światem.</p>
+
+                            <h4>17.3. Koszt realnej prywatności</h4>
+                            <p>Ochrona prywatności wymaga wysiłku, pewnej wiedzy technicznej i czasem rezygnacji z niektórych udogodnień.</p>
+
+                            <h2 id="section-18">18. Jak ograniczyć wiedzę ISP o Tobie</h2>
+                            <h4>18.1. Minimalne kroki (DNS, HTTPS, aktualizacje)</h4>
+                            <ul class="checklist">
+                                <li><i class="fas fa-check-circle checklist-icon"></i> Włącz DNS-over-HTTPS w przeglądarce.</li>
+                                <li><i class="fas fa-check-circle checklist-icon"></i> Używaj zaufanego VPN (płatnego, nie darmowego).</li>
+                                <li><i class="fas fa-check-circle checklist-icon"></i> Regularnie aktualizuj oprogramowanie routera.</li>
+                            </ul>
+                            
+                            <h4>18.2. Architektura prywatności w domu</h4>
+                            <p>Warto rozważyć użycie routera z oprogramowaniem OpenWRT i skonfigurowanym VPN na poziomie całej sieci domowej.</p>
+
+                            <h4>18.3. Segmentacja sieci</h4>
+                            <p>Oddziel urządzenia IoT od głównej sieci, w której przechowujesz wrażliwe dane (np. sieć gościnna dla odkurzacza).</p>
+
+                            <h4>18.4. Świadome korzystanie z usług</h4>
+                            <p>Wybieraj usługi, które szanują prywatność (np. Signal zamiast Messengera, ProtonMail zamiast Gmaila).</p>
+
+                            <h4 id="tools">18.5. Narzędzia do weryfikacji (Sprawdź sam)</h4>
+                            <p>Nie wierz na słowo – sprawdź, co widać z Twojego komputera. Oto zestaw bezpiecznych narzędzi do audytu własnego łącza:</p>
+
+                            <div class="resource-links-grid">
+                                <a href="https://ipleak.net/" target="_blank" class="resource-card purple">
+                                    <h4><i class="fas fa-network-wired"></i> IPLeak.net</h4>
+                                    <p>Kompleksowy test sprawdzający adres IP, wycieki DNS, WebRTC oraz geolokalizację widoczną dla stron.</p>
+                                    <div class="resource-link-box">ipleak.net</div>
+                                </a>
+                                
+                                <a href="https://coveryourtracks.eff.org/" target="_blank" class="resource-card red">
+                                    <h4><i class="fas fa-fingerprint"></i> Cover Your Tracks</h4>
+                                    <p>Narzędzie od EFF sprawdzające unikalność Twojej przeglądarki (Fingerprinting). Zobacz, jak bardzo wyróżniasz się w tłumie.</p>
+                                    <div class="resource-link-box">coveryourtracks.eff.org</div>
+                                </a>
+
+                                <a href="https://dnsleaktest.com/" target="_blank" class="resource-card blue">
+                                    <h4><i class="fas fa-server"></i> DNS Leak Test</h4>
+                                    <p>Proste narzędzie dedykowane do sprawdzania, czy Twój VPN faktycznie ukrywa zapytania o domeny.</p>
+                                    <div class="resource-link-box">dnsleaktest.com</div>
+                                </a>
+                            </div>
+
+                            <h2 id="section-19">19. Granice techniczne anonimowości</h2>
+                            <h4>19.1. Korelacja danych</h4>
+                            <p>Nawet używając VPN, analiza czasu i rozmiaru pakietów (Traffic Analysis) może pozwolić na powiązanie ruchu wchodzącego i wychodzącego.</p>
+
+                            <h4>19.2. Fingerprinting sieciowy</h4>
+                            <p>Unikalny odcisk przeglądarki (czcionki, rozdzielczość, wersja) pozwala śledzić użytkownika niezależnie od adresu IP.</p>
+
+                            <h4>19.3. Zachowanie użytkownika jako identyfikator</h4>
+                            <p>Sposób, w jaki piszesz na klawiaturze, poruszasz myszką czy korzystasz z aplikacji, może być unikalną sygnaturą biometryczną.</p>
+
+                            <h4>19.4. Dlaczego 100% anonimowości nie istnieje</h4>
+                            <p>W cyfrowym świecie zawsze pozostaje jakiś ślad. Celem jest maksymalne utrudnienie identyfikacji, a nie jej całkowite uniemożliwienie.</p>
+
+                            <h2 id="section-20">20. Przyszłość prywatności w internecie</h2>
+                            <h4>20.1. Postępujące szyfrowanie</h4>
+                            <p>Nowe standardy, takie jak <strong>ECH (Encrypted Client Hello)</strong>, mają na celu zaszyfrowanie ostatniego elementu widocznego dla ISP – nazwy domeny (SNI).</p>
+
+                            <h4>20.2. Rosnące wymagania regulacyjne</h4>
+                            <p>Przepisy takie jak ePrivacy czy kolejne dyrektywy UE będą wymuszać większą przejrzystość operatorów.</p>
+
+                            <h4>20.3. Centralizacja vs decentralizacja</h4>
+                            <p>Walka toczy się między centralizacją internetu (wielkie korporacje) a powrotem do idei sieci rozproszonej (Fediverse).</p>
+
+                            <h4>20.4. Nowe formy nadzoru</h4>
+                            <p>Rozwój AI pozwala na coraz skuteczniejszą analizę zaszyfrowanego ruchu w czasie rzeczywistym.</p>
+
+                            <h2 id="section-21">21. Społeczne konsekwencje braku prywatności</h2>
+                            <h4>21.1. Efekt mrożący</h4>
+                            <p>Gdy wiesz, że jesteś obserwowany, zmieniasz swoje zachowanie. Unikasz kontrowersyjnych tematów, co ogranicza wolność słowa.</p>
+
+                            <h4>21.2. Autocenzura</h4>
+                            <p>Społeczeństwo pod nadzorem staje się konformistyczne i mniej innowacyjne.</p>
+
+                            <h4>21.3. Zmiana relacji obywatel–państwo</h4>
+                            <p>Brak prywatności prowadzi do asymetrii władzy i może być prostą drogą do systemów oceny obywateli.</p>
+
+                            <div class="timeline-container">
+                                <h3 class="timeline-title">Krótka historia prywatności (i jej utraty)</h3>
+                                <div class="timeline">
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                            <span class="timeline-date">2013</span>
+                                            <h4>Edward Snowden</h4>
+                                            <p>Ujawnienie programu PRISM pokazało skalę masowej inwigilacji przez rządy.</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                            <span class="timeline-date">2018</span>
+                                            <h4>RODO / GDPR</h4>
+                                            <p>Wejście w życie europejskich przepisów o ochronie danych. Początek ery "banerów cookie".</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                            <span class="timeline-date">2024</span>
+                                            <h4>Koniec 3rd Party Cookies</h4>
+                                            <p>Google Chrome zaczyna blokować ciasteczka stron trzecich, promując własne Privacy Sandbox.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h2 id="section-22">22. Podsumowanie</h2>
+                            <h4>22.1. Co realnie wie Twój dostawca internetu</h4>
+                            <p>ISP wie, gdzie bywasz w sieci, kiedy i jak długo. Nie zna treści Twoich szyfrowanych wiadomości, ale zna kontekst Twojego życia.</p>
+
+                            <h4>22.2. Co możesz, a czego nie kontrolujesz</h4>
+                            <p>Możesz szyfrować ruch (VPN, DoH), ale nie masz wpływu na to, co ISP robi z metadanymi, które musi zbierać zgodnie z prawem.</p>
+
+                            <h4>22.3. Świadoma prywatność zamiast iluzji anonimowości</h4>
+                            <p>Prywatność w sieci to proces. Nie da się być w 100% anonimowym, ale można drastycznie utrudnić profilowanie swojej osoby. Pamiętaj: Twoje dane to Twoja własność.</p>
+
+                            <!-- Karta Pobierania -->
+                            <div class="download-card">
+                                <div class="download-icon"><i class="fas fa-file-shield"></i></div>
+                                <div class="download-info">
+                                    <h4>Checklista Prywatności 2025</h4>
+                                    <p>Lista kroków do zabezpieczenia cyfrowej tożsamości. PDF, 1.5 MB</p>
+                                </div>
+                                <a href="#" class="download-btn"><i class="fas fa-download"></i> Pobierz</a>
+                            </div>
+
+                            <!-- Słowniczek pojęć -->
+                            <div class="glossary-box">
+                                <h3><i class="fas fa-book"></i> Słowniczek pojęć</h3>
+                                <div class="glossary-item">
+                                    <span class="glossary-term">VPN (Virtual Private Network)</span>
+                                    <p class="glossary-def">Wirtualna sieć prywatna. Tworzy szyfrowany tunel między Twoim urządzeniem a serwerem VPN, ukrywając Twój prawdziwy adres IP i chroni dane przed podglądem przez dostawcę internetu.</p>
+                                </div>
+                                <div class="glossary-item">
+                                    <span class="glossary-term">Tor (The Onion Router)</span>
+                                    <p class="glossary-def">Sieć anonimizująca, która przesyła ruch przez serię losowych węzłów (serwerów) na świecie, wielokrotnie go szyfrując. Zapewnia bardzo wysoki poziom anonimowości kosztem prędkości.</p>
+                                </div>
+                                <div class="glossary-item">
+                                    <span class="glossary-term">DNS (Domain Name System)</span>
+                                    <p class="glossary-def">"Książka telefoniczna" internetu, tłumacząca nazwy domen (np. google.com) na adresy IP. Tradycyjne zapytania DNS są jawne, co pozwala ISP śledzić odwiedzane strony.</p>
+                                </div>
+                                <div class="glossary-item">
+                                    <span class="glossary-term">Metadata (Metadane)</span>
+                                    <p class="glossary-def">"Dane o danych". Informacje opisujące komunikację (kto, z kim, kiedy, jak długo), ale nie zawierające jej treści. Są kluczowe dla inwigilacji masowej i profilowania.</p>
+                                </div>
+                            </div>
+
+                            <!-- Sekcja Przypisy -->
+                            <div class="references-box">
+                                <h3><i class="fas fa-bookmark"></i> Przypisy i źródła</h3>
+                                <ol>
+                                    <li>Ustawa z dnia 16 lipca 2004 r. Prawo telekomunikacyjne (Dz.U. 2004 nr 171 poz. 1800) – art. 180a dot. retencji danych.</li>
+                                    <li>Shoshana Zuboff, <em>The Age of Surveillance Capitalism</em>, PublicAffairs, 2019.</li>
+                                    <li>Electronic Frontier Foundation, <a href="https://coveryourtracks.eff.org/" target="_blank">Cover Your Tracks</a> – analiza fingerprintingu przeglądarek.</li>
+                                    <li>Rozporządzenie Parlamentu Europejskiego i Rady (UE) 2016/679 (RODO).</li>
+                                </ol>
+                            </div>
+
+                            <!-- SEKCJA FAQ -->
+                            <section class="faq-section">
+                                <h3><i class="fas fa-question-circle"></i> FAQ</h3>
+                                <details>
+                                    <summary>Czy tryb Incognito zapewnia anonimowość?</summary>
+                                    <p>Nie. Tryb Incognito sprawia tylko, że historia nie zapisuje się na Twoim komputerze. Strony internetowe, Twój ISP i administrator sieci w pracy nadal widzą, co robisz.</p>
+                                </details>
+                                <details>
+                                    <summary>Czy darmowy VPN jest bezpieczny?</summary>
+                                    <p>Zazwyczaj nie. Jeśli nie płacisz za produkt, jesteś produktem. Darmowe VPN-y często sprzedają dane o Twoim ruchu reklamodawcom.</p>
+                                </details>
+                                <details>
+                                    <summary>Czy HTTPS ukrywa odwiedzane strony przed dostawcą?</summary>
+                                    <p>Nie całkowicie. HTTPS szyfruje treść strony, ale nazwa domeny (np. <i>przychodnia.pl</i>) jest widoczna dla ISP podczas nawiązywania połączenia (w nagłówku SNI) oraz w zapytaniach DNS, jeśli nie są szyfrowane.</p>
+                                </details>
+                                <details>
+                                    <summary>Czy dostawca widzi moje wiadomości na Messengerze/WhatsAppie?</summary>
+                                    <p>Nie. Większość nowoczesnych komunikatorów szyfruje treść wiadomości (często End-to-End). Dostawca widzi jedynie, że łączysz się z serwerami danej aplikacji i ile danych przesyłasz, ale nie ma wglądu w treść rozmów.</p>
+                                </details>
+                                <details>
+                                    <summary>Czy zmiana DNS na Google (8.8.8.8) zapewnia prywatność?</summary>
+                                    <p>To półśrodek. Ukrywa Twoje zapytania przed lokalnym dostawcą internetu (ISP), ale przekazuje je do Google. Aby zapytania były całkowicie niewidoczne dla pośredników, należy włączyć DNS-over-HTTPS (DoH) w przeglądarce.</p>
+                                </details>
+                            </section>
+
+                            <!-- Tagi w stopce posta -->
+                            <div class="post-footer-tags">
+                                <span>Tagi:</span>
+                                <a href="#" class="tag">Prywatność</a>
+                                <a href="#" class="tag">Bezpieczeństwo</a>
+                                <a href="#" class="tag">Cookies</a>
+                                <a href="#" class="tag">VPN</a>
+                            </div>
+
+                        </section>
+
+                        <!-- NAWIGACJA MIĘDZY POSTAMI -->
+                        <nav class="post-navigation">
+                            <a href="movie-free.html" class="post-nav-link prev-post">
+                                <span class="nav-subtitle"><i class="fas fa-arrow-left"></i> Poprzedni wpis</span>
+                                <span class="nav-title">Strony z Filmami: Za Darmo to Uczciwa Cena</span>
+                            </a>
+                            <a href="cyberpunk-future.html" class="post-nav-link next-post">
+                                <span class="nav-subtitle">Następny wpis <i class="fas fa-arrow-right"></i></span>
+                                <span class="nav-title">Cyberpunk: Czy Dożyjemy Czasów Cyborgów?</span>
+                            </a>
+                        </nav>
+
+                        <!-- NEWSLETTER -->
+                        <section class="newsletter-box">
+                            <div class="newsletter-content">
+                                <h3>Bądź na bieżąco!</h3>
+                                <p>Dołącz do newslettera i otrzymuj porady o bezpieczeństwie.</p>
+                                <form class="newsletter-form">
+                                    <input type="email" placeholder="Twój adres e-mail" required>
+                                    <button type="submit" class="btn">Zapisz się</button>
+                                </form>
+                            </div>
+                        </section>
+
+                        <!-- SEKCJA O AUTORZE -->
+                        <section class="author-box">
+                            <div class="author-avatar">
+                                <img src="../img/avatar.png" alt="Avatar autora">
+                            </div>
+                            <div class="author-content">
+                                <h3 class="author-name">Kamil [Nazwisko]</h3>
+                                <p class="author-bio">Pasjonat technologii, student informatyki. Na co dzień zajmuję się cyberbezpieczeństwem i web developmentem.</p>
+                                <div class="author-socials">
+                                    <a href="https://github.com/fireeagle050" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                    <a href="https://www.linkedin.com/in/kamil-dziedzic-6aa0ba30b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="../o-mnie.html" class="author-more-btn">Więcej o mnie</a>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- KOMENTARZE -->
+                        <section class="comments-section">
+                            <h3>Komentarze (0)</h3>
+                            <form class="comment-form">
+                                <textarea placeholder="Zostaw komentarz..." rows="4"></textarea>
+                                <button type="submit" class="btn-secondary">Opublikuj</button>
+                            </form>
+                        </section>
+                    </div>
+
+                    <!-- SIDEBAR (SPIS TREŚCI) -->
+                    <aside class="post-sidebar">
+                        <div class="toc-widget">
+                            <h3>Spis treści</h3>
+                            <nav class="toc-nav">
+                                <ul>
+                                    <li><a href="#section-1">1. Wprowadzenie</a></li>
+                                    <li><a href="#section-2">2. Kim jest ISP?</a></li>
+                                    <li><a href="#section-3">3. Dane techniczne</a></li>
+                                    <li><a href="#section-4">4. Metadane</a></li>
+                                    <li><a href="#section-5">5. Treść danych</a></li>
+                                    <li><a href="#section-6">6. Logowanie i retencja</a></li>
+                                    <li><a href="#section-7">7. Prawo i obowiązki</a></li>
+                                    <li><a href="#section-8">8. Sprzedaż danych</a></li>
+                                    <li><a href="#section-9">9. DPI</a></li>
+                                    <li><a href="#section-10">10. Profilowanie</a></li>
+                                    <li><a href="#section-11">11. Big Tech</a></li>
+                                    <li><a href="#section-12">12. Telemetria</a></li>
+                                    <li><a href="#section-13">13. IoT i Smart Home</a></li>
+                                    <li><a href="#section-14">14. VPN, DNS, Tor</a></li>
+                                    <li><a href="#section-15">15. Mobile</a></li>
+                                    <li><a href="#section-16">16. Ataki i wycieki</a></li>
+                                    <li><a href="#section-17">17. Prywatność a wygoda</a></li>
+                                    <li><a href="#section-18">18. Jak się bronić?</a></li>
+                                    <li><a href="#section-19">19. Granice anonimowości</a></li>
+                                    <li><a href="#section-20">20. Przyszłość</a></li>
+                                    <li><a href="#section-21">21. Konsekwencje</a></li>
+                                    <li><a href="#section-22">22. Podsumowanie</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </aside>
+
+                </div> <!-- Koniec Grid -->
+            </article>
+
+            <!-- SEKCJA POWIĄZANYCH ARTYKUŁÓW -->
+            <section class="related-posts">
+                <h2 class="related-posts-title">Przeczytaj również</h2>
+                <div class="related-posts-grid">
+                    <a href="movie-free.html" class="related-post-card">
+                        <div class="related-post-image">
+                            <img src="../img/movies.jpg" alt="Miniatura posta o darmowych filmach">
+                        </div>
+                        <div class="related-post-content">
+                            <span class="related-post-category">Refleksje</span>
+                            <h3>Strony z Filmami: Za Darmo to Uczciwa Cena</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="related-post-card">
+                        <div class="related-post-image">
+                            <img src="../img/cybersec.jpg" alt="Miniatura posta o cyberbezpieczeństwie">
+                        </div>
+                        <div class="related-post-content">
+                            <span class="related-post-category">Cyberbezpieczeństwo</span>
+                            <h3>Cyberbezpieczeństwo: Wilk w owczej skórze</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="related-post-card">
+                        <div class="related-post-image">
+                            <img src="../img/virus.jpg" alt="Miniatura posta o rodzajach ataków">
+                        </div>
+                        <div class="related-post-content">
+                            <span class="related-post-category">Cyberbezpieczeństwo</span>
+                            <h3>Hacking: Rodzaje ataków</h3>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Kamil [Nazwisko]. Wszelkie prawa zastrzeżone.</p>
+            <div class="footer-socials">
+                <a href="https://github.com/fireeagle050" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/kamil-dziedzic-6aa0ba30b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js" defer></script>
+    <script src="../js/blog.js" defer></script>
+    <!-- Skrypty Prism.js do podświetlania składni -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js" defer></script>
+</body>
+</html>

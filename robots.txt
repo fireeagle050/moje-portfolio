@@ -1,0 +1,11 @@
+# Określ zasady dla wszystkich robotów internetowych
+User-agent: *
+
+# Zezwól na indeksowanie całej zawartości strony
+Allow: /
+
+# Zablokuj dostęp do folderów z zasobami, które nie powinny być indeksowane (np. dokumenty CV)
+Disallow: /assets/
+
+# Wskaż poprawną lokalizację mapy strony
+Sitemap: https://fireeagle050.github.io/kamil-portfolio/sitemap.xml

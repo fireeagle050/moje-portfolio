@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Project Genesis - Portfolio Kamila, technika informatyka i studenta. Odkryj moje projekty z zakresu web developmentu, designu i sztucznej inteligencji.">
+    <title>Project Genesis | Portfolio Kamila</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+    <!-- Biblioteka do animacji przy przewijaniu (AOS) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Ikony (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+</head>
+<body class="body-index">
+
+    <!-- Dynamiczne tło będzie tutaj -->
+    <div id="particles-js"></div>
+
+    <header>
+        <nav>
+            <div class="nav-left-items">
+                <a href="index.html" class="nav-logo"><img src="img/logo.png" alt="Logo Kamila - Strona główna"></a>
+                <!-- PRZEŁĄCZNIK MOTYWU -->
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="theme-checkbox">
+                        <input type="checkbox" id="theme-checkbox" />
+                        <div class="slider round"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></div>
+                    </label>
+                </div>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="o-mnie.html">O mnie <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="o-mnie.html#o-mnie">O mnie</a></li>
+                        <li><a href="o-mnie.html#doswiadczenie">Doświadczenie</a></li>
+                        <li><a href="o-mnie.html#edukacja">Edukacja</a></li>
+                        <li><a href="o-mnie.html#osiagniecia">Osiągnięcia</a></li>
+                        <li><a href="o-mnie.html#projekty">Projekty</a></li>
+                        <li><a href="o-mnie.html#technologie">Technologie</a></li>
+                    </ul>
+                </li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="materialy.html">Materiały</a></li>
+                <li><a href="kontakt.html" class="nav-contact-btn">Kontakt</a></li>
+            </ul>
+            <button class="mobile-nav-toggle" aria-label="Otwórz menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SEKCJA HERO - PIERWSZE WRAŻENIE -->
+        <section id="hero">
+            <div class="hero-content" data-aos="fade-in">
+                <h1 class="hero-headline">Cześć, jestem Kamil</h1>
+                <p class="hero-subheadline">Pasjonat tworzenia nowoczesnych aplikacji i rozwiązań AI.<br>Aktualnie jestem <span id="typed-text"></span></p>
+                <div class="hero-cta-buttons">
+                    <a href="o-mnie.html#projekty" class="btn">Zobacz moje projekty</a>
+                    <a href="kontakt.html" class="btn-secondary">Porozmawiajmy o współpracy</a>
+                </div>
+                <!-- Nowe, interaktywne bloki informacyjne -->
+                <div class="hero-info-blocks">
+                    <div class="info-block info-block-availability" data-aos="fade-up" data-aos-delay="100">
+                        <span class="availability-dot" aria-hidden="true"></span>
+                        <i class="fas fa-calendar-check" aria-hidden="true"></i>
+                        <p><strong>2 dni w tygodniu i weekendy</strong> na pełne zaangażowanie w Twój projekt.</p>
+                    </div>
+                    <div class="info-block" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-rocket" aria-hidden="true"></i>
+                        <p>Zainwestuj w <strong>potencjał i czystą kartę</strong>, nie tylko w doświadczenie.</p>
+                    </div>
+                </div>
+                <div class="hero-socials">
+                    <a href="https://github.com/fireeagle050" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/kamil-dziedzic-6aa0ba30b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKCJA "O MNIE" (SKRÓT) -->
+        <section id="about-summary" class="container" style="margin-top: 4rem; margin-bottom: 4rem;">
+            <div class="about-summary-grid">
+                <div class="about-summary-image" data-aos="fade-in-right">
+                    <img src="img/index_me.jpg" alt="Zdjęcie profilowe Kamila">
+                </div>
+                <div class="about-summary-content" data-aos="fade-in-left">
+                    <h2>Kim jestem?</h2>
+                    <p>Jestem technikiem informatykiem i studentem z pasją do tworzenia innowacyjnych rozwiązań. Moja droga w świecie IT to nieustanne poszukiwanie wiedzy, od web developmentu, przez projektowanie UI/UX, aż po fascynujący obszar sztucznej inteligencji. Wierzę, że technologia ma moc zmieniania świata na lepsze.</p>
+                    <a href="o-mnie.html" class="btn">Dowiedz się więcej</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKCJA "ZAINWESTUJ WE MNIE" -->
+        <section id="invest-in-me" class="container" style="margin-top: 4rem; margin-bottom: 4rem;">
+            <div class="invest-grid">
+                <div class="invest-content" data-aos="fade-right">
+                    <h2>Zainwestuj we mnie</h2>
+                    <p>Wybierając mnie, inwestujesz w coś więcej niż tylko umiejętności – inwestujesz w potencjał, ambicję i autentyczną pasję do tworzenia. Jestem jak start-up: pełen energii, zwinny i gotowy, by wnieść świeżą perspektywę do Twojego zespołu.</p>
+                    <p>Moja determinacja do nauki i adaptacji oznacza, że szybko przyswajam nowe technologie i wpasowuję się w dynamikę projektu, dążąc do generowania realnej wartości i wspierania wspólnych celów.</p>
+                    <a href="kontakt.html" class="btn">Nawiążmy współpracę</a>
+                </div>
+                <div class="invest-image-wrapper" data-aos="fade-left">
+                    <div class="invest-image">
+                        <!-- WAŻNE: Zastąp ten obraz swoim zdjęciem biznesowym w formacie 9:16 -->
+                        <img src="img/index_me2.jpg" alt="Biznesowe zdjęcie Kamila">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKCJA "DLACZEGO WARTO ZE MNĄ PRACOWAĆ?" -->
+        <section id="value-proposition" class="container" style="margin-top: 4rem; margin-bottom: 4rem;">
+            <h2 data-aos="fade-up">Co wnoszę do zespołu?</h2>
+            <div class="value-grid">
+                <div class="value-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="value-icon"><i class="fas fa-code" aria-hidden="true"></i></div>
+                    <h3>Nowoczesny Web Development</h3>
+                    <p>Buduję responsywne i wydajne aplikacje, wykorzystując technologie takie jak React i JavaScript, aby dostarczać użytkownikom najlepsze doświadczenia.</p>
+                </div>
+                <div class="value-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="value-icon"><i class="fas fa-brain" aria-hidden="true"></i></div>
+                    <h3>Świeże Spojrzenie na AI</h3>
+                    <p>Jako student i członek koła naukowego, jestem na bieżąco z nowymi trendami w AI, gotów wdrażać świeże i innowacyjne pomysły w praktyce.</p>
+                </div>
+                <div class="value-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="value-icon"><i class="fas fa-lightbulb" aria-hidden="true"></i></div>
+                    <h3>Ambicja i Rozwiązywanie Problemów</h3>
+                    <p>Łączę myślenie analityczne z kreatywnym podejściem, aby projektować intuicyjne interfejsy (UI/UX) i znajdować nieszablonowe rozwiązania dla złożonych wyzwań.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKCJA ZAUFANIA (SOCIAL PROOF) -->
+        <section id="trust-bar" class="container" style="margin-top: 4rem; margin-bottom: 4rem;">
+            <h3 class="trust-headline" data-aos="fade-up">Zaufali mi / Współpracowałem z</h3>
+            <div class="logos-container" data-aos="fade-up" data-aos-delay="100">
+                <!-- Zastąp # prawdziwymi linkami, a src logotypami. Użyj logotypów w odcieniach szarości dla spójności. -->
+                <a href="#" target="_blank" title="Nazwa Firmy/Uczelni 1"><img src="img/ubb.png" alt="Logo Uczelni"></a>
+                <a href="#" target="_blank" title="Nazwa Firmy/Uczelni 3"><img src="img/reset.png" alt="Logo Koła Naukowego"></a>
+                <a href="#" target="_blank" title="Nazwa Firmy/Uczelni 2"><img src="img/alfavox.png" alt="Logo Firmy Staż"></a>
+                <a href="#" target="_blank" title="Nazwa Firmy/Uczelni 4"><img src="img/ans.png" alt="Logo Projektu Open Source"></a>
+            </div>
+        </section>
+
+        <!-- SEKCJA OPINII (SOCIAL PROOF) -->
+        <section id="testimonials" class="container" style="margin-top: 4rem; margin-bottom: 4rem;">
+            <h2 data-aos="fade-up">Co mówią inni?</h2>
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                <img src="img/avatar.png" alt="Avatar Jana Kowalskiego" class="testimonial-avatar">
+                <div class="testimonial-content">
+                    <blockquote>
+                        "Kamil to osoba o ogromnym potencjale i chęci do nauki. Jego świeże spojrzenie i zaangażowanie w projekty w kole naukowym przyniosły wymierne rezultaty. To inwestycja, która z pewnością się zwróci."
+                    </blockquote>
+                    <cite>
+                        <strong>Jan Kowalski</strong>
+                        <span>Opiekun Koła Naukowego "Reset"</span>
+                    </cite>
+                </div>
+            </div>
+            <!-- Możesz dodać więcej opinii, używając np. slidera -->
+        </section>
+
+        <!-- SEKCJA WIZUALIZACJA WPŁYWU NA WYNIKI -->
+        <section id="impact-visualization" class="container" style="margin-top: 4rem; margin-bottom: 4rem;">
+            <h2 data-aos="fade-up">Mamy wspólny cel</h2>
+            <div class="stock-chart-container" data-aos="fade-up" data-aos-delay="100" aria-hidden="true">
+                <svg width="100%" height="250" viewBox="0 0 800 250" preserveAspectRatio="xMidYMid meet">
+                    <!-- Osie -->
+                    <line x1="30" y1="220" x2="770" y2="220" stroke="#444" stroke-width="1"/>
+                    <line x1="30" y1="220" x2="30" y2="30" stroke="#444" stroke-width="1"/>
+
+                    <!-- Szara linia "inni" -->
+                    <polyline points="50,160 150,150 250,165 350,140 450,155 550,130 650,140 750,120" fill="none" stroke="#4a4a4a" stroke-width="2" stroke-dasharray="4 2"/>
+
+                    <!-- Definicje gradientu i poświaty dla linii "ja" -->
+                    <defs>
+                        <linearGradient id="line-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="var(--primary-color)" />
+                            <stop offset="100%" stop-color="var(--secondary-color)" />
+                        </linearGradient>
+                        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <!-- Kolorowa linia "ja" -->
+                    <polyline points="50,160 150,130 250,110 350,80 450,50 550,70 650,40 750,50" fill="none" stroke="url(#line-gradient)" stroke-width="3" style="filter: url(#glow);"/>
+                </svg>
+            </div>
+            <div class="chart-legend" data-aos="fade-up">
+                <div class="legend-item">
+                    <span class="legend-line legend-line-others"></span>
+                    <span>Wkład innych</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-line legend-line-me"></span>
+                    <span>Z moim udziałem</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKCJA REZULTATÓW "JAK MOGĘ POMÓC?" -->
+        <section id="results" class="container" style="margin-top: 4rem; margin-bottom: 4rem;">
+            <h2 data-aos="fade-up">Jak mogę Ci pomóc?</h2>
+            <div class="results-grid">
+                <!-- Rezultat 1: Optymalizacja -->
+                <div class="result-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="result-icon"><i class="fas fa-rocket" aria-hidden="true"></i></div>
+                    <h3>Optymalizacja i Czysty Kod</h3>
+                    <div class="result-problem">
+                        <p><strong>Problem:</strong> Wolne aplikacje i "dług technologiczny" frustrują użytkowników i spowalniają rozwój.</p>
+                    </div>
+                    <div class="result-solution">
+                        <p><strong>Moje podejście:</strong> Skupiam się na pisaniu wydajnego kodu i dobrych praktykach. W jednym z projektów studenckich udało mi się zredukować czas ładowania komponentu o 15%, co pokazuje moje praktyczne podejście do optymalizacji.</p>
+                    </div>
+                    <!-- Poniższy wykres jest teraz wizualnym podsumowaniem powyższego -->
+                    <div class="result-graph" aria-hidden="true">
+                        <div class="scale"><span>MAX</span><span></span><span>MIN</span></div>
+                        <div class="bar-wrapper">
+                            <div class="bar bar-others" style="--height: 40%;"></div>
+                        </div>
+                        <div class="bar-wrapper">
+                            <div class="bar bar-me" style="--height: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="graph-labels">
+                        <span>Inni</span>
+                        <span>Ja</span>
+                    </div>
+                </div>
+                <!-- Rezultat 2: Automatyzacja -->
+                <div class="result-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="result-icon"><i class="fas fa-cogs" aria-hidden="true"></i></div>
+                    <h3>Automatyzacja i Oszczędność Czasu</h3>
+                    <div class="result-problem">
+                        <p><strong>Problem:</strong> Powtarzalne, manualne zadania zabierają cenny czas deweloperów, który mogliby poświęcić na rozwój produktu.</p>
+                    </div>
+                    <div class="result-solution">
+                        <p><strong>Moje podejście:</strong> Aktywnie poszukuję sposobów na automatyzację procesów. Moje <strong>2 dni pełnego zaangażowania</strong> w tygodniu mogę poświęcić na tworzenie skryptów i wdrażanie narzędzi, które oszczędzą godziny pracy całego zespołu.</p>
+                    </div>
+
+                    <div class="result-graph" aria-hidden="true">
+                        <div class="scale"><span>MAX</span><span></span><span>MIN</span></div>
+                        <div class="bar-wrapper">
+                            <div class="bar bar-others" style="--height: 30%;"></div>
+                        </div>
+                        <div class="bar-wrapper">
+                            <div class="bar bar-me" style="--height: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="graph-labels">
+                        <span>Inni</span>
+                        <span>Ja</span>
+                    </div>
+                </div>
+                <!-- Rezultat 3: Zaangażowanie -->
+                <div class="result-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="result-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+                    <h3>Świeże Spojrzenie na UI/UX</h3>
+                    <div class="result-problem">
+                        <p><strong>Problem:</strong> Stare, nieintuicyjne interfejsy mogą prowadzić do niskiego zaangażowania użytkowników i porzucania produktu.</p>
+                    </div>
+                    <div class="result-solution">
+                        <p><strong>Moje podejście:</strong> Jako osoba "z zewnątrz", wnoszę świeże spojrzenie na interfejsy. Projektuję z myślą o nowoczesnych standardach i komforcie użytkownika, aby tworzyć rozwiązania, które są nie tylko funkcjonalne, ale i przyjemne w obsłudze.</p>
+                    </div>
+                    <div class="result-graph" aria-hidden="true">
+                        <div class="scale"><span>MAX</span><span></span><span>MIN</span></div>
+                        <div class="bar-wrapper">
+                            <div class="bar bar-others" style="--height: 50%;"></div>
+                        </div>
+                        <div class="bar-wrapper">
+                            <div class="bar bar-me" style="--height: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="graph-labels">
+                        <span>Inni</span>
+                        <span>Ja</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKCJA CTA - MATERIAŁY -->
+        <section class="container" style="margin-top: 4rem; margin-bottom: 4rem;">
+            <div id="cta-materials" data-aos="fade-up">
+                <div class="cta-icon-wrapper">
+                    <i class="fas fa-gift" aria-hidden="true"></i>
+                </div>
+                <h2>Wiedza, którą się dzielę</h2>
+                <p>Odkryj moje darmowe materiały, notatki i podsumowania z zakresu IT. To świetny sposób, aby zobaczyć, jak podchodzę do nauki i rozwiązywania problemów.</p>
+                <a href="materialy.html" class="btn">Przejdź do materiałów</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Kamil [Nazwisko]. Wszelkie prawa zastrzeżone.</p>
+            <div class="footer-socials">
+                <a href="https://github.com/fireeagle050" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/kamil-dziedzic-6aa0ba30b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+            <p class="footer-quote">"Inwestycja w wiedzę zawsze przynosi największe odsetki." - Benjamin Franklin</p>
+        </div>
+    </footer>
+
+    <!-- Biblioteka do efektu cząsteczek (particles.js) -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script> 
+    <!-- Biblioteka do efektu pisania (Typed.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
+    <!-- Biblioteka do animacji przy przewijaniu (AOS) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <!-- Główny skrypt JS -->
+    <script src="js/main.js" defer></script>
+    <script src="js/index.js" defer></script>
+</body>
+</html>

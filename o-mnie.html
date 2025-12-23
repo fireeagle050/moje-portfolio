@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Poznaj moją historię, doświadczenie i umiejętności w ramach projektu Genesis. Kamil - technik informatyk i student, pasjonat AI, web developmentu i designu.">
+    <title>O mnie | Project Genesis</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/o-mnie.css">
+    <!-- Biblioteka do animacji przy przewijaniu (AOS) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Ikony (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+</head>
+<body class="body-omnie">
+
+    <!-- Dedykowane tło "Cyfrowe Ścieżki" -->
+    <canvas id="omnie-canvas"></canvas>
+
+    <header>
+        <nav>
+            <div class="nav-left-items">
+                <a href="index.html" class="nav-logo"><img src="img/logo.png" alt="Logo"></a>
+                <!-- PRZEŁĄCZNIK MOTYWU -->
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="theme-checkbox">
+                        <input type="checkbox" id="theme-checkbox" />
+                        <div class="slider round"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></div>
+                    </label>
+                </div>
+            </div>
+            <button class="mobile-nav-toggle" aria-label="Otwórz menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="o-mnie.html">O mnie <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="o-mnie.html#o-mnie">O mnie</a></li>
+                        <li><a href="o-mnie.html#doswiadczenie">Doświadczenie</a></li>
+                        <li><a href="o-mnie.html#edukacja">Edukacja</a></li>
+                        <li><a href="o-mnie.html#osiagniecia">Osiągnięcia</a></li>
+                        <li><a href="o-mnie.html#projekty">Projekty</a></li>
+                        <li><a href="o-mnie.html#technologie">Technologie</a></li>
+                    </ul>
+                </li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="materialy.html">Materiały</a></li>
+                <li><a href="kontakt.html" class="nav-contact-btn">Kontakt</a></li>
+        </nav>
+    </header>
+
+    <main>
+        <h1 style="display: none;">O mnie - Kamil</h1>
+        <!-- SEKCJA O MNIE -->
+        <section id="o-mnie" class="container" style="margin-bottom: 4rem;">
+            <div class="o-mnie-content">
+                <h2 data-aos="fade-left">O mnie</h2>
+                <p data-aos="fade-left" data-aos-delay="100">
+                    Jestem technikiem informatykiem i studentem na Uniwersytecie Bielsko-Bialskim, gdzie z pasją rozwijam swoje kompetencje. Moje zainteresowania koncentrują się na styku technologii, designu i sztucznej inteligencji. Wierzę, że połączenie analitycznego myślenia z kreatywnym podejściem do projektowania pozwala tworzyć rozwiązania, które są nie tylko funkcjonalne, ale także intuicyjne i estetyczne. Dążę do tego, by wykorzystywać nowoczesne narzędzia do rozwiązywania realnych problemów i optymalizacji procesów, co sprawia, że jestem otwarty na wyzwania w każdej branży.
+                </p>
+                <a href="assets/docs/Curriculum Vitae.pdf" class="btn" data-aos="fade-left" data-aos-delay="200" download>Pobierz CV</a>
+            </div>
+        </section>
+
+        <!-- SEKCJA W LICZBACH -->
+        <section id="liczby" class="container" style="margin-top: 4rem; margin-bottom: 4rem;">
+            <h2 data-aos="fade-up">W liczbach</h2>
+            <div class="stats-grid">
+                <!-- Statystyka 1: Projekty -->
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-code-branch" aria-hidden="true"></i>
+                    <span class="stat-number" data-target="15">0</span>
+                    <p>Ukończone Projekty</p>
+                </div>
+                <!-- Statystyka 2: Linie Kodu -->
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-file-code" aria-hidden="true"></i>
+                    <span class="stat-number" data-target="50000">0</span>
+                    <p>Napisane Linie Kodu</p>
+                </div>
+                <!-- Statystyka 3: Lata w IT (obliczane dynamicznie) -->
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                    <span class="stat-number" id="it-experience-years" data-target="">0</span>
+                    <p>Lata w Branży IT</p>
+                </div>
+                <!-- Statystyka 4: Wypite kawy -->
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-coffee" aria-hidden="true"></i>
+                    <span class="stat-number" data-target="1500">0</span>
+                    <p>Wypitych Kaw</p>
+                </div>
+                <!-- Statystyka 5: Godziny nauki -->
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="500">
+                    <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+                    <span class="stat-number" data-target="2000">0</span>
+                    <p>Godzin Nauki i Rozwoju</p>
+                </div>
+                <!-- Statystyka 6: Certyfikaty -->
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="600">
+                    <i class="fas fa-certificate" aria-hidden="true"></i>
+                    <span class="stat-number" data-target="5">0</span>
+                    <p>Zdobyte Certyfikaty</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKCJA EDUKACJA -->
+        <section id="edukacja" class="container" style="margin-top: 4rem; margin-bottom: 4rem;">
+            <h2 data-aos="fade-up">Ścieżka Edukacji</h2>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-icon" aria-hidden="true">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Uniwersytet Bielsko-Bialski</h3>
+                        <h4>Kierunek: Informatyka | Studia inżynierskie</h4>
+                        <p>Zdobywanie zaawansowanej wiedzy z zakresu algorytmiki, inżynierii oprogramowania i sztucznej inteligencji.</p>
+                    </div>
+                    <div class="timeline-date">2025 – obecnie</div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-icon" aria-hidden="true">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Zespół Szkół Elektrycznych, Elektronicznych i Mechanicznych</h3>
+                        <h4>Kierunek: Technik Informatyk</h4>
+                        <p>Ukończenie szkoły z wyróżnieniem i zdobycie kwalifikacji INF.02 oraz INF.03, potwierdzających umiejętności w administracji sieci i tworzeniu aplikacji.</p>
+                    </div>
+                    <div class="timeline-date">2020 – 2025</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKCJA DOŚWIADCZENIE -->
+        <section id="doswiadczenie" class="container" style="margin-top: 4rem; margin-bottom: 4rem;">
+            <h2 data-aos="fade-up">Doświadczenie Zawodowe</h2>
+            <div class="timeline">
+                <!-- Alfavox - Asystent -->
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-icon" aria-hidden="true">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Asystent Prezesa Zarządu</h3>
+                        <h4>Alfavox Software | umowa zlecenie</h4>
+                        <ul>
+                            <li>Zarządzanie harmonogramem Prezesa.</li>
+                            <li>Przygotowanie dokumentów, raportów i prezentacji.</li>
+                            <li>Komunikacja z zespołem i klientami.</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-date">VI 2025 – VIII 2025</div>
+                </div>
+                <!-- ANS-Connect - Administrator IT -->
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-icon" aria-hidden="true">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Administrator IT</h3>
+                        <h4>ANS-Connect | staż i praktyki</h4>
+                        <ul>
+                            <li>Konfiguracja i montaż infrastruktury sieciowej oraz zabezpieczeń.</li>
+                            <li>Diagnostyka i usuwanie usterek w sieciach oraz sprzęcie sieciowym.</li>
+                            <li>Montaż kamer i obsługa monitoringu.</li>
+                            <li>Praca w dynamicznym środowisku z umiejętnością adaptacji.</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-date">II 2024, VII-VIII 2024</div>
+                </div>
+                <!-- Alfavox - IT Support -->
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-icon" aria-hidden="true">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>IT Support</h3>
+                        <h4>Alfavox Software | praktyki</h4>
+                        <ul>
+                            <li>Zarządzanie środowiskiem Windows Server.</li>
+                            <li>Wsparcie techniczne i organizacyjne klienta.</li>
+                            <li>Rozwiązywanie problemów IT i raportowanie postępu prac.</li>
+                            <li>Budowanie pozytywnej atmosfery i efektywna współpraca w zespole.</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-date">IX 2022</div>
+                </div>
+                <!-- Możesz skopiować powyższy blok "timeline-item", aby dodać kolejne pozycje -->
+            </div>
+        </section>
+
+        <!-- SEKCJA OSIĄGNIĘCIA I CERTYFIKATY -->
+        <section id="osiagniecia" class="container" style="margin-top: 4rem; margin-bottom: 4rem;">
+            <h2 data-aos="fade-up">Osiągnięcia i Certyfikaty</h2>
+            <div class="osiagniecia-grid">
+                <div class="osiagniecie-item" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-award" aria-hidden="true"></i>
+                    <div class="osiagniecie-content">
+                        <h3>Dyplom Technika Informatyka</h3>
+                        <h4>OKE | 2025</h4>
+                        <p>Potwierdzenie kwalifikacji INF.02 i INF.03.</p>
+                    </div>
+                </div>
+                <div class="osiagniecie-item" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-award" aria-hidden="true"></i>
+                    <div class="osiagniecie-content">
+                        <h3>Certyfikat Kwalifikacji INF.03</h3>
+                        <h4>OKE | 2025</h4>
+                        <p>Potwierdzenie umiejętności w tworzeniu aplikacji internetowych, desktopowych i baz danych.</p>
+                    </div>
+                </div>
+                <div class="osiagniecie-item" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-award" aria-hidden="true"></i>
+                    <div class="osiagniecie-content">
+                        <h3>Certyfikat Kwalifikacji INF.02</h3>
+                        <h4>OKE | 2024</h4>
+                        <p>Potwierdzenie umiejętności w administracji sieciami i sprzętem komputerowym.</p>
+                    </div>
+                </div>
+                <div class="osiagniecie-item" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-certificate" aria-hidden="true"></i>
+                    <div class="osiagniecie-content">
+                        <h3>Certyfikat Podstaw Programowania w Pythonie</h3>
+                        <h4>Platforma Edukacyjna | 2024</h4>
+                        <p>Ukończenie kursu z zakresu podstaw programowania w języku Python.</p>
+                    </div>
+                </div>
+                <div class="osiagniecie-item" data-aos="fade-up" data-aos-delay="500">
+                    <i class="fas fa-certificate" aria-hidden="true"></i>
+                    <div class="osiagniecie-content">
+                        <h3>Certyfikat Tworzenia Stron WWW</h3>
+                        <h4>Platforma Edukacyjna | 2023</h4>
+                        <p>Ukończenie kursu z zakresu HTML, CSS i podstaw JavaScript.</p>
+                    </div>
+            </div>
+        </section>
+
+        <!-- SEKCJA PROJEKTY -->
+        <section id="projekty" class="container" style="margin-top: 4rem; margin-bottom: 4rem;">
+            <h2 data-aos="fade-up">Wybrane Projekty</h2>
+            <div class="projekty-grid">
+                <!-- Projekt 1 -->
+                <div class="projekt-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="projekt-image-wrapper">
+                        <img src="assets/images/clicker.jpg" alt="Projekt interfejsu użytkownika dla aplikacji mobilnej">
+                        <div class="projekt-overlay"></div>
+                    </div>
+                    <div class="projekt-content">
+                        <h3>Projekt: Click Yourself</h3>
+                        <p>Aplikacja do wszechstronnej automatyzacji oparta o język Python i prezentująca jego możliwości.</p>
+                        <div class="projekt-technologie">
+                            <span>Python</span><span>GUI</span><span>Automatyzacja</span>
+                        </div>
+                        <a href="projekty/projekt-design-1/index.html" class="btn-secondary">Dowiedz się więcej</a>
+                    </div>
+                </div>
+                <!-- Projekt 2 -->
+                <div class="projekt-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="projekt-image-wrapper">
+                        <img src="https://via.placeholder.com/400x250/333/808080?text=Projekt+Web+App" alt="Aplikacja webowa do zarządzania zadaniami">
+                        <div class="projekt-overlay"></div>
+                    </div>
+                    <div class="projekt-content">
+                        <h3>Aplikacja webowa do zarządzania zadaniami</h3>
+                        <p>Opis technologii (np. React, Node.js) i funkcjonalności aplikacji.</p>
+                        <div class="projekt-technologie">
+                            <span>React</span><span>Node.js</span><span>Express</span>
+                        </div>
+                        <a href="projekty/projekt-web-app/index.html" class="btn-secondary">Dowiedz się więcej</a>
+                    </div>
+                </div>
+                <!-- Projekt 3 -->
+                <div class="projekt-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="projekt-image-wrapper">
+                        <img src="https://via.placeholder.com/400x250/333/808080?text=Projekt+AI" alt="Model AI do rozpoznawania obrazów">
+                        <div class="projekt-overlay"></div>
+                    </div>
+                    <div class="projekt-content">
+                        <h3>Model AI do rozpoznawania obrazów</h3>
+                        <p>Opis modelu (np. CNN), zbioru danych i wyników (np. TensorFlow, PyTorch).</p>
+                        <div class="projekt-technologie">
+                            <span>TensorFlow</span><span>Python</span><span>CNN</span>
+                        </div>
+                        <a href="projekty/projekt-ai-analiza-danych/index.html" class="btn-secondary">Dowiedz się więcej</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKCJA TECHNOLOGIE -->
+        <section id="technologie" class="container" style="margin-top: 4rem; margin-bottom: 4rem;">
+            <h2 data-aos="fade-up">Główne Technologie</h2>
+            <div class="skills-grid">
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="50"><i class="fa-brands fa-html5" aria-hidden="true"></i> HTML5</div>
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="100"><i class="fa-brands fa-css3-alt" aria-hidden="true"></i> CSS3</div>
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="150"><i class="fa-brands fa-js-square" aria-hidden="true"></i> JavaScript</div>
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="200"><i class="fa-brands fa-react" aria-hidden="true"></i> React</div>
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="250"><i class="fa-brands fa-python" aria-hidden="true"></i> Python</div>
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="300"><i class="fa-brands fa-c" aria-hidden="true"></i> C++</div>
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="350"><i class="fa-solid fa-brain" aria-hidden="true"></i> TensorFlow</div>
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="400"><i class="fa-solid fa-database" aria-hidden="true"></i> SQL</div>
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="450"><i class="fa-brands fa-figma" aria-hidden="true"></i> Figma</div>
+                
+            </div>
+        </section>
+
+        <!-- SEKCJA KOMPETENCJE TWARDE -->
+        <section id="kompetencje-twarde" class="container" style="padding-bottom: 120px; margin-top: 4rem; margin-bottom: 4rem;">
+        <h2 data-aos="fade-up">Kompetencje Twarde</h2>
+        <div class="kompetencje-grid">
+            <div class="kompetencja-item" data-aos="fade-up" data-aos-delay="100">
+                <h3>Architektura Rozwiązań Cyfrowych</h3>
+                <p>Projektuję i wdrażam kompletne rozwiązania – od responsywnych interfejsów w React, po logikę serwerową i bazy danych. Moje doświadczenie w administracji sieciami (ANS-Connect) pozwala mi tworzyć aplikacje z myślą o ich realnym wdrożeniu i skalowalności.</p>
+            </div>
+            <div class="kompetencja-item" data-aos="fade-up" data-aos-delay="200">
+                <h3>Praktyczne Zastosowanie AI</h3>
+                <p>Nie tylko śledzę trendy, ale aktywnie eksploruję modele AI (TensorFlow), szukając sposobów na automatyzację i inteligentne przetwarzanie danych. Moim celem jest przekuwanie teoretycznej wiedzy w narzędzia, które generują realną wartość biznesową.</p>
+            </div>
+            <div class="kompetencja-item" data-aos="fade-up" data-aos-delay="300">
+                <h3>Administracja i Bezpieczeństwo IT</h3>
+                <p>Doświadczenie w zarządzaniu Windows Server (Alfavox) oraz konfiguracji infrastruktury sieciowej i zabezpieczeń (ANS-Connect) daje mi solidne podstawy do budowania bezpiecznych i stabilnych systemów, a nie tylko "działającego" kodu.</p>
+            </div>
+            <div class="kompetencja-item" data-aos="fade-up" data-aos-delay="400">
+                <h3>Komunikacja Biznesowa w Języku Angielskim</h3>
+                <p>Biegle wykorzystuję język angielski do analizy dokumentacji technicznej, komunikacji w projektach i prezentacji rozwiązań. To dla mnie naturalne narzędzie pracy, otwierające drzwi do globalnej wiedzy i współpracy.</p>
+            </div>
+            <div class="kompetencja-item" data-aos="fade-up" data-aos-delay="500">
+                <h3>Mobilność i Gotowość do Działania</h3>
+                <p>Czynne prawo jazdy kat. B to dla mnie symbol niezależności i gotowości do działania tam, gdzie projekt tego wymaga. Jestem mobilny i elastyczny, gotów na spotkania i pracę w terenie.</p>
+            </div>
+            <div class="kompetencja-item" data-aos="fade-up" data-aos-delay="600">
+                <h3>Projektowanie UI/UX i Prototypowanie</h3>
+                <p>Korzystając z narzędzi takich jak Figma, projektuję intuicyjne i estetyczne interfejsy. Moje podejście łączy kreatywność z analityką, aby tworzyć makiety, które rozwiązują realne problemy i zapewniają pozytywne doświadczenia użytkownika (UX).</p>
+            </div>
+        </div>
+        </section>
+
+        <!-- SEKCJA KOMPETENCJE MIEKKIE -->
+        <section id="kompetencje-miekke" class="container" style="padding-bottom: 120px; margin-top: 4rem; margin-bottom: 4rem;">
+        <h2 data-aos="fade-up">Kompetencje Miękkie</h2>
+        <div class="kompetencje-grid">
+            <div class="kompetencja-item" data-aos="fade-up" data-aos-delay="100">
+                <h3>Adaptacyjność i Przyswajanie Wiedzy</h3>
+                <p>Praca w dynamicznym środowisku (ANS-Connect) nauczyła mnie, że jedyną stałą jest zmiana. Traktuję każdą nową technologię nie jako przeszkodę, lecz jako okazję do rozwoju. Szybko się uczę, bo moją największą motywacją jest ciekawość.</p>
+            </div>
+            <div class="kompetencja-item" data-aos="fade-up" data-aos-delay="200">
+                <h3>Myślenie Analityczne i Rozwiązywanie Problemów</h3>
+                <p>Diagnostyka usterek sieciowych i wsparcie klienta (Alfavox) wyostrzyły moją zdolność do logicznego myślenia pod presją. Potrafię zdekomponować złożony problem, zidentyfikować jego źródło i wdrożyć skuteczne, długofalowe rozwiązanie.</p>
+            </div>
+            <div class="kompetencja-item" data-aos="fade-up" data-aos-delay="300">
+                <h3>Zarządzanie Priorytetami i Odpowiedzialność</h3>
+                <p>Jako asystent prezesa zarządu (Alfavox) byłem odpowiedzialny za koordynację harmonogramu i przygotowanie kluczowych dokumentów. Nauczyło mnie to precyzyjnego planowania, dotrzymywania terminów i brania pełnej odpowiedzialności za powierzone zadania.</p>
+            </div>
+            <div class="kompetencja-item" data-aos="fade-up" data-aos-delay="400">
+                <h3>Proaktywna Komunikacja i Budowanie Relacji</h3>
+                <p>Wierzę, że sukces projektu zależy od otwartej komunikacji. Doświadczenie w pracy z klientami i zespołami nauczyło mnie nie tylko jasno przekazywać informacje, ale także aktywnie słuchać, aby budować pozytywną atmosferę i dążyć do wspólnego celu.</p>
+            </div>
+            <div class="kompetencja-item" data-aos="fade-up" data-aos-delay="500">
+                <h3>Inicjatywa i Samodzielność</h3>
+                <p>Nie czekam na zadania – szukam możliwości. Niezależnie od tego, czy chodzi o optymalizację procesu, czy naukę nowego narzędzia, działam proaktywnie. Potrafię samodzielnie zarządzać swoją pracą, aby dostarczać wyniki, a nie tylko "wykonywać obowiązki".</p>
+            </div>
+            <div class="kompetencja-item" data-aos="fade-up" data-aos-delay="600">
+                <h3>Inteligencja Emocjonalna i Feedback</h3>
+                <p>Rozumiem, że technologia tworzona jest przez ludzi dla ludzi. Potrafię budować relacje oparte na empatii, a także konstruktywnie przyjmować i przekazywać informację zwrotną. To dla mnie klucz do tworzenia zdrowego i efektywnego środowiska pracy.</p>
+            </div>
+        </div>
+        </section>
+
+        <!-- SEKCJA HOBBY -->
+        <section id="hobby" class="container" style="padding-bottom: 120px; margin-top: 4rem; margin-bottom: 4rem;">
+            <h2 data-aos="fade-up">Poza Kodem: Kodeks Wojownika</h2>
+
+            <div class="philosophy-grid">
+                <div class="principle-card" data-aos="fade-right" data-aos-delay="100">
+                    <h4>Zasada Ciała i Ducha</h4>
+                    <p>
+                        "Body of an athlete,<br>
+                        Mind of a stoic,<br>
+                        Spirit of a warrior,<br>
+                        Heart of a poet,<br>
+                        That's the goal."
+                    </p>
+                </div>
+                <div class="principle-card" data-aos="fade-left" data-aos-delay="200">
+                    <h4>Zasada Myślenia i Działania</h4>
+                    <p>
+                        "Speak like a Lawyer,<br>
+                        Express like a Philosopher,<br>
+                        Think like a Scientist,<br>
+                        Analyze like a Psychologist,<br>
+                        Observe like a Detective,<br>
+                        Love like a Poet,<br>
+                        Decide like a Judge,<br>
+                        Create like an Artist,<br>
+                        Work like an Engineer."
+                    </p>
+                </div>
+            </div>
+
+            <div class="hobby-story">
+                <div class="hobby-chapter" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-mountain" aria-hidden="true"></i>
+                    <h3>Co Cię nie zabije... czyli Survival i Góry</h3>
+                    <p>...uczy strategicznego planowania w chaosie. W lesie, tak jak w projekcie, zasoby są ograniczone, a nieoczekiwane problemy to norma. To tam nauczyłem się odporności, adaptacji i kreatywnego rozwiązywania problemów, gdy presja jest największa.</p>
+                </div>
+                <div class="hobby-chapter" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-dumbbell" aria-hidden="true"></i>
+                    <h3>Żelazna Dyscyplina: Siłownia</h3>
+                    <p>Każdy podniesiony ciężar to metafora pokonywania barier w kodzie. Siłownia to mój poligon doświadczalny dla determinacji i konsekwencji. Uczy, że systematyczna praca nad fundamentami przynosi rezultaty, których nie da się osiągnąć idąc na skróty.</p>
+                </div>
+                <div class="hobby-chapter" data-aos="fade-up" data-aos-delay="500">
+                    <i class="fas fa-camera-retro" aria-hidden="true"></i>
+                    <h3>Sztuka Patrzenia: Fotografia i Podróże</h3>
+                    <p>Obiektyw aparatu nauczył mnie szukać unikalnej perspektywy i dostrzegać detale, które umykają innym. Podróże zmuszają do wyjścia ze strefy komfortu. To trening kreatywności i empatii, kluczowy w projektowaniu rozwiązań, które naprawdę odpowiadają na potrzeby ludzi.</p>
+                </div>
+                <div class="hobby-chapter" data-aos="fade-up" data-aos-delay="600">
+                    <i class="fas fa-brain" aria-hidden="true"></i>
+                    <h3>Architektura Charakteru: Psychologia i Przywództwo</h3>
+                    <p>Poza kodem i algorytmami, fascynuje mnie inżynieria ludzkiego umysłu. Analizuję mechanizmy psychologiczne, strategie samorozwoju i cechy skutecznych liderów. To dla mnie nie tylko hobby, ale klucz do budowania silnych zespołów i świadomego kształtowania własnej drogi.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Kamil [Nazwisko]. Wszelkie prawa zastrzeżone.</p>
+            <div class="footer-socials">
+                <a href="https://github.com/fireeagle050" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/kamil-dziedzic-6aa0ba30b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+            <p class="footer-quote">"Inwestycja w wiedzę zawsze przynosi największe odsetki." - Benjamin Franklin</p>
+        </div>
+    </footer>
+
+    <!-- Biblioteka do animacji przy przewijaniu (AOS) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <!-- Dedykowany skrypt dla tła strony "O mnie" -->
+    <script src="js/o-mnie.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ZMIENNE: Tytuł i opis wpisu -->
+    <meta name="description" content="Kompletny szkielet ebooka o Designie i UI. Od psychologii kolorów, przez typografię, aż po systemy designu i współpracę z deweloperami.">
+    <title>Design i UI: Gdzie Sztuka Spotyka Technologię | Project Genesis</title>
+
+    <!-- Współdzielone style i skrypty -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/post.css"> <!-- Dedykowane style dla pojedynczego wpisu -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Prism.js CSS (motyw Okaidia dla ciemnego tła) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
+    <!-- Biblioteki do generowania PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body class="body-post"> <!-- Dedykowana klasa dla pojedynczego wpisu -->
+
+    <header>
+        <nav>
+            <div class="nav-left-items">
+                <a href="../index.html" class="nav-logo"><img src="../img/logo.png" alt="Logo"></a>
+                <!-- PRZEŁĄCZNIK MOTYWU -->
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="theme-checkbox">
+                        <input type="checkbox" id="theme-checkbox" />
+                        <div class="slider round"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></div>
+                    </label>
+                </div>
+            </div>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../o-mnie.html">O mnie</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../materialy.html">Materiały</a></li>
+                <li><a href="../kontakt.html" class="nav-contact-btn">Kontakt</a></li>
+            </ul>
+        </nav>
+        <!-- Pasek postępu czytania -->
+        <div class="reading-progress-bar"></div>
+    </header>
+
+    <main>
+        <div class="post-container container">
+            <!-- NAWIGACJA OKRUSZKOWA (BREADCRUMBS) -->
+            <nav class="breadcrumbs">
+                <a href="../index.html"><i class="fas fa-home"></i> Home</a> <span class="separator">/</span>
+                <a href="../blog.html">Blog</a> <span class="separator">/</span>
+                <span class="current">Design i UI</span>
+            </nav>
+
+            <!-- ZMIENNE: Treść artykułu -->
+            <article class="post-full-content">
+                <header class="post-full-header">
+                    <div class="post-meta">
+                        <span><i class="fas fa-calendar-alt"></i> 8 Listopada 2025</span>
+                        <span><i class="fas fa-user"></i> Kamil</span>
+                        <span><i class="fas fa-folder-open"></i> Design</span>
+                        <span><i class="fas fa-clock"></i> 15 min czytania</span>
+                    </div>
+                    <h1 class="post-full-title">Design i UI: Gdzie Sztuka Spotyka Technologię</h1>
+                </header>
+
+                <!-- Przyciski udostępniania -->
+                <div class="post-share-buttons">
+                    <span>Udostępnij:</span>
+                    <a href="#" class="share-btn share-facebook" aria-label="Udostępnij na Facebooku"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="share-btn share-twitter" aria-label="Udostępnij na Twitterze"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="share-btn share-linkedin" aria-label="Udostępnij na LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <button id="save-pdf-btn" class="share-btn share-pdf" aria-label="Zapisz jako PDF" title="Zapisz artykuł jako PDF"><i class="fas fa-file-pdf"></i></button>
+                    <button id="print-btn" class="share-btn share-print" aria-label="Drukuj artykuł" title="Drukuj artykuł"><i class="fas fa-print"></i></button>
+                    <button id="copy-link-btn" class="share-btn share-copy" aria-label="Kopiuj link" title="Kopiuj link do schowka"><i class="fas fa-link"></i></button>
+                </div>
+
+                <figure class="post-full-image">
+                    <img src="../img/design.jpg" alt="Interfejs użytkownika i proces projektowy">
+                    <figcaption style="text-align: center; color: #888; font-size: 0.9rem; margin-top: 0.5rem;">Dobry design jest niewidoczny. Zły design krzyczy.</figcaption>
+                </figure>
+
+                <!-- UKŁAD GRID: TREŚĆ + SIDEBAR -->
+                <div class="post-content-grid">
+                    
+                    <!-- KOLUMNA GŁÓWNA -->
+                    <div class="post-main-column">
+                        <section class="post-full-body">
+                            
+                            <!-- Sekcja "W skrócie" -->
+                            <div class="key-takeaways">
+                                <h3><i class="fas fa-lightbulb"></i> Cel tego wpisu</h3>
+                                <ul>
+                                    <li><strong>Kompletna mapa drogowa:</strong> 20 rozdziałów prowadzących od teorii do praktyki.</li>
+                                    <li><strong>Most między światami:</strong> Jak połączyć artystyczną wizję z inżynierską precyzją.</li>
+                                    <li><strong>Narzędziownik:</strong> Gotowe fragmenty kodu, struktury plików i checklisty.</li>
+                                    <li><strong>Przyszłość:</strong> Rola AI i nowych technologii w pracy projektanta.</li>
+                                </ul>
+                            </div>
+
+                            <p class="lead"><span class="drop-cap">P</span>rojektowanie interfejsów to nie tylko dobieranie ładnych kolorów. To inżynieria doświadczeń, w której psychologia spotyka się z technologią, a sztuka z biznesem. Poniżej przedstawiam kompleksowe kompendium wiedzy dla nowoczesnego twórcy produktów cyfrowych.</p>
+
+                            <h2 id="intro">1. Wprowadzenie</h2>
+                            <p>Zaczynamy od zdefiniowania fundamentów. Design to nie dekoracja – to sposób rozwiązywania problemów.</p>
+                            <h3>Design jako punkt styku człowieka i maszyny</h3>
+                            <p>Interfejs jest tłumaczem. Przekłada skomplikowany kod binarny i logikę backendu na język zrozumiały dla człowieka – przyciski, gesty i obrazy. Dobry design sprawia, że technologia staje się przezroczysta, a użytkownik skupia się na celu, a nie na narzędziu.</p>
+                            <h3>UI i UX – mylone pojęcia, realne różnice</h3>
+                            <p>Wyobraź sobie samochód. UX (User Experience) to wrażenia z jazdy – czy fotel jest wygodny, czy silnik pracuje cicho, czy auto dobrze wchodzi w zakręty. UI (User Interface) to deska rozdzielcza – wygląd zegarów, kształt kierownicy i kolor tapicerki. Piękne UI nie naprawi zepsutego silnika (złego UX), a świetny silnik będzie bezużyteczny bez kierownicy.</p>
+                            <h3>Estetyka kontra użyteczność: fałszywy konflikt</h3>
+                            <p>Często słyszy się, że coś jest albo ładne, albo użyteczne. To błąd. Zjawisko znane jako <strong>efekt estetyka-użyteczność</strong> dowodzi, że ludzie postrzegają ładne rzeczy jako działające lepiej. Estetyka buduje zaufanie i wybacza drobne błędy, stając się integralną częścią funkcjonalności.</p>
+
+                            <h2 id="geneza">2. Geneza projektowania interakcji</h2>
+                            <p>Aby zrozumieć, dokąd zmierzamy, musimy wiedzieć, skąd przyszliśmy.</p>
+                            <h3>Ergonomia i psychologia pracy</h3>
+                            <p>Korzenie UX sięgają czasów II wojny światowej i projektowania kokpitów samolotów. Inżynierowie musieli zrozumieć, jak rozmieścić wskaźniki, by pilot w stresie nie pomylił podwozia z klapami. To wtedy narodziła się ergonomia kognitywna.</p>
+                            <h3>Human–Computer Interaction (HCI)</h3>
+                            <p>W latach 80. powstała dziedzina HCI, badająca interakcję człowieka z komputerem. To naukowcy z Xerox PARC i później Apple zdefiniowali metafory biurka, folderów i kosza, które używamy do dziś.</p>
+                            <h3>Od paneli sterowniczych do aplikacji mobilnych</h3>
+                            <p>Przeszliśmy długą drogę od fizycznych przełączników i wiersza poleceń, przez graficzne interfejsy (GUI) sterowane myszką, aż po dotykowe ekrany smartfonów. Każda zmiana medium wymuszała zmianę paradygmatu projektowania.</p>
+                            <h3>Wpływ rewolucji cyfrowej na design</h3>
+                            <p>Smartfon zmienił wszystko. Ograniczona przestrzeń ekranu, obsługa kciukiem i kontekst użycia (w biegu, w słońcu) wymusiły minimalizm i skupienie na najważniejszych funkcjach. Design stał się bardziej pragmatyczny.</p>
+
+                            <!-- Oś Czasu (Timeline) -->
+                            <div class="timeline-container">
+                                <h3 class="timeline-title">Ewolucja Interfejsów</h3>
+                                <div class="timeline">
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                            <span class="timeline-date">Lata 40.</span>
+                                            <h4>Ergonomia Kokpitów</h4>
+                                            <p>Początki myślenia o układzie wskaźników w lotnictwie wojskowym.</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                            <span class="timeline-date">1984</span>
+                                            <h4>Rewolucja GUI</h4>
+                                            <p>Apple Macintosh popularyzuje myszkę i graficzny interfejs użytkownika.</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                            <span class="timeline-date">2007</span>
+                                            <h4>Era Post-PC</h4>
+                                            <p>iPhone wprowadza multitouch. Internet trafia do naszych kieszeni.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h2 id="ux">3. UX – doświadczenie użytkownika</h2>
+                            <p>UX to suma wszystkich punktów styku użytkownika z marką. To proces, nie jednorazowy "deliverable".</p>
+                            <h3>UX jako suma odczuć, nie ekranów</h3>
+                            <p>Doświadczenie użytkownika nie zaczyna się po włączeniu aplikacji, ale znacznie wcześniej – gdy słyszy o produkcie, szuka go w Google czy rozmawia z obsługą klienta. UX Designer projektuje całą tę podróż, a nie tylko ekrany.</p>
+                            <h3>Emocje, frustracja i satysfakcja</h3>
+                            <p>Kluczem do dobrego UX jest zarządzanie emocjami. Frustracja pojawia się, gdy oczekiwania rozmijają się z rzeczywistością (np. długie ładowanie). Satysfakcja to moment, w którym produkt rozwiązuje problem szybciej i łatwiej, niż użytkownik zakładał.</p>
+                            <h3>Użyteczność, dostępność, inkluzywność</h3>
+                            <p>Dobry produkt stoi na trzech filarach. <strong>Użyteczność</strong> oznacza, że da się go używać. <strong>Dostępność</strong> (Accessibility) zapewnia, że mogą z niego korzystać osoby z niepełnosprawnościami. <strong>Inkluzywność</strong> dba o to, by nikt nie czuł się wykluczony ze względu na język, kulturę czy wiek.</p>
+                            <h3>UX jako proces, nie deliverable</h3>
+                            <p>UX to nie zestaw makiet wysłanych mailem. To ciągły cykl: zrozumienie problemu (Empathize), zdefiniowanie wyzwań (Define), generowanie pomysłów (Ideate), prototypowanie (Prototype) i testowanie (Test). Ten proces nigdy się nie kończy.</p>
+
+                            <!-- Przeniesiony proces projektowy -->
+                            <div class="step-process">
+                                <div class="step-item">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h4>Empathize & Define (Badania)</h4>
+                                        <p>Wywiady z użytkownikami, tworzenie Person, User Stories. Zrozumienie problemu.</p>
+                                    </div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h4>Ideate & Wireframing (Szkice)</h4>
+                                        <p>Szybkie szkice na papierze (Lo-Fi). Architektura informacji, User Flows (ścieżki użytkownika).</p>
+                                    </div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h4>Prototyping (Hi-Fi)</h4>
+                                        <p>Tworzenie makiet w Figmie. Dodawanie kolorów, zdjęć i interakcji. Budowa klikalnego prototypu.</p>
+                                    </div>
+                                </div>
+                                <div class="step-item">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">
+                                        <h4>Testing (Weryfikacja)</h4>
+                                        <p>Testy użyteczności z prawdziwymi ludźmi. Poprawki i iteracje.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h2 id="ui">4. UI – interfejs użytkownika</h2>
+                            <p>Interfejs to język, którym system "rozmawia" z użytkownikiem. Musi być czytelny i spójny.</p>
+                            <h3>UI jako język wizualny systemu</h3>
+                            <p>Jeśli UX jest architekturą budynku, UI jest wystrojem wnętrz. To zbiór zasad wizualnych – kolorów, typografii, kształtów – które komunikują markę i prowadzą użytkownika przez funkcje systemu.</p>
+                            <h3>Komponenty, layouty, hierarchia</h3>
+                            <p>Interfejsy budujemy z komponentów (przyciski, karty, inputy) ułożonych w layoutach opartych na siatkach (Grid). Kluczowa jest hierarchia wizualna – najważniejsze elementy muszą być największe lub najbardziej kontrastowe, by oko użytkownika instynktownie wiedziało, gdzie patrzeć.</p>
+                            <h3>Mikrointerakcje i feedback</h3>
+                            <p>System musi "żyć". Mikrointerakcje to subtelne animacje, które informują o statusie: przycisk zmienia kolor po najechaniu, ikona ładowania się kręci, formularz podświetla się na czerwono przy błędzie. Bez tego interfejs wydaje się martwy.</p>
+                            <h3>Spójność wizualna i systemowość</h3>
+                            <p>Użytkownik uczy się interfejsu. Jeśli przycisk "Zapisz" jest zielony na jednej stronie, musi być zielony na każdej innej. Spójność buduje poczucie bezpieczeństwa i przewidywalności, co przyspiesza obsługę aplikacji.</p>
+
+                            <!-- Przeniesione przykłady kodu CSS -->
+                            <h3 id="css-examples">Kod w Praktyce: Grid vs Flexbox</h3>
+                            <p>Jako designer musisz rozumieć, jak Twoje makiety przekładają się na kod. Oto różnica w implementacji layoutów:</p>
+
+                            <!-- Terminal: Flexbox -->
+                            <div class="terminal-window macos">
+                                <div class="terminal-header">
+                                    <div class="terminal-controls">
+                                        <span class="terminal-dot red"></span>
+                                        <span class="terminal-dot yellow"></span>
+                                        <span class="terminal-dot green"></span>
+                                    </div>
+                                    <span class="terminal-title">flexbox-center.css</span>
+                                </div>
+                                <div class="terminal-body">
+                                    <pre class="language-css" style="margin: 0; padding: 0; border: none; background: transparent; box-shadow: none;"><code class="language-css">.container {
+    display: flex;
+    justify-content: center; /* Centrowanie w poziomie */
+    align-items: center;     /* Centrowanie w pionie */
+    gap: 1rem;               /* Odstępy między elementami */
+}</code></pre>
+                                </div>
+                            </div>
+
+                            <!-- Terminal: Grid -->
+                            <div class="terminal-window windows">
+                                <div class="terminal-header">
+                                    <div class="terminal-title">
+                                        <i class="fab fa-windows"></i> grid-layout.css
+                                    </div>
+                                    <div class="terminal-controls">
+                                        <div class="terminal-control minimize"><i class="fas fa-minus"></i></div>
+                                        <div class="terminal-control maximize"><i class="far fa-square"></i></div>
+                                        <div class="terminal-control close"><i class="fas fa-times"></i></div>
+                                    </div>
+                                </div>
+                                <div class="terminal-body">
+                                    <pre class="language-css" style="margin: 0; padding: 0; border: none; background: transparent; box-shadow: none;"><code class="language-css">.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* 12 równych kolumn */
+    gap: 20px;
+}
+
+.card {
+    grid-column: span 4; /* Element zajmuje 4 kolumny */
+}</code></pre>
+                                </div>
+                            </div>
+
+                            <h2 id="psychologia">5. Psychologia percepcji w designie</h2>
+                            <p>Design to psychologia stosowana. Musimy wiedzieć, jak działa ludzki mózg, aby projektować intuicyjne rozwiązania.</p>
+                            <h3>Gestalt i organizacja informacji</h3>
+                            <p>Zasady Gestalt opisują, jak mózg grupuje elementy. Prawo bliskości mówi, że rzeczy leżące obok siebie są powiązane. Prawo domknięcia sprawia, że widzimy kształty nawet tam, gdzie ich nie ma. Wykorzystujemy to, by tworzyć czytelne sekcje bez nadmiaru linii podziału.</p>
+                            <h3>Ograniczenia uwagi użytkownika</h3>
+                            <p>Ludzka uwaga jest zasobem skończonym. Zjawiska takie jak "ślepota banerowa" (ignorowanie elementów wyglądających jak reklamy) czy ograniczona pamięć robocza (reguła 7±2) wymuszają na projektantach upraszczanie komunikatów i usuwanie zbędnych bodźców.</p>
+                            <h3>Kolor, kontrast, rytm</h3>
+                            <p>Oko automatycznie podąża za kontrastem. Używając koloru akcentowego, możemy sterować wzrokiem użytkownika jak laserem. Rytm w typografii i odstępach (whitespace) pozwala "oddychać" treściom i ułatwia skanowanie tekstu.</p>
+                            <h3>Czytelność i obciążenie poznawcze</h3>
+                            <p>Cognitive Load to wysiłek, jaki mózg musi włożyć w zrozumienie interfejsu. Każdy zbędny element, niejasna ikona czy trudny tekst zwiększa to obciążenie. Dobry design dąży do minimalizmu kognitywnego – nie każ mi myśleć, pozwól mi działać.</p>
+
+                            <div class="definition-box">
+                                <h4>Pojęcie: Affordance (Afordancja)</h4>
+                                <p>Cechy obiektu, które sugerują jego użycie. Przycisk powinien wyglądać jak coś, co da się wcisnąć (cień, obrys), a link jak coś, w co da się kliknąć (podkreślenie, kolor).</p>
+                            </div>
+
+                            <div class="pros-cons-container">
+                                <div class="pros-box">
+                                    <h3><i class="fas fa-brain"></i> Kluczowe Prawa UX</h3>
+                                    <ul>
+                                        <li><strong>Prawo Hicka:</strong> Czas potrzebny na podjęcie decyzji rośnie wraz z liczbą opcji. (Mniej = Lepiej).</li>
+                                        <li><strong>Prawo Fittsa:</strong> Czas dotarcia do celu zależy od odległości i wielkości celu. (Przyciski muszą być duże!).</li>
+                                        <li><strong>Prawo Jakoba:</strong> Użytkownicy spędzają większość czasu na innych stronach. Oczekują, że Twoja będzie działać tak samo.</li>
+                                    </ul>
+                                </div>
+                                <div class="cons-box">
+                                    <h3><i class="fas fa-exclamation-circle"></i> Częste Błędy</h3>
+                                    <ul>
+                                        <li><strong>Paraliż Decyzyjny:</strong> Zbyt wiele opcji na raz (łamanie Prawa Hicka).</li>
+                                        <li><strong>Mikroskopijne Cele:</strong> Przyciski trudne do kliknięcia na mobile (łamanie Prawa Fittsa).</li>
+                                        <li><strong>Wymyślanie Koła:</strong> Niestandardowa nawigacja, która myli użytkownika (łamanie Prawa Jakoba).</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h2 id="typografia">6. Typografia jako fundament</h2>
+                            <p>90% internetu to tekst. Typografia to nie tylko wybór fontu, to architektura informacji.</p>
+                            <ul class="checklist">
+                                <li>
+                                    <i class="fas fa-font checklist-icon" style="color: #9b59b6;"></i>
+                                    <div class="checklist-content">
+                                        <strong>Fundamenty Typografii</strong>
+                                        <span>Hierarchia, dobór fontów (Serif vs Sans), kerning, leading, zasada 60-30-10 w tekście.</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <h3>Pismo jako interfejs</h3>
+                            <p>W dobie "Content First", typografia często staje się jedynym elementem interfejsu. Dobrze dobrany krój pisma potrafi zastąpić linie, ramki i tła, tworząc strukturę wyłącznie za pomocą wielkości, wagi i odstępów.</p>
+                            <h3>Czytelność vs charakter</h3>
+                            <p>Istnieje wieczny konflikt między unikalnością a użytecznością. Ozdobne fonty szeryfowe budują charakter marki, ale mogą być nieczytelne w małych rozmiarach. W UI zazwyczaj wygrywają proste kroje bezszeryfowe (Sans-Serif) ze względu na ich czytelność na ekranach.</p>
+                            <h3>Skale typograficzne</h3>
+                            <p>Aby zachować harmonię, wielkości fontów nie powinny być przypadkowe. Stosuje się skale matematyczne, np. Major Third (1.250) czy Perfect Fourth (1.333), gdzie każdy kolejny stopień nagłówka jest mnożnikiem poprzedniego. To zapewnia naturalny rytm.</p>
+                            <h3>Typografia cyfrowa a druk</h3>
+                            <p>Ekran to nie papier. Piksele, podświetlenie i różna rozdzielczość wymuszają inne podejście. Stosujemy jednostki relatywne (rem/em) zamiast stałych (pt/px), dbamy o większą interlinię (line-height) i odpowiedni kontrast, by nie męczyć wzroku.</p>
+
+                            <h2 id="kolor">7. Kolor i emocje</h2>
+                            <ul class="checklist">
+                                <li>
+                                    <i class="fas fa-palette checklist-icon" style="color: #3498db;"></i>
+                                    <div class="checklist-content">
+                                        <strong>Teoria Koloru</strong>
+                                        <span>Koło barw, harmonia, kontrast (WCAG), psychologia kolorów w marketingu, tryb Dark Mode.</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <h3>Psychologia koloru</h3>
+                            <p>Kolory wywołują podświadome reakcje. Niebieski budzi zaufanie (banki, Facebook), czerwony stymuluje i ostrzega (błędy, promocje), a zielony kojarzy się z powodzeniem i naturą. Wybór palety to decyzja strategiczna, nie tylko estetyczna.</p>
+                            <h3>Palety funkcjonalne vs estetyczne</h3>
+                            <p>W UI potrzebujemy dwóch typów kolorów. Paleta estetyczna (Brand) buduje klimat. Paleta funkcjonalna (Semantic) służy do komunikacji: zielony dla sukcesu, żółty dla ostrzeżeń, czerwony dla błędów i neutralne szarości dla tekstów i tła.</p>
+                            <h3>Kontrast i dostępność (WCAG)</h3>
+                            <p>Piękny szary tekst na białym tle może być nieczytelny dla osoby starszej lub korzystającej z telefonu w słońcu. Standardy WCAG (Web Content Accessibility Guidelines) wymagają minimalnego kontrastu 4.5:1 dla tekstu podstawowego. To nie opcja, to konieczność.</p>
+                            <h3>Tryby jasne i ciemne</h3>
+                            <p>Dark Mode to nie tylko odwrócenie kolorów. To osobna paleta, w której unikamy czystej czerni (#000000) na rzecz ciemnych szarości, aby uniknąć smużenia (smearing) na ekranach OLED i zmniejszyć kontrast męczący oczy.</p>
+
+                            <h2 id="interakcja">8. Projektowanie interakcji</h2>
+                            <p>Statyczny ekran to nie produkt. Produkt to to, co dzieje się między ekranami.</p>
+                            <h3>Przepływy użytkownika (user flows)</h3>
+                            <p>Zanim narysujemy pierwszy ekran, musimy rozrysować logikę. User Flow to schemat blokowy pokazujący ścieżkę użytkownika: od punktu wejścia (np. reklama), przez akcje (rejestracja), aż do celu (zakup). Pozwala to wykryć ślepe zaułki w logice.</p>
+                            <h3>Mapy doświadczeń (journey maps)</h3>
+                            <p>Customer Journey Map to szersze spojrzenie. Uwzględnia nie tylko kliknięcia, ale też myśli, uczucia i kontekst użytkownika na każdym etapie. Czy jest zdenerwowany, gdy szuka kontaktu? Czy czuje ulgę po dokonaniu płatności?</p>
+                            <h3>Animacja jako komunikat</h3>
+                            <p>Motion Design w UI nie służy do ozdoby. Animacja wyjaśnia zmiany stanów: menu wysuwa się z boku (pokazując skąd przyszło), nowa karta przykrywa starą (pokazując hierarchię). Ruch kieruje uwagą i tłumaczy relacje przestrzenne.</p>
+                            <h3>Czas reakcji i płynność</h3>
+                            <p>Użytkownik oczekuje natychmiastowej reakcji. Jeśli system potrzebuje czasu (powyżej 0.1s), musi o tym poinformować (spinner, pasek postępu). Płynność animacji (60fps) jest kluczowa dla odczucia jakości aplikacji.</p>
+
+                            <h3 id="microinteraction-code">Kod w Praktyce: Mikrointerakcja Przycisku</h3>
+                            <p>Dobra mikrointerakcja daje natychmiastową informację zwrotną. Oto prosty efekt "naciśnięcia" w CSS:</p>
+                            <div class="terminal-window macos">
+                                <div class="terminal-header">
+                                    <div class="terminal-controls">
+                                        <span class="terminal-dot red"></span>
+                                        <span class="terminal-dot yellow"></span>
+                                        <span class="terminal-dot green"></span>
+                                    </div>
+                                    <span class="terminal-title">button-interaction.css</span>
+                                </div>
+                                <div class="terminal-body">
+                                    <pre class="language-css" style="margin: 0; padding: 0; border: none; background: transparent; box-shadow: none;"><code class="language-css">.btn {
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btn:active {
+    transform: scale(0.95); /* Efekt wciśnięcia */
+    box-shadow: inset 0 3px 5px rgba(0,0,0,0.2);
+}</code></pre>
+                                </div>
+                            </div>
+
+                            <h2 id="design-systemy">9. Design systemy</h2>
+                            <p>Jak zarządzać designem w dużych projektach? Wprowadzenie do Atomic Design i Design Tokenów.</p>
+
+                            <h3>Skalowalność interfejsów</h3>
+                            <p>Przy setkach ekranów ręczne pilnowanie spójności jest niemożliwe. Design System to "jedno źródło prawdy" – biblioteka gotowych rozwiązań, dzięki której nowy ekran buduje się z klocków w 15 minut, a nie rysuje od zera przez 5 godzin.</p>
+                            <h3>Komponenty i tokeny</h3>
+                            <p>Podstawą są Design Tokens – zmienne przechowujące wartości takie jak kolory, odstępy czy fonty. Z nich budujemy Komponenty (przyciski, inputy), które są wielokrotnego użytku. Zmiana koloru w tokenie aktualizuje cały system automatycznie.</p>
+                            <h3>Design system jako produkt</h3>
+                            <p>Design System nigdy nie jest skończony. To żywy produkt wewnętrzny, który ma swoich użytkowników (designerów i programistów), wymaga dokumentacji, wersjonowania i ciągłego rozwoju wraz z potrzebami aplikacji.</p>
+
+                            <div class="info-box tip">
+                                <i class="fas fa-cubes"></i>
+                                <div>
+                                    <strong>Atomic Design (Brad Frost):</strong><br>
+                                    Metodologia budowania interfejsów jak z klocków LEGO.
+                                    <ul>
+                                        <li><strong>Atomy:</strong> Podstawowe elementy (Ikona, Label, Input).</li>
+                                        <li><strong>Molekuły:</strong> Proste grupy (Pole wyszukiwania = Input + Button).</li>
+                                        <li><strong>Organizmy:</strong> Złożone sekcje (Pasek nawigacji).</li>
+                                        <li><strong>Szablony:</strong> Układ strony bez treści.</li>
+                                        <li><strong>Strony:</strong> Gotowy widok z realną treścią.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h3>Struktura Design Systemu (Przykład)</h3>
+                            <div class="file-tree">
+                                <ul>
+                                    <li><i class="fas fa-folder folder"></i> Design System
+                                        <ul>
+                                            <li><i class="fas fa-folder folder"></i> Foundations
+                                                <ul>
+                                                    <li><i class="fas fa-file-code file-css"></i> colors.tokens.json</li>
+                                                    <li><i class="fas fa-file-code file-css"></i> typography.tokens.json</li>
+                                                    <li><i class="fas fa-file-code file-css"></i> spacing.tokens.json</li>
+                                                </ul>
+                                            </li>
+                                            <li><i class="fas fa-folder folder"></i> Components
+                                                <ul>
+                                                    <li><i class="fas fa-file-code file-js"></i> Button.tsx</li>
+                                                    <li><i class="fas fa-file-code file-js"></i> Input.tsx</li>
+                                                    <li><i class="fas fa-file-code file-js"></i> Card.tsx</li>
+                                                    <li><i class="fas fa-file-code file-js"></i> Modal.tsx</li>
+                                                </ul>
+                                            </li>
+                                            <li><i class="fas fa-file-alt file-html"></i> Documentation</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <h3>Współpraca design–development (Handoff)</h3>
+                            <p>Handoff to krytyczny moment w procesie, gdzie design spotyka się z kodem. To nie tylko przekazanie linku do Figmy, ale przygotowanie pełnej dokumentacji. Programista nie czyta w myślach – musi wiedzieć, jak zachowuje się przycisk po najechaniu, co się dzieje przy błędzie walidacji i jak skaluje się karta na mobile. Dobra współpraca na tym etapie to mniej poprawek i szybsze wdrożenie.</p>
+
+                            <ul class="checklist">
+                                <li>
+                                    <i class="fas fa-check-circle checklist-icon"></i>
+                                    <div class="checklist-content">
+                                        <strong>Czystość w Figmie</strong>
+                                        <span>Usuń nieużywane warstwy, nazwij grupy logicznie, używaj Auto Layout.</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle checklist-icon"></i>
+                                    <div class="checklist-content">
+                                        <strong>Specyfikacja Stanów</strong>
+                                        <span>Zaprojektuj nie tylko "idealny stan", ale też: Hover, Active, Disabled, Error, Loading, Empty State.</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle checklist-icon"></i>
+                                    <div class="checklist-content">
+                                        <strong>Responsywność</strong>
+                                        <span>Pokaż jak komponent zachowuje się na mobile, tablet i desktop.</span>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <h2 id="research">10. UX research</h2>
+                            <p>Projektowanie bez badań to tylko zgadywanie.</p>
+                            <h3>Badania jakościowe i ilościowe</h3>
+                            <p>Badania dzielimy na dwa nurty. Ilościowe (np. ankiety, analityka) mówią "CO" się dzieje i "ILE" osób to robi. Jakościowe (np. wywiady IDI) odpowiadają na pytanie "DLACZEGO" to robią. Dopiero połączenie obu daje pełny obraz.</p>
+                            <h3>Testy użyteczności</h3>
+                            <p>Nie wiesz, czy Twój projekt działa, dopóki nie zobaczysz, jak ktoś próbuje go użyć. Testy użyteczności polegają na obserwacji użytkownika wykonującego konkretne zadania. To najlepszy sposób na weryfikację hipotez i znalezienie błędów.</p>
+                            <h3>Dane vs intuicja projektanta</h3>
+                            <p>Intuicja jest ważna, ale bywa myląca. Data-driven design opiera decyzje na twardych danych. Jeśli analityka pokazuje, że nikt nie klika w menu, to trzeba je zmienić, nawet jeśli designerowi bardzo się podoba.</p>
+                            <h3>Błędy poznawcze w badaniach</h3>
+                            <p>Badacz też jest człowiekiem. Efekt potwierdzenia sprawia, że szukamy dowodów na poparcie własnych tez. Efekt obserwatora może zmieniać zachowanie badanych. Świadomość tych błędów jest kluczowa dla rzetelności wyników.</p>
+
+                            <div class="pros-cons-container">
+                                <div class="pros-box">
+                                    <h3><i class="fas fa-search"></i> Narzędzia Badawcze</h3>
+                                    <ul>
+                                        <li><strong>Hotjar / Microsoft Clarity:</strong> Mapy cieplne i nagrania sesji użytkowników.</li>
+                                        <li><strong>Google Analytics 4:</strong> Ilościowe dane o ścieżkach i konwersji.</li>
+                                        <li><strong>Maze:</strong> Szybkie testy prototypów i zbieranie feedbacku.</li>
+                                    </ul>
+                                </div>
+                                <div class="cons-box">
+                                    <h3><i class="fas fa-times-circle"></i> Pułapki Badawcze</h3>
+                                    <ul>
+                                        <li><strong>Testowanie na kolegach:</strong> Oni znają produkt, więc nie są reprezentatywni.</li>
+                                        <li><strong>Pytania sugerujące:</strong> "Czy podoba Ci się ten świetny design?" (Błąd!).</li>
+                                        <li><strong>Ignorowanie kontekstu:</strong> Badanie w laboratorium vs użycie w biegu na ulicy.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h2 id="sztuka">11. Sztuka w designie cyfrowym</h2>
+                            <p>Technologia pozwala na nową ekspresję artystyczną, ale czy zawsze warto?</p>
+                            <h3>Inspiracje artystyczne</h3>
+                            <p>Web design czerpie garściami z historii sztuki. Minimalizm wywodzi się z Bauhausu ("Mniej znaczy więcej"), a popularny ostatnio Neubrutalism nawiązuje do surowej architektury betonu. Znajomość historii sztuki pozwala świadomie łamać schematy.</p>
+                            <h3>Estetyka jako wyróżnik produktu</h3>
+                            <p>Na nasyconym rynku, gdzie wiele aplikacji ma te same funkcje, to unikalny styl wizualny decyduje o wyborze. Estetyka buduje tożsamość marki i emocjonalną więź z użytkownikiem, której nie da się osiągnąć samą funkcjonalnością.</p>
+                            <h3>Eksperymenty wizualne</h3>
+                            <p>Technologie takie jak WebGL czy Three.js pozwalają na tworzenie immersyjnych doświadczeń 3D w przeglądarce. To pole do popisu dla Creative Coding, gdzie kod staje się pędzlem, a przeglądarka płótnem.</p>
+
+                            <div class="terminal-window macos">
+                                <div class="terminal-header">
+                                    <div class="terminal-controls">
+                                        <span class="terminal-dot red"></span>
+                                        <span class="terminal-dot yellow"></span>
+                                        <span class="terminal-dot green"></span>
+                                    </div>
+                                    <span class="terminal-title">threejs-scene.js</span>
+                                </div>
+                                <div class="terminal-body">
+                                    <pre class="language-javascript" style="margin: 0; padding: 0; border: none; background: transparent; box-shadow: none;"><code class="language-javascript">const scene = new THREE.Scene();
+const geometry = new THREE.TorusKnotGeometry(10, 3, 100, 16);
+const material = new THREE.MeshBasicMaterial({ color: 0x6a11cb, wireframe: true });
+const mesh = new THREE.Mesh(geometry, material);
+scene.add(mesh);</code></pre>
+                                </div>
+                            </div>
+
+                            <h3>Granica między sztuką a użytecznością</h3>
+                            <p>Sztuka ma zadawać pytania, design ma dawać odpowiedzi. Granica przebiega tam, gdzie forma zaczyna przeszkadzać w funkcji. Przerost formy nad treścią (over-design) może zachwycić na Dribbble, ale zirytować w codziennym użytkowaniu.</p>
+
+                            <h2 id="technologia">12. Technologia jako medium</h2>
+                            <p>Designer musi rozumieć materiał, w którym tworzy – czyli kod i przeglądarkę.</p>
+                            <h3>Ograniczenia techniczne a kreatywność</h3>
+                            <p>Nie wszystko, co narysujesz w Figmie, da się łatwo wdrożyć. Zrozumienie ograniczeń CSS, HTML i przeglądarek pozwala projektować rozwiązania realne do wykonania i optymalne kosztowo. Kreatywność w ramach ograniczeń to cecha mistrzów.</p>
+                            <h3>Performance jako element UX</h3>
+                            <p>Wydajność to niewidzialny element designu. Każda sekunda ładowania strony zwiększa współczynnik odrzuceń. Designer musi dbać o wagę grafik, unikać zbędnych animacji i rozumieć wpływ swoich decyzji na szybkość działania aplikacji.</p>
+                            <h3>Responsywność i adaptacja</h3>
+                            <p>Projektowanie RWD (Responsive Web Design) to standard. Podejście Mobile First wymusza priorytetyzację treści – na małym ekranie zostaje tylko to, co najważniejsze. Na dużych ekranach interfejs może się adaptować, wykorzystując dodatkową przestrzeń.</p>
+                            <h3>Nowe interfejsy: gest, głos, dotyk</h3>
+                            <p>Interfejs to nie tylko kliknięcia. Gesty (swipe, pinch) stały się naturalne na mobile. Interfejsy głosowe (VUI) i haptyka (wibracje) otwierają nowe kanały komunikacji, pozwalając na obsługę bez patrzenia na ekran.</p>
+
+                            <div class="info-box tip">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <div>
+                                    <strong>Performance Tip:</strong>
+                                    <p>Zawsze używaj nowoczesnych formatów obrazów. WebP jest średnio 30% lżejszy od JPEG.</p>
+                                    <pre class="language-html" style="background: transparent; padding: 0; margin-top: 0.5rem;"><code class="language-html">&lt;img src="image.webp" loading="lazy" alt="Opis"&gt;</code></pre>
+                                </div>
+                            </div>
+
+                            <h3>Porównanie Formatów Graficznych</h3>
+                            <div class="table-responsive">
+                                <table class="comparison-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Format</th>
+                                            <th>Typ</th>
+                                            <th>Najlepsze do</th>
+                                            <th>Zalety</th>
+                                            <th>Wady</th>
+                                            <th>Cechy</th>
+                                            <th>Najlepsze zastosowanie</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>SVG</strong></td>
+                                            <td>Wektor</td>
+                                            <td>Ikony, logo, ilustracje płaskie</td>
+                                            <td>Nieskończona skalowalność, mały rozmiar, edytowalny w kodzie.</td>
+                                            <td>Nie nadaje się do zdjęć, skomplikowane kształty obciążają CPU.</td>
+                                            <td>Nieskończona skalowalność, mały rozmiar (kod), edytowalny w CSS.</td>
+                                            <td>Ikony, logo, proste ilustracje.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>PNG</strong></td>
+                                            <td>Raster</td>
+                                            <td>Grafiki z przezroczystością, zrzuty ekranu</td>
+                                            <td>Obsługa przezroczystości (alpha), kompresja bezstratna.</td>
+                                            <td>Duży rozmiar plików przy zdjęciach.</td>
+                                            <td>Obsługa przezroczystości, kompresja bezstratna (duża waga).</td>
+                                            <td>Zrzuty ekranu, grafiki z tekstem, wykresy.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>JPG</strong></td>
+                                            <td>Raster</td>
+                                            <td>Fotografie, tła</td>
+                                            <td>Mały rozmiar pliku, uniwersalność.</td>
+                                            <td>Brak przezroczystości, artefakty przy kompresji (stratna).</td>
+                                            <td>Kompresja stratna, bardzo mały rozmiar plików, brak przezroczystości.</td>
+                                            <td>Fotografie, tła, złożone obrazy.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>WebP</strong></td>
+                                            <td>Raster</td>
+                                            <td>Nowoczesny web (zamiennik JPG/PNG)</td>
+                                            <td>Świetna kompresja (30% lżejszy od JPG), obsługa przezroczystości.</td>
+                                            <td>Wymaga fallbacku dla bardzo starych przeglądarek (rzadkość).</td>
+                                            <td>Nowoczesny standard. Lżejszy o ~30% od JPG/PNG przy tej samej jakości.</td>
+                                            <td>Domyślny format dla stron WWW.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h2 id="branding">13. UI/UX a branding</h2>
+                            <p>Interfejs to często najważniejszy punkt styku klienta z marką.</p>
+                            <h3>Produkt jako nośnik marki</h3>
+                            <p>Dla cyfrowych firm (jak Uber czy Spotify) aplikacja JEST produktem i marką jednocześnie. Każdy ekran, komunikat błędu czy animacja ładowania buduje wizerunek firmy w oczach klienta silniej niż billboardy.</p>
+                            <h3>Spójność wizualna</h3>
+                            <p>Marka musi być rozpoznawalna. Spójne użycie logo, kolorów firmowych i typografii we wszystkich kanałach (web, mobile, social media) buduje profesjonalny wizerunek. Design System jest strażnikiem tej spójności.</p>
+                            <h3>Tone of voice interfejsu</h3>
+                            <p>UX Writing to głos marki. Czy aplikacja mówi do Ciebie formalnie ("Wystąpił błąd"), czy luźno ("Ups, coś poszło nie tak")? Słowa w interfejsie są tak samo ważnym elementem designu jak kolory.</p>
+                            <h3>Emocjonalna relacja z użytkownikiem</h3>
+                            <p>Marki, które kochamy, budują z nami relację. Drobne detale, personalizacja, czy zabawne komunikaty w pustych stanach (Empty States) sprawiają, że użytkownik czuje się zauważony i doceniony.</p>
+
+                            <h2 id="dark-patterns">14. Dark patterns i etyka projektowania</h2>
+                            <p>Z wielką mocą wiąże się wielka odpowiedzialność. Czego unikać?</p>
+                            
+                            <h3>Manipulacja w interfejsach</h3>
+                            <p>Dark Patterns to techniki projektowania mające na celu zmuszenie użytkownika do działań, których nie chce (np. trudna rezygnacja z subskrypcji). To krótkowzroczna strategia, która niszczy zaufanie.</p>
+                            <h3>Projektowanie na uzależnienie</h3>
+                            <p>Mechanizmy znane z hazardu (np. "pull to refresh" działający jak jednoręki bandyta, czerwone kropki powiadomień) są celowo stosowane, by uzależnić nas od aplikacji. Etyczny design stara się szanować czas i uwagę użytkownika.</p>
+                            <h3>Granice odpowiedzialności projektanta</h3>
+                            <p>Projektant nie jest tylko wykonawcą zleceń biznesu. Ma obowiązek dbać o dobro użytkownika. Czy ten przycisk nie wprowadza w błąd? Czy ten formularz nie narusza prywatności? To pytania, które musimy zadawać.</p>
+                            <h3>Prawo a UX</h3>
+                            <p>Regulacje takie jak RODO (GDPR) czy DSA (Digital Services Act) wymuszają transparentność. Zgody na cookies, jasne warunki usług czy prawo do bycia zapomnianym to teraz elementy interfejsu, które trzeba zaprojektować zgodnie z prawem.</p>
+
+                            <div class="cons-box">
+                                <h3><i class="fas fa-exclamation-triangle"></i> Ciemne Wzorce (Dark Patterns)</h3>
+                                <ul>
+                                    <li><strong>Confirmshaming:</strong> Wzbudzanie poczucia winy przy rezygnacji ("Nie, nie chcę oszczędzać").</li>
+                                    <li><strong>False Urgency:</strong> Fałszywe liczniki czasu ("Oferta wygasa za 5 min").</li>
+                                    <li><strong>Sneak into Basket:</strong> Dodawanie ukrytych produktów do koszyka.</li>
+                                    <li><strong>Roach Motel:</strong> Łatwo wejść (subskrypcja), trudno wyjść (anulowanie).</li>
+                                </ul>
+                            </div>
+
+                            <h2 id="dostepnosc">15. Dostępność (Accessibility)</h2>
+                            <p>Internet jest dla wszystkich. Dostępność to nie tylko wymóg prawny, to empatia.</p>
+                            <h3>Projektowanie dla wszystkich</h3>
+                            <p>Inclusive Design zakłada, że rozwiązując problemy osób z ograniczeniami, pomagamy wszystkim. Napisy w filmach dla niesłyszących przydają się każdemu w głośnym autobusie. Duży kontrast pomaga nie tylko słabowidzącym, ale też w słoneczny dzień.</p>
+                            <h3>Bariery sensoryczne i poznawcze</h3>
+                            <p>Niepełnosprawność to nie tylko wózek inwalidzki. To także ślepota barw (daltonizm), niedowład rąk, czy problemy z koncentracją. Projektując, musimy pamiętać o obsłudze klawiaturą, czytnikach ekranowych i prostym języku.</p>
+                            <h3>Standardy i realna praktyka</h3>
+                            <p>WCAG (Web Content Accessibility Guidelines) to biblia dostępności. Określa zasady postrzegalności, funkcjonalności, zrozumiałości i solidności. Wdrożenie ich to proces ciągły, wymagający audytów i testów z użytkownikami asystującymi.</p>
+                            <h3>Accessibility jako jakość, nie obowiązek</h3>
+                            <p>Dostępna strona to po prostu lepsza strona. Ma czystszy kod, lepiej się pozycjonuje w Google (SEO) i dociera do szerszej grupy odbiorców (ok. 15% populacji ma jakąś formę niepełnosprawności).</p>
+
+                            <ul class="checklist">
+                                <li>
+                                    <i class="fas fa-image checklist-icon" style="color: #27ae60;"></i>
+                                    <div class="checklist-content">
+                                        <strong>Tekst Alternatywny (Alt)</strong>
+                                        <span>Każdy obrazek niosący treść musi mieć opis (alt). Elementy dekoracyjne ukrywamy (alt="").</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-adjust checklist-icon" style="color: #27ae60;"></i>
+                                    <div class="checklist-content">
+                                        <strong>Kontrast i Kolor</strong>
+                                        <span>Stosunek kontrastu min. 4.5:1. Nie polegaj wyłącznie na kolorze do przekazywania informacji.</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-keyboard checklist-icon" style="color: #27ae60;"></i>
+                                    <div class="checklist-content">
+                                        <strong>Nawigacja Klawiaturą</strong>
+                                        <span>Strona musi być w pełni obsługiwana klawiszem Tab. Fokus musi być zawsze widoczny.</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fas fa-code checklist-icon" style="color: #27ae60;"></i>
+                                    <div class="checklist-content">
+                                        <strong>Semantyka HTML</strong>
+                                        <span>Używaj nagłówków (h1-h6) w poprawnej kolejności. Przyciski to <code>&lt;button&gt;</code>, a linki to <code>&lt;a&gt;</code>.</span>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <h2 id="zaawansowane">16. UI/UX w produktach zaawansowanych</h2>
+                            <p>Projektowanie prostych stron to jedno, ale jak zaprojektować kokpit sterowania elektrownią?</p>
+                            <h3>Aplikacje biznesowe i narzędzia (B2B)</h3>
+                            <p>W systemach B2B (SaaS, CRM) liczy się efektywność pracy. Użytkownik spędza tu 8 godzin dziennie. Priorytetem jest gęstość informacji, skróty klawiszowe i możliwość szybkiego wykonywania powtarzalnych zadań.</p>
+                            <h3>Systemy krytyczne</h3>
+                            <p>W medycynie czy lotnictwie błąd interfejsu może kosztować życie. Tutaj design musi być ekstremalnie czytelny, jednoznaczny i odporny na błędy ludzkie. Estetyka schodzi na drugi plan, liczy się bezbłędna komunikacja stanu systemu.</p>
+                            <h3>AI i interfejsy adaptacyjne</h3>
+                            <p>Nowoczesne interfejsy potrafią się uczyć. Adaptacyjne UI dostosowuje się do kontekstu i nawyków użytkownika, podsuwając najczęściej używane funkcje. To wyzwanie projektowe – jak zmieniać interfejs, by nie dezorientować użytkownika?</p>
+                            <h3>Wizualizacja danych</h3>
+                            <p>Big Data wymaga odpowiedniej prezentacji. Dashboardy muszą zamieniać tysiące rekordów w zrozumiałe wykresy. Sztuką jest dobór odpowiedniego typu wizualizacji do danych, by nie przekłamać rzeczywistości i nie przytłoczyć odbiorcy.</p>
+
+                            <div class="line-chart-box">
+                                <h4>Przykładowa Wizualizacja: Wzrost Konwersji po Redesignie</h4>
+                                <svg class="line-chart-svg" viewBox="0 0 500 200" preserveAspectRatio="xMidYMid meet">
+                                    <defs>
+                                        <linearGradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+                                            <stop offset="0%" stop-color="var(--primary-color)" />
+                                            <stop offset="100%" stop-color="transparent" />
+                                        </linearGradient>
+                                    </defs>
+                                    <!-- Grid -->
+                                    <g class="line-chart-grid">
+                                        <line x1="50" y1="150" x2="450" y2="150" />
+                                        <line x1="50" y1="100" x2="450" y2="100" />
+                                        <line x1="50" y1="50" x2="450" y2="50" />
+                                    </g>
+                                    <!-- Area -->
+                                    <path class="line-chart-area" d="M50,150 L50,120 Q150,140 250,80 T450,40 L450,150 Z" />
+                                    <!-- Line -->
+                                    <path class="line-chart-path" d="M50,120 Q150,140 250,80 T450,40" />
+                                    <!-- Points -->
+                                    <circle class="line-chart-point" cx="50" cy="120" />
+                                    <circle class="line-chart-point" cx="250" cy="80" />
+                                    <circle class="line-chart-point" cx="450" cy="40" />
+                                    <!-- Labels -->
+                                    <text x="50" y="170" class="line-chart-label">Styczeń</text>
+                                    <text x="250" y="170" class="line-chart-label">Czerwiec</text>
+                                    <text x="450" y="170" class="line-chart-label">Grudzień</text>
+                                    <!-- Values -->
+                                    <text x="50" y="110" class="line-chart-value">2.5%</text>
+                                    <text x="250" y="70" class="line-chart-value">4.8%</text>
+                                    <text x="450" y="30" class="line-chart-value">8.2%</text>
+                                </svg>
+                            </div>
+
+                            <h2 id="ai-design">17. Design w erze AI</h2>
+                            <p>Sztuczna inteligencja zmienia narzędzia pracy i same produkty.</p>
+                            <h3>Projektowanie dla modeli AI</h3>
+                            <p>Chatboty i asystenci AI wymagają nowego podejścia. Prompt Design i projektowanie konwersacyjne (VUI) stają się kluczowe. Musimy przewidzieć nieliniowe ścieżki rozmowy i obsłużyć błędy rozumienia intencji przez maszynę.</p>
+                            <h3>Explainable UI</h3>
+                            <p>Gdy AI podejmuje decyzje (np. o przyznaniu kredytu), użytkownik musi wiedzieć dlaczego. Explainable UI to nurt projektowania stawiający na transparentność algorytmów, budujący zaufanie do "czarnej skrzynki".</p>
+                            <h3>Generatywny design</h3>
+                            <p>Narzędzia takie jak Midjourney czy UIzard zmieniają proces twórczy. AI potrafi wygenerować setki wariantów layoutu w minutę. Rola designera przesuwa się z "twórcy pikseli" na "kuratora i dyrektora artystycznego", który wybiera i dopracowuje najlepsze rozwiązania.</p>
+                            <h3>Rola projektanta w świecie automatyzacji</h3>
+                            <p>Czy AI nas zastąpi? Nie, ale zmieni naszą pracę. Automatyzacja przejmie nudne zadania (skalowanie grafik, warianty językowe), dając nam więcej czasu na empatię, strategię i rozwiązywanie złożonych problemów, których maszyna jeszcze nie rozumie.</p>
+
+                            <div class="definition-box">
+                                <h4><i class="fas fa-robot"></i> Przykładowy Prompt do Midjourney (UI Design)</h4>
+                                <p style="font-family: monospace; background: rgba(0,0,0,0.05); padding: 10px; border-radius: 5px; font-size: 0.9rem;">
+                                    /imagine prompt: mobile app interface design for a plant watering tracker, clean minimal ui, green and white color palette, figma style, high fidelity, dribbble trending --ar 9:16 --v 5
+                                </p>
+                            </div>
+
+                            <h2 id="przyszlosc">18. Przyszłość interfejsów</h2>
+                            <p>Ekrany znikają. Co przyjdzie po smartfonach?</p>
+                            <h3>AR, VR, XR: Spatial Computing</h3>
+                            <p>Apple Vision Pro i Meta Quest wprowadzają nas w erę obliczeń przestrzennych. Interfejs przestaje być płaskim oknem, a staje się obiektem zawieszonym w naszym pokoju. To wymaga myślenia w 3D, uwzględniania głębi, oświetlenia i fizyki.</p>
+                            <h3>Interfejsy bezekranowe</h3>
+                            <p>Internet Rzeczy (IoT) i Ambient Computing sprawiają, że technologia znika w otoczeniu. Inteligentny głośnik, zegarek czy lodówka komunikują się z nami głosem, światłem lub wibracją. Design staje się niewidzialny.</p>
+                            <h3>Biometria i neurointerfejsy</h3>
+                            <p>Sterowanie wzrokiem czy myślą (BCI - Brain-Computer Interfaces) to już nie science-fiction. To ostateczna granica UX – bezpośrednie połączenie intencji z działaniem, z pominięciem rąk i głosu.</p>
+                            <h3>Zanik klasycznego UI</h3>
+                            <p>Dążymy do "Zero UI". Najlepszy interfejs to taki, którego nie ma. Jeśli drzwi otwierają się same, gdy podchodzisz, to jest to lepsze doświadczenie niż najładniejsza aplikacja do otwierania drzwi.</p>
+
+                            <h2 id="kompetencje">19. Kompetencje projektanta</h2>
+                            <p>Czego uczyć się dzisiaj, by mieć pracę jutro?</p>
+                            <h3>Design jako myślenie systemowe</h3>
+                            <p>Nowoczesny designer nie rysuje obrazków, on projektuje systemy. Musi rozumieć, jak zmiana jednego elementu wpływa na całość ekosystemu produktu, biznesu i technologii.</p>
+                            <h3>Współpraca interdyscyplinarna</h3>
+                            <p>Soft skills są ważniejsze niż obsługa Figmy. Umiejętność komunikacji z programistami, obrona swoich decyzji przed biznesem i empatia wobec badaczy to klucz do sukcesu. Design to sport zespołowy.</p>
+                            <h3>Balans estetyki i inżynierii</h3>
+                            <p>Pragmatyzm jest cnotą. Designer musi balansować między wizją "idealnego UX" a budżetem i możliwościami technologicznymi (MVP). Sztuka kompromisu to chleb powszedni w tej pracy.</p>
+                            <h3>Ciągłe uczenie się</h3>
+                            <p>Technologia zmienia się szybciej niż programy studiów. Model "T-shaped designer" (szeroka wiedza ogólna + głęboka specjalizacja w jednej niszy) to najlepsza strategia na karierę. Bądź ciekawy świata, nie tylko designu.</p>
+
+                            <!-- Wykres Kompetencji -->
+                            <div class="chart-box">
+                                <h4>Profil Kompetencji (T-Shaped Designer)</h4>
+                                <div class="simple-bar-chart">
+                                    <div class="chart-column">
+                                        <span class="chart-value">Wysoka</span>
+                                        <div class="chart-bar" style="height: 85%;"></div>
+                                        <span class="chart-label">Empatia & Research</span>
+                                    </div>
+                                    <div class="chart-column">
+                                        <span class="chart-value">Ekspert</span>
+                                        <div class="chart-bar" style="height: 95%;"></div>
+                                        <span class="chart-label">Visual & UI</span>
+                                    </div>
+                                    <div class="chart-column">
+                                        <span class="chart-value">Średnia</span>
+                                        <div class="chart-bar" style="height: 40%;"></div>
+                                        <span class="chart-label">Kod (HTML/CSS)</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="glossary-box">
+                                <h3><i class="fas fa-book"></i> Słowniczek Pojęć</h3>
+                                <div class="glossary-item">
+                                    <span class="glossary-term">Affordance (Afordancja)</span>
+                                    <p class="glossary-def">Cecha obiektu sugerująca jego funkcję. Np. przycisk z cieniem "prosi się" o wciśnięcie.</p>
+                                </div>
+                                <div class="glossary-item">
+                                    <span class="glossary-term">Kerning</span>
+                                    <p class="glossary-def">Regulacja odstępów między konkretnymi parami liter w celu poprawy czytelności.</p>
+                                </div>
+                                <div class="glossary-item">
+                                    <span class="glossary-term">White Space (Negative Space)</span>
+                                    <p class="glossary-def">Pusta przestrzeń między elementami. Kluczowa dla hierarchii i "oddechu" w designie.</p>
+                                </div>
+                                <div class="glossary-item">
+                                    <span class="glossary-term">Wireframe</span>
+                                    <p class="glossary-def">Szkielet strony lub aplikacji, pozbawiony kolorów i detali, skupiający się na układzie treści.</p>
+                                </div>
+                            </div>
+
+                            <h2 id="podsumowanie-rozdzial">20. Podsumowanie</h2>
+                            <p>UI i UX to nowa forma sztuki użytkowej, gdzie technologia jest płótnem. Pamiętaj: dobry design jest niewidoczny.</p>
+                            <h3>UI i UX jako nowa forma sztuki użytkowej</h3>
+                            <p>Tak jak kiedyś architektura czy wzornictwo przemysłowe, tak dziś design cyfrowy kształtuje naszą codzienność. To odpowiedzialność i przywilej tworzenia narzędzi, których używają miliony.</p>
+                            <h3>Technologia jako płótno</h3>
+                            <p>Kod, ekrany i algorytmy to tylko materiały. Prawdziwym dziełem jest doświadczenie, jakie dzięki nim tworzymy. Ograniczenia technologii nie są przeszkodą, lecz ramami, które nadają formę naszej kreatywności.</p>
+                            <h3>Dobry design jest niewidoczny</h3>
+                            <p>Największym komplementem dla designera jest brak skarg. Gdy wszystko działa intuicyjnie, użytkownik nie zauważa interfejsu – widzi tylko rozwiązanie swojego problemu. I do tego powinniśmy dążyć.</p>
+
+                            <h2 id="tools">Narzędzia i Zasoby</h2>
+                            <p>Nie musisz wymyślać koła na nowo. Oto lista sprawdzonych narzędzi, które przyspieszą Twoją pracę i podniosą jakość projektów.</p>
+
+                            <div class="resource-links-grid">
+                                <!-- Coolors -->
+                                <div class="resource-card blue">
+                                    <h4><i class="fas fa-palette"></i> Coolors.co</h4>
+                                    <p>Najszybszy generator palet kolorów. Twórz, zapisuj i udostępniaj idealne zestawy barw w kilka sekund.</p>
+                                    <div class="resource-link-box" onclick="window.open('https://coolors.co', '_blank')">coolors.co</div>
+                                </div>
+
+                                <!-- Font Awesome -->
+                                <div class="resource-card green">
+                                    <h4><i class="fab fa-font-awesome"></i> Font Awesome</h4>
+                                    <p>Standard branżowy dla ikon wektorowych. Tysiące ikon gotowych do użycia w Twoim projekcie.</p>
+                                    <div class="resource-link-box" onclick="window.open('https://fontawesome.com', '_blank')">fontawesome.com</div>
+                                </div>
+
+                                <!-- Google Fonts -->
+                                <div class="resource-card red">
+                                    <h4><i class="fas fa-font"></i> Google Fonts</h4>
+                                    <p>Ogromna biblioteka darmowych fontów. Znajdziesz tu typografię pasującą do każdego stylu.</p>
+                                    <div class="resource-link-box" onclick="window.open('https://fonts.google.com', '_blank')">fonts.google.com</div>
+                                </div>
+
+                                <!-- Figma Community -->
+                                <div class="resource-card purple">
+                                    <h4><i class="fab fa-figma"></i> Figma Community</h4>
+                                    <p>Skarbnica darmowych plików, pluginów i widgetów tworzonych przez społeczność designerów.</p>
+                                    <div class="resource-link-box" onclick="window.open('https://www.figma.com/community', '_blank')">figma.com/community</div>
+                                </div>
+                            </div>
+
+                            <!-- Karta Pobierania -->
+                            <div class="download-card">
+                                <div class="download-icon"><i class="fas fa-file-pdf"></i></div>
+                                <div class="download-info">
+                                    <h4>Pobierz Pełny Spis Treści (PDF)</h4>
+                                    <p>Szczegółowa agenda ebooka z listą planowanych ćwiczeń. PDF, 0.5 MB</p>
+                                </div>
+                                <a href="#" class="download-btn"><i class="fas fa-download"></i> Pobierz teraz</a>
+                            </div>
+
+                            <!-- SEKCJA FAQ -->
+                            <section class="faq-section">
+                                <h3><i class="fas fa-question-circle"></i> Często zadawane pytania</h3>
+                                <details>
+                                    <summary>Czy muszę umieć rysować, żeby być UI Designerem?</summary>
+                                    <p>Nie. UI Design to układanie gotowych elementów, praca z siatką i typografią. Rysowanie przydaje się w ilustracji, ale nie jest wymagane w projektowaniu interfejsów.</p>
+                                </details>
+                                <details>
+                                    <summary>Figma czy Adobe XD?</summary>
+                                    <p>Obecnie standardem rynkowym jest Figma ze względu na możliwości pracy w chmurze, kolaborację w czasie rzeczywistym i potężną społeczność.</p>
+                                </details>
+                                <details>
+                                    <summary>Czym różni się UI od UX?</summary>
+                                    <p>UX (User Experience) to "jak to działa i co czuje użytkownik" (badania, ścieżki). UI (User Interface) to "jak to wygląda" (kolory, fonty, przyciski).</p>
+                                </details>
+                                <details>
+                                    <summary>Ile zarabia UI/UX Designer?</summary>
+                                    <p>Zarobki zależą od doświadczenia i formy zatrudnienia. W Polsce Junior może liczyć na 4-7 tys. zł netto, Mid na 8-14 tys. zł, a Seniorzy często przekraczają 15-20 tys. zł na B2B. Stawki zagraniczne są zazwyczaj wyższe.</p>
+                                </details>
+                                <details>
+                                    <summary>Jaka jest różnica między Juniorem a Seniorem?</summary>
+                                    <p>Junior skupia się na "jak to narysować" i potrzebuje nadzoru. Senior pyta "po co to rysujemy", rozumie cele biznesowe, potrafi obronić swoje decyzje przed zarządem i mentoruje innych. To różnica w myśleniu, nie tylko w obsłudze narzędzi.</p>
+                                </details>
+                            </section>
+
+                            <!-- Tagi w stopce posta -->
+                            <div class="post-footer-tags">
+                                <span>Tagi:</span>
+                                <a href="#" class="tag">Design</a>
+                                <a href="#" class="tag">UI/UX</a>
+                                <a href="#" class="tag">Ebook</a>
+                                <a href="#" class="tag">Figma</a>
+                            </div>
+
+                        </section>
+
+                        <!-- NAWIGACJA MIĘDZY POSTAMI -->
+                        <nav class="post-navigation">
+                            <a href="selfdevelopment-leader.html" class="post-nav-link prev-post">
+                                <span class="nav-subtitle"><i class="fas fa-arrow-left"></i> Poprzedni wpis</span>
+                                <span class="nav-title">Selfdevelopment - jak wykształcić cechy lidera?</span>
+                            </a>
+                            <a href="historia-ai.html" class="post-nav-link next-post">
+                                <span class="nav-subtitle">Następny wpis <i class="fas fa-arrow-right"></i></span>
+                                <span class="nav-title">Historia AI: Od Maszyny Turinga</span>
+                            </a>
+                        </nav>
+
+                        <!-- NEWSLETTER -->
+                        <section class="newsletter-box">
+                            <div class="newsletter-content">
+                                <h3>Chcesz otrzymać ten ebook jako pierwszy?</h3>
+                                <p>Zapisz się na listę oczekujących. Wyślę Ci darmowy rozdział w dniu premiery.</p>
+                                <form class="newsletter-form">
+                                    <input type="email" placeholder="Twój adres e-mail" required>
+                                    <button type="submit" class="btn">Zapisz się</button>
+                                </form>
+                            </div>
+                        </section>
+
+                        <!-- SEKCJA O AUTORZE -->
+                        <section class="author-box">
+                            <div class="author-avatar">
+                                <img src="../img/avatar.png" alt="Avatar autora">
+                            </div>
+                            <div class="author-content">
+                                <h3 class="author-name">Kamil [Nazwisko]</h3>
+                                <p class="author-bio">Pasjonat technologii, student informatyki i twórca tego bloga. Na co dzień eksploruję świat kodu, AI i designu, dzieląc się swoimi odkryciami i przemyśleniami.</p>
+                                <div class="author-socials">
+                                    <a href="https://github.com/fireeagle050" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                    <a href="https://www.linkedin.com/in/kamil-dziedzic-6aa0ba30b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="../o-mnie.html" class="author-more-btn">Więcej o mnie</a>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- KOMENTARZE -->
+                        <section class="comments-section">
+                            <h3>Komentarze (0)</h3>
+                            <form class="comment-form">
+                                <textarea placeholder="Zostaw komentarz..." rows="4"></textarea>
+                                <button type="submit" class="btn-secondary">Opublikuj</button>
+                            </form>
+                        </section>
+                    </div>
+
+                    <!-- SIDEBAR (SPIS TREŚCI) -->
+                    <aside class="post-sidebar">
+                        <div class="toc-widget">
+                            <h3>Spis treści</h3>
+                            <nav class="toc-nav">
+                                <ul>
+                                    <li><a href="#intro">1. Wprowadzenie</a></li>
+                                    <li><a href="#geneza">2. Geneza</a></li>
+                                    <li><a href="#ux">3. UX</a></li>
+                                    <li><a href="#ui">4. UI</a></li>
+                                    <li><a href="#psychologia">5. Psychologia</a></li>
+                                    <li><a href="#typografia">6. Typografia</a></li>
+                                    <li><a href="#kolor">7. Kolor</a></li>
+                                    <li><a href="#interakcja">8. Interakcja</a></li>
+                                    <li><a href="#design-systemy">9. Design Systemy</a></li>
+                                    <li><a href="#research">10. UX Research</a></li>
+                                    <li><a href="#sztuka">11. Sztuka</a></li>
+                                    <li><a href="#technologia">12. Technologia</a></li>
+                                    <li><a href="#branding">13. Branding</a></li>
+                                    <li><a href="#dark-patterns">14. Dark Patterns</a></li>
+                                    <li><a href="#dostepnosc">15. Dostępność</a></li>
+                                    <li><a href="#zaawansowane">16. Zaawansowane</a></li>
+                                    <li><a href="#ai-design">17. Design i AI</a></li>
+                                    <li><a href="#przyszlosc">18. Przyszłość</a></li>
+                                    <li><a href="#kompetencje">19. Kompetencje</a></li>
+                                    <li><a href="#tools">Narzędzia</a></li>
+                                    <li><a href="#podsumowanie-rozdzial">20. Podsumowanie</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </aside>
+
+                </div> <!-- Koniec Grid -->
+            </article>
+
+            <!-- SEKCJA POWIĄZANYCH ARTYKUŁÓW -->
+            <section class="related-posts">
+                <h2 class="related-posts-title">Przeczytaj również</h2>
+                <div class="related-posts-grid">
+                    <a href="selfdevelopment-leader.html" class="related-post-card">
+                        <div class="related-post-image">
+                            <img src="../img/leader.jpg" alt="Miniatura posta o samorozwoju">
+                        </div>
+                        <div class="related-post-content">
+                            <span class="related-post-category">Self-development</span>
+                            <h3>Selfdevelopment - jak wykształcić cechy lidera?</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="related-post-card">
+                        <div class="related-post-image">
+                            <img src="../img/programowanie.jpg" alt="Miniatura posta o programowaniu">
+                        </div>
+                        <div class="related-post-content">
+                            <span class="related-post-category">Programowanie</span>
+                            <h3>Programowanie: Ścieżka Języków</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="related-post-card">
+                        <div class="related-post-image">
+                            <img src="../img/aination.jpg" alt="Miniatura posta o modelach AI">
+                        </div>
+                        <div class="related-post-content">
+                            <span class="related-post-category">AI</span>
+                            <h3>Wiodące Modele AI i Budowa Sieci Neuronowych</h3>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Kamil [Nazwisko]. Wszelkie prawa zastrzeżone.</p>
+            <div class="footer-socials">
+                <a href="https://github.com/fireeagle050" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/kamil-dziedzic-6aa0ba30b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js" defer></script>
+    <script src="../js/blog.js" defer></script>
+    <!-- Skrypty Prism.js do podświetlania składni -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js" defer></script>
+</body>
+</html>

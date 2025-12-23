@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Repozytorium wiedzy w ramach projektu Genesis. Pobierz przydatne skrypty, poradniki i inne zasoby dla programistów i projektantów.">
+    <title>Materiały | Project Genesis</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/materialy.css">
+    <!-- Ikony (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+</head>
+<body class="body-materialy"> <!-- Poprawiono: Upewniono się, że klasa jest obecna -->
+
+    <!-- Tło z efektem Matrixa -->
+    <canvas id="matrix-canvas"></canvas>
+
+    <header>
+        <nav>
+            <div class="nav-left-items">
+                <a href="index.html" class="nav-logo"><img src="img/logo.png" alt="Logo"></a>
+                <!-- PRZEŁĄCZNIK MOTYWU -->
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="theme-checkbox">
+                        <input type="checkbox" id="theme-checkbox" />
+                        <div class="slider round"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></div>
+                    </label>
+                </div>
+            </div>
+            <button class="mobile-nav-toggle" aria-label="Otwórz menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="o-mnie.html">O mnie <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="o-mnie.html#o-mnie">O mnie</a></li>
+                        <li><a href="o-mnie.html#doswiadczenie">Doświadczenie</a></li>
+                        <li><a href="o-mnie.html#edukacja">Edukacja</a></li>
+                        <li><a href="o-mnie.html#osiagniecia">Osiągnięcia</a></li>
+                        <li><a href="o-mnie.html#projekty">Projekty</a></li>
+                        <li><a href="o-mnie.html#technologie">Technologie</a></li>
+                    </ul>
+                </li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="materialy.html">Materiały</a></li>
+                <li><a href="kontakt.html" class="nav-contact-btn">Kontakt</a></li>
+        </nav>
+    </header>
+
+    <main class="materialy-container">
+        <!-- SEKCJA NAGŁÓWKOWA -->
+        <section class="materialy-header" data-aos="fade-down">
+            <h1>Repozytorium Wiedzy</h1>
+            <p>Zbiór wyselekcjonowanych narzędzi, skryptów i materiałów, które wspierają rozwój w świecie technologii.</p>
+        </section>
+
+        <!-- SEKCJA ZASOBÓW DO POBRANIA -->
+        <section class="materialy-section" data-aos="fade-up">
+            <h2>Zasoby do pobrania</h2>
+            <div class="materialy-grid">
+                <!-- Karta materiału 1 -->
+                <div class="material-card card" data-modal-target="#modal-studia">
+                    <i class="fas fa-book-open card-icon gradient-text" aria-hidden="true"></i>
+                    <h3>Studia</h3>
+                    <p>Opracowane materiały i wiedza zdobyta w toku studiów.</p>
+                    <button class="btn-matrix">Przeglądaj<i class="fas fa-arrow-right"></i></button>
+                </div>
+                <!-- Karta materiału 2 -->
+                <div class="material-card card" data-modal-target="#modal-skrypty">
+                    <i class="fas fa-code card-icon gradient-text" aria-hidden="true"></i>
+                    <h3>Skrypty</h3>
+                    <p>Zbiór użytecznych skryptów w różnych językach.</p>
+                    <button class="btn-matrix">Przeglądaj<i class="fas fa-arrow-right"></i></button>
+                </div>
+                <!-- Karta materiału 3 -->
+                <div class="material-card card" data-modal-target="#modal-organizacja">
+                    <i class="fas fa-calendar card-icon gradient-text" aria-hidden="true"></i>
+                    <h3>Organizacja</h3>
+                    <p>Biblioteka darmowych materiałów, szablonów i grafik do organizacji życia i zarządzania czasem.</p>
+                    <button class="btn-matrix">Przeglądaj<i class="fas fa-arrow-right"></i></button>
+                </div>
+                <!-- Karta materiału 4 -->
+                <div class="material-card card" data-modal-target="#modal-samouczki">
+                    <i class="fas fa-video card-icon gradient-text" aria-hidden="true"></i>
+                    <h3>Samouczki</h3>
+                    <p>Lista linków do rozwoju Twoich umiejętności w IT.</p>
+                    <button class="btn-matrix">Przeglądaj<i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOWA SEKCJA: POLECANY ZASÓB -->
+        <section class="materialy-section featured-resource" data-aos="fade-up">
+            <div class="featured-resource-content">
+                <span class="featured-tag">Raport Specjalny</span>
+                <h2>Analiza Trendów AI w 2025 Roku</h2>
+                <p>Dogłębna analiza kluczowych trendów, które zdefiniują branżę sztucznej inteligencji w nadchodzącym roku. Odkryj, które technologie zyskają na znaczeniu i jak wpłyną na rynek pracy. Niezbędna lektura dla każdego, kto chce być o krok przed innymi.</p>
+                <a href="#" class="btn-matrix" download>Pobierz Raport<i class="fas fa-file-pdf"></i></a>
+            </div>
+            <div class="featured-resource-image">
+                <img src="img/aination.jpg" alt="Abstrakcyjna grafika AI">
+            </div>
+        </section>
+
+        <!-- NOWA SEKCJA: POLECANE NARZĘDZIA -->
+        <section class="materialy-section" data-aos="fade-up">
+            <h2>Polecane Narzędzia</h2>
+            <div class="tools-list">
+                <a href="https://code.visualstudio.com/" target="_blank" class="tool-item"><i class="fas fa-code"></i><span>Visual Studio Code</span><small>Edytor kodu</small></a>
+                <a href="https://www.figma.com/" target="_blank" class="tool-item"><i class="fab fa-figma"></i><span>Figma</span><small>Projektowanie UI/UX</small></a>
+                <a href="https://obsidian.md/" target="_blank" class="tool-item"><i class="fas fa-brain"></i><span>Obsidian</span><small>Baza wiedzy</small></a>
+                <a href="https://github.com/" target="_blank" class="tool-item"><i class="fab fa-github"></i><span>GitHub</span><small>Kontrola wersji</small></a>
+            </div>
+        </section>
+
+        <!-- NOWA SEKCJA: ŚCIEŻKI ROZWOJU -->
+        <section class="materialy-section" data-aos="fade-up">
+            <h2>Ścieżki Rozwoju</h2>
+            <div class="learning-paths-grid">
+                <div class="path-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Frontend Developer</h3>
+                    <p>Od HTML i CSS, przez JavaScript, aż po zaawansowane frameworki jak React. Kompletna ścieżka do zostania nowoczesnym frontendowcem.</p>
+                </div>
+                <div class="path-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>AI & Machine Learning</h3>
+                    <p>Zanurz się w świat sztucznej inteligencji. Poznaj podstawy Pythona, biblioteki takie jak TensorFlow i stwórz swoje pierwsze modele predykcyjne.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOWA SEKCJA: INSPIRACJE -->
+        <section class="materialy-section inspiration-section" data-aos="fade-up">
+            <p>"The best way to predict the future is to invent it."</p>
+            <cite>– Alan Kay</cite>
+        </section>
+    </main>
+
+    <!-- STRUKTURA OKNA MODALNEGO (przykład dla "Studia") -->
+    <div class="modal-overlay" id="modal-studia">
+        <div class="modal-content" data-aos="zoom-in">
+            <button class="modal-close" aria-label="Zamknij okno">&times;</button>
+            <div class="modal-header">
+                <i class="fas fa-book-open"></i>
+                <h2>Materiały ze studiów</h2>
+            </div>
+            <div class="modal-body">
+                <p>Poniżej znajduje się lista dostępnych materiałów. Możesz je podejrzeć lub pobrać bezpośrednio na swoje urządzenie.</p>
+                <ul class="file-list">
+                    <li class="file-item">
+                        <i class="fas fa-file-pdf file-icon"></i>
+                        <span class="file-name">Algorytmy i Struktury Danych - Notatki.pdf</span>
+                        <a href="#" class="btn-matrix" download>Pobierz <i class="fas fa-download"></i></a>
+                    </li>
+                    <li class="file-item">
+                        <i class="fas fa-file-archive file-icon"></i>
+                        <span class="file-name">Projekty z Programowania Obiektowego.zip</span>
+                        <a href="#" class="btn-matrix" download>Pobierz <i class="fas fa-download"></i></a>
+                    </li>
+                    <li class="file-item">
+                        <i class="fas fa-file-alt file-icon"></i>
+                        <span class="file-name">Wprowadzenie do Sieci Neuronowych.docx</span>
+                        <a href="#" class="btn-matrix" download>Pobierz <i class="fas fa-download"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DLA SKRYPTÓW -->
+    <div class="modal-overlay" id="modal-skrypty">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Zamknij okno">&times;</button>
+            <div class="modal-header">
+                <i class="fas fa-code"></i>
+                <h2>Skrypty</h2>
+            </div>
+            <div class="modal-body">
+                <p>Kolekcja gotowych do użycia skryptów automatyzujących pracę.</p>
+                <!-- Lista plików dla skryptów -->
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DLA ORGANIZACJI -->
+    <div class="modal-overlay" id="modal-organizacja">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Zamknij okno">&times;</button>
+            <div class="modal-header">
+                <i class="fas fa-calendar"></i>
+                <h2>Organizacja</h2>
+            </div>
+            <div class="modal-body">
+                <p>Szablony i narzędzia do lepszego zarządzania czasem i projektami.</p>
+                <!-- Lista plików dla organizacji -->
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DLA SAMOUCZKÓW -->
+    <div class="modal-overlay" id="modal-samouczki">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Zamknij okno">&times;</button>
+            <div class="modal-header">
+                <i class="fas fa-video"></i>
+                <h2>Samouczki</h2>
+            </div>
+            <div class="modal-body">
+                <p>Zbiór linków do wartościowych kursów i tutoriali wideo.</p>
+                <!-- Lista plików dla samouczków -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Kamil [Nazwisko]. Wszelkie prawa zastrzeżone.</p>
+            <div class="footer-socials">
+                <a href="https://github.com/fireeagle050" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/kamil-dziedzic-6aa0ba30b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+            <p class="footer-quote">"Inwestycja w wiedzę zawsze przynosi największe odsetki." - Benjamin Franklin</p>
+        </div>
+    </footer>
+
+    <!-- Biblioteka do animacji przy przewijaniu (AOS) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <!-- Skrypt do efektu Matrixa -->
+    <script src="js/matrix.js" defer></script>
+    <!-- Główny skrypt JS (dla nawigacji, motywów itp.) -->
+    <script src="js/main.js" defer></script>
+    <!-- Dedykowany skrypt dla strony Materiały (logika modali) -->
+    <script src="js/materialy.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Strona główna -->
+  <url>
+    <loc>https://fireeagle050.github.io/kamil-portfolio/</loc>
+    <lastmod>2025-12-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- O mnie -->
+  <url>
+    <loc>https://fireeagle050.github.io/kamil-portfolio/o-mnie.html</loc>
+    <lastmod>2025-12-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog -->
+  <url>
+    <loc>https://fireeagle050.github.io/kamil-portfolio/blog.html</loc>
+    <lastmod>2025-12-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Materiały -->
+  <url>
+    <loc>https://fireeagle050.github.io/kamil-portfolio/materialy.html</loc>
+    <lastmod>2025-12-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Kontakt -->
+  <url>
+    <loc>https://fireeagle050.github.io/kamil-portfolio/kontakt.html</loc>
+    <lastmod>2025-12-10</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Strony projektów -->
+  <url>
+    <loc>https://fireeagle050.github.io/kamil-portfolio/projekty/projekt-design-1/index.html</loc>
+    <lastmod>2025-12-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fireeagle050.github.io/kamil-portfolio/projekty/projekt-web-app/index.html</loc>
+    <lastmod>2025-12-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fireeagle050.github.io/kamil-portfolio/projekty/projekt-ai-analiza-danych/index.html</loc>
+    <lastmod>2025-12-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Przykładowy wpis na blogu (w przyszłości dodaj tu linki do każdego artykułu) -->
+  <url>
+    <loc>https://fireeagle050.github.io/kamil-portfolio/blog/historia-ai.html</loc>
+    <lastmod>2025-12-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fireeagle050.github.io/kamil-portfolio/posty/selfdevelopment-leader.html</loc>
+    <lastmod>2025-12-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fireeagle050.github.io/kamil-portfolio/posty/cyberpunk-future.html</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

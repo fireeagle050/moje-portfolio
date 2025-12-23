@@ -1,0 +1,336 @@
+/* Główny kontener */
+.contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Zapewnia, że kontener zajmuje co najmniej całą wysokość ekranu */
+    padding: 40px 20px; /* Usunięto padding-top, jest teraz w main */
+    box-sizing: border-box;
+}
+
+.contact-wrapper {
+    max-width: 900px;
+    width: 100%;
+    background: rgba(30, 30, 30, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid #333;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-header h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+.contact-header p {
+    color: var(--text-secondary-color);
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr; /* Lepsze proporcje kolumn */
+    gap: 40px;
+}
+
+/* Informacje kontaktowe */
+.contact-info {
+    border-right: 1px solid #333;
+    padding-right: 40px;
+    text-align: center; /* Wyśrodkowanie zawartości, w tym zdjęcia */
+}
+
+/* Stylowa ramka na zdjęcie */
+.photo-frame {
+    width: 180px; /* Zoptymalizowany rozmiar dla lepszego układu */
+    margin: 0 auto 1.5rem; /* Wyśrodkowanie i margines dolny */
+    padding: 4px; /* Grubość ramki */
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); /* Gradientowa ramka */
+    border-radius: 12px; /* Zaokrąglenie rogów ramki */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); /* Głęboki cień dla efektu 3D */
+    transition: transform 0.3s ease;
+}
+
+.photo-frame:hover {
+    transform: scale(1.05) translateY(-5px); /* Lekkie powiększenie i uniesienie */
+}
+
+/* Styl samego zdjęcia */
+.contact-photo {
+    display: block;
+    width: 100%; /* Zdjęcie wypełnia ramkę */
+    aspect-ratio: 9 / 16; /* Ustawienie proporcji 9:16 */
+    object-fit: cover; /* Zapewnia, że obraz jest przycięty, a nie zniekształcony */
+    border-radius: 8px; /* Wewnętrzne zaokrąglenie, nieco mniejsze niż ramki */
+    border: 2px solid #1e1e1e; /* Subtelna wewnętrzna ramka oddzielająca od gradientu */
+}
+
+.contact-info h3 {
+    color: var(--text-color);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    margin-top: 0;
+}
+
+.contact-info p {
+    color: var(--text-secondary-color);
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center; /* Wyśrodkowanie tekstu i ikon */
+    align-items: center;
+}
+
+.contact-info .fas {
+    color: var(--primary-color);
+    margin-right: 15px;
+    width: 20px;
+}
+
+.social-links {
+    margin-top: 25px;
+    text-align: center; /* Wyśrodkowanie ikon społecznościowych */
+}
+
+.social-links a {
+    color: var(--text-secondary-color);
+    font-size: 1.5rem;
+    margin-right: 20px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+/* Formularz kontaktowy */
+.contact-form .form-group {
+    position: relative;
+    margin-bottom: 30px; /* Zwiększony margines na komunikat o błędzie */
+}
+
+/* Klasa do ukrywania formularza z animacją */
+.contact-form.form-hidden {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+/* --- NOWE STYLE DLA PŁYWAJĄCYCH ETYKIET --- */
+.form-label {
+    position: relative;
+    display: block;
+}
+
+.form-label span {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    color: var(--text-secondary-color);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* Animujsmy etykietę, gdy input jest w focusie lub ma wartość */
+.contact-form input:focus + span,
+.contact-form input:not(:placeholder-shown) + span,
+.contact-form textarea:focus + span,
+.contact-form textarea:not(:placeholder-shown) + span
+{
+    top: -10px;
+    left: 12px;
+    font-size: 0.8rem;
+    padding: 0 5px;
+    background: var(--surface-color); /* Tło etykiety, aby "wyciąć" ramkę */
+    color: var(--primary-color);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    background: #2a2a2a;
+    border: 1px solid #444;
+    color: #e0e0e0;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(106, 17, 203, 0.5);
+}
+
+/* Style dla pól z błędem walidacji */
+.contact-form input.invalid,
+.contact-form textarea.invalid {
+    border-color: #e74c3c;
+    box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+}
+
+/* Komunikat o błędzie */
+.error-message {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 6px;
+    height: 1rem; /* Rezerwuje miejsce, aby uniknąć przesunięć layoutu */
+    text-align: left;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Przycisk wysyłania */
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-size 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-size: 100% 100%;
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(106, 17, 203, 0.4), 0 8px 25px rgba(37, 117, 252, 0.3);
+    background-size: 200% 100%; /* Tworzy efekt animacji gradientu */
+}
+
+/* --- STYLE DLA POTWIERDZENIA WYSŁANIA --- */
+.success-message {
+    display: none; /* Początkowo ukryty */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.success-message.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.success-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    margin-bottom: 1.5rem;
+    animation: pop-in 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.3s;
+}
+
+.success-icon-wrapper .fas {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+@keyframes pop-in {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 120px 15px 30px; /* Dopasowanie paddingu do wysokości nagłówka (spójnie z innymi stronami) */
+    }
+
+    .contact-wrapper {
+        padding: 25px; /* Mniejszy padding wewnętrzny */
+    }
+
+    .contact-header h1 {
+        font-size: 2rem; /* Mniejszy nagłówek na mobilce */
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 30px; /* Mniejszy odstęp między sekcjami */
+    }
+
+    .contact-info {
+        border-right: none;
+        border-bottom: 1px solid #333;
+        padding-right: 0;
+        padding-bottom: 30px;
+    }
+
+    .contact-info p {
+        justify-content: center; /* Wyśrodkowanie informacji kontaktowych */
+    }
+
+    .social-links a {
+        margin: 0 12px; /* Mniejsze marginesy między ikonami */
+    }
+}
+
+/* --- STYLE DLA MOTYWU JASNEGO --- */
+body.light-mode .contact-wrapper {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: #e0e0e0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .contact-info {
+    border-right-color: #e0e0e0;
+}
+
+body.light-mode .contact-photo {
+    border-color: #fff;
+}
+
+body.light-mode .contact-form input,
+body.light-mode .contact-form textarea {
+    background: #fff;
+    border-color: #ccc;
+    color: #333;
+}
+
+body.light-mode .contact-form input:focus,
+body.light-mode .contact-form textarea:focus {
+    box-shadow: 0 0 10px rgba(106, 17, 203, 0.25);
+}
+
+body.light-mode .contact-form input:focus + span,
+body.light-mode .contact-form input:not(:placeholder-shown) + span,
+body.light-mode .contact-form textarea:focus + span,
+body.light-mode .contact-form textarea:not(:placeholder-shown) + span {
+    background: #fff;
+}
+
+@media (max-width: 768px) {
+    body.light-mode .contact-info {
+        border-bottom-color: #e0e0e0;
+    }
+}

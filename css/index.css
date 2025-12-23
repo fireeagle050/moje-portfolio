@@ -1,0 +1,583 @@
+/* --- SEKCJA HERO --- */
+#hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.hero-content .hero-headline {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content .hero-subheadline {
+    font-size: 1.5rem;
+    color: var(--text-secondary-color);
+    margin-bottom: 2rem;
+}
+
+.hero-cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.hero-socials {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.hero-socials a {
+    color: var(--text-secondary-color);
+    font-size: 1.8rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-socials a:hover {
+    color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+#typed-text {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+/* --- NOWE BLOKI INFORMACYJNE W SEKCJI HERO --- */
+.hero-info-blocks {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 3rem 0;
+    flex-wrap: wrap; /* Zapewnia responsywność na mniejszych ekranach */
+}
+
+.info-block {
+    position: relative; /* Potrzebne do pozycjonowania pseudo-elementu dla obramowania */
+    background: rgba(28, 28, 32, 0.65); /* Półprzezroczyste tło */
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    max-width: 320px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Ukrywa nadmiar gradientu z pseudo-elementu */
+}
+
+.info-block::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border-radius: 12px;
+    padding: 2px; /* Grubość "gradientowego" obramowania */
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.info-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.info-block:hover::before {
+    opacity: 1;
+}
+
+.info-block i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Efekt pilności przy bloku dostępności */
+.info-block-availability {
+    position: relative;
+}
+
+.availability-dot {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 12px;
+    height: 12px;
+    background-color: #25fc75; /* Zielony kolor oznaczający dostępność */
+    border-radius: 50%;
+    box-shadow: 0 0 10px #25fc75, 0 0 20px #25fc75;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.9); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.7; }
+    100% { transform: scale(0.9); opacity: 1; }
+}
+
+.info-block-availability:hover .availability-dot {
+    animation-play-state: paused; /* Zatrzymanie animacji po najechaniu dla lepszego UX */
+}
+
+/* --- SEKCJA "O MNIE" (SKRÓT) --- */
+.about-summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    gap: 3rem;
+}
+
+.about-summary-image {
+    text-align: center;
+}
+
+.about-summary-image img {
+    width: 100%;
+    max-width: 300px; /* Ograniczenie szerokości zdjęcia */
+    border-radius: 15px;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.about-summary-image img:hover {
+    transform: scale(1.05);
+}
+
+.about-summary-content h2 {
+    text-align: left; /* Nadpisanie globalnego stylu */
+}
+
+@media (max-width: 768px) {
+    .about-summary-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+}
+
+/* --- SEKCJA "ZAINWESTUJ WE MNIE" --- */
+.invest-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    gap: 3rem;
+}
+
+.invest-content h2 {
+    text-align: left;
+}
+
+.invest-content p {
+    margin-bottom: 1.5rem;
+}
+
+.invest-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.invest-image {
+    position: relative;
+    width: 100%;
+    max-width: 300px; /* Maksymalna szerokość zdjęcia */
+    aspect-ratio: 9 / 16; /* Zachowanie proporcji 9:16 */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease;
+}
+
+.invest-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.4s ease;
+}
+
+.invest-image:hover {
+    transform: scale(1.03);
+}
+.invest-image:hover::after {
+    opacity: 1;
+}
+
+.invest-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Zapewnia dopasowanie zdjęcia bez zniekształceń */
+}
+
+@media (max-width: 992px) {
+    .invest-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .invest-content {
+        order: 2; /* Tekst pojawi się pod zdjęciem na mobilkach */
+        text-align: center;
+    }
+
+    .invest-content h2 {
+        text-align: center;
+    }
+
+    .invest-image-wrapper {
+        order: 1;
+    }
+}
+
+/* --- SEKCJA WARTOŚCI --- */
+.value-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.value-card {
+    background: var(--surface-color);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #333;
+}
+
+.value-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background-clip: text;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.value-card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+/* --- SEKCJA ZAUFANIA (TRUST BAR) --- */
+#trust-bar {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.trust-headline {
+    text-align: center;
+    color: var(--text-secondary-color);
+    font-weight: 500;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1rem;
+}
+
+.logos-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.logos-container img {
+    max-height: 50px;
+    filter: grayscale(100%) opacity(0.6);
+    transition: filter 0.3s ease;
+}
+
+.logos-container a:hover img {
+    filter: grayscale(0%) opacity(1);
+}
+
+/* --- SEKCJA REZULTATÓW --- */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.result-card {
+    background: var(--surface-color);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.result-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background-clip: text;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.result-card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.result-card p {
+    flex-grow: 1;
+}
+
+.result-graph {
+    width: 100%;
+    height: 150px; /* Zwiększona wysokość ramki wykresu */
+    margin: 1.5rem auto 0;
+    border: 1px solid #444;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 20%;
+    max-width: 200px;
+    padding: 0 1rem;
+}
+
+.result-graph .scale {
+    position: absolute;
+    left: -5px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #444;
+}
+
+.result-graph .scale span {
+    position: absolute;
+    left: -35px;
+    width: 30px;
+    text-align: right;
+    font-size: 0.7rem;
+    color: var(--text-secondary-color);
+}
+
+.result-graph .scale span:nth-child(1) { top: -5px; }
+.result-graph .scale span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.result-graph .scale span:nth-child(3) { bottom: -5px; }
+
+.bar-wrapper {
+    width: 35px;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.bar {
+    width: 100%; /* Kluczowa poprawka: nadaje szerokość słupkom */
+    height: var(--height); /* Ustawia wysokość słupka bezpośrednio na podstawie wartości z HTML */
+    border-radius: 3px 3px 0 0;
+}
+
+.bar-me {
+    background: linear-gradient(to top, var(--primary-color), var(--secondary-color));
+}
+
+.bar-others {
+    background-color: #4a4a4a;
+}
+
+.graph-labels {
+    display: flex;
+    justify-content: center;
+    gap: 20%;
+    max-width: 200px;
+    margin: 0.5rem auto 0;
+}
+
+.graph-labels span {
+    width: 35px;
+    font-size: 0.8rem;
+    color: var(--text-secondary-color);
+}
+
+/* --- SEKCJA WYKRES GIEŁDOWY --- */
+.stock-chart-container {
+    text-align: center;
+}
+
+.stock-chart-container h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* --- LEGENDA WYKRESU GIEŁDOWEGO --- */
+.chart-legend {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.legend-item span:last-child {
+    color: var(--text-secondary-color);
+}
+
+.legend-line {
+    display: inline-block;
+    width: 30px;
+    height: 3px;
+}
+
+.legend-line-others {
+    background-color: #4a4a4a;
+}
+
+.legend-line-me {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+/* --- SEKCJA CTA MATERIAŁY (EFEKT PREZENTU) --- */
+#cta-materials {
+    background: var(--surface-color);
+    border: 1px solid #333;
+    border-radius: 15px;
+    padding: 3rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#cta-materials .cta-icon-wrapper {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--background-color);
+    border-radius: 50%;
+    padding: 1rem;
+    border: 1px solid #333;
+}
+
+#cta-materials .cta-icon-wrapper i {
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#cta-materials .btn {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+#cta-materials:hover .btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- SEKCJA OPINII --- */
+.testimonial-card {
+    background: var(--surface-color);
+    border: 1px solid #333;
+    border-radius: 15px;
+    padding: 2rem;
+    max-width: 700px;
+    margin: 4rem auto 0; /* Dodatkowy margines górny dla awatara */
+    position: relative;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efekt "Halo" / Autorytetu dla opinii */
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(106, 17, 203, 0.4), 0 0 40px rgba(37, 117, 252, 0.2);
+}
+
+.testimonial-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid var(--primary-color);
+    object-fit: cover; /* Zachowuje proporcje obrazu */
+    position: absolute;
+    top: -50px; /* Połowa wysokości awatara, aby wystawał */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.testimonial-content {
+    padding-top: 30px; /* Przestrzeń pod awatarem */
+}
+
+.testimonial-content blockquote {
+    position: relative;
+    background: #2a2a2e;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem; /* Odstęp od cytatu do autora */
+    font-style: italic;
+    color: var(--text-secondary-color);
+}
+
+.testimonial-content cite {
+    display: block;
+    font-style: normal;
+}
+
+/* --- POPRAWKI RESPONSYWNOŚCI DLA SEKCJI HERO --- */
+@media (max-width: 768px) {
+    #hero {
+        height: auto;
+        min-height: calc(100vh - 120px);
+        padding-top: 2rem;
+        padding-bottom: 4rem;
+    }
+
+    .hero-content .hero-subheadline {
+        min-height: 5rem; /* Rezerwuje miejsce na 2 linie tekstu */
+    }
+}
