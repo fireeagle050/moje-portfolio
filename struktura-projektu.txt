@@ -1,4 +1,4 @@
-moje-portfolio/             # Projekt portfolio
+moje-portfolio/             # Folder Projektu Portfolio (Project Genesis)
 ├── css/                    # Główne style CSS projektu
 │   ├── style.css           # Główny plik style
 │   ├── blog.css            # Style dla strony bloga
@@ -13,7 +13,7 @@ moje-portfolio/             # Projekt portfolio
 │   ├── blog.js             # Skrypt dla strony bloga
 │   ├── kontakt.js          # Skrypt dla strony kontaktowej
 │   ├── o-mnie.js           # Skrypt dla strony o mnie
-│   └── matrix.js           # Skrypt dla animacji
+│   └── matrix.js           # Skrypt dla animacji tła na stronie "materialy"
 │ 
 ├── img/
 │   ├── index_bg.jpg        # Obrazek tła strony głównej
@@ -21,22 +21,27 @@ moje-portfolio/             # Projekt portfolio
 │   ├── kontakt_bg.jpg      # Obrazek tła strony kontaktowej
 │   ├── o-mnie_bg.jpg       # Obrazek tła strony o mnie
 │   ├── materialy_bg.jpg    # Obrazek tła strony z materiałami
-│   ├── avatar.png          # Obrazek avatara komentarzy
+│   ├── avatar.png          # Obrazek avatara dla komentarzy
 │   ├── index_me.jpg        # Obrazek profilu
 │   ├── index_me2.jpg       # Obrazek profilu
 │   ├── kontakt_me.jpg      # Obrazek profilu
 │   ├── reset.jpg           # Logo koła naukowego
 │   ├── ubb.jpg             # Logo uczelni
-│   ├── ans.jpg             # Logo firmy
-│   ├── ans.jpg             # Logo firmy
-│   ├── logo.png            # Logo strony
+│   ├── ans.jpg             # Logo firmy 1
+│   ├── ans.jpg             # Logo firmy 2
+│   ├── logo.png            # Logo dla całego projektu
 │   └── posty/              # Obrazy dla wpisów blogowych
+│       └── example.jpg     # Pzykładowy obraz dla wpisu
 │ 
-├── assets/
+├── assets/                 # Dokumenty do podglądu i pobrania
 │   └── docs/
-│       └── Curriculum Vitae.pdf # Pliki do pobrania, np. CV
+|       ├── Cert_INF_02.pdf # Podgląd certyfikatu 1
+|       ├── Cert_INF_03.pdf # Podgląd certyfikatu 2
+|       ├── Dyplom1.pdf     # Podgląd dyplomu
+|       ├── List Motywacyjny.pdf # List motywacyjny do pobrania
+│       └── Curriculum Vitae.pdf # CV do pobrania
 │ 
-├── projekty/
+├── projekty/               # Spis projektów i prac 
 │   ├── projekt-design-1/
 │   │   └── index.html      # Strona szczegółów projektu 1
 │   ├── projekt-web-app/
@@ -54,19 +59,19 @@ moje-portfolio/             # Projekt portfolio
 │
 ├── materialy/
 │   ├── studia/
-│   │   └── index.html      # 
+│   │   └── index1.html      # Podgląd materiałów ze studiów
 │   ├── skrypty/
-│   │   └── index.html      # 
+│   │   └── index2.html      # Podgląd skryptów z programowania
 │   ├── selfdevelopment/
-│   │   └── index.html      #
+│   │   └── index3.html      # Podgląd materiałów samorozwojowych
 │   ├── samouczki/
-│   │   └── index.html      #
+│   │   └── index4.html      # Podgląd kursów i samouczków
 │   └── raporty/
-│       └── index.html      # 
+│       └── index5.html      # Podgląd sprawozdań, streszczeń i raportów
 │ 
 ├── index.html              # Główna strona portfolio (pierwsze wrażenie)
-├── o-mnie.html             # Strona o mnie
-├── blog.html               # Strona bloga
+├── o-mnie.html             # Strona o mnie (nowoczesne i wciągające CV)
+├── blog.html               # Strona bloga (lista wpisów z IT i zainteresowań)
 │   ├── historiaAI             # Wpis1
 │   ├── selfdevelopment        # Wpis2
 │   ├── hacking                # Wpis3
@@ -74,16 +79,16 @@ moje-portfolio/             # Projekt portfolio
 │   ├── cyberbezpieczenstwo    # Wpis5
 │   ├── cyberpunk              # Wpis6
 │
-├── materialy.html          # Strona z materiałami
+├── materialy.html          # Strona z materiałami (podgląd materiałów)
 │   ├── Studia              # Zakładka 1
 │   ├── Skrypty             # Zakładka 2
 │   ├── Selfdevelopment     # Zakładka 3
 │   ├── Samouczki IT        # Zakładka 4
 │   ├── Raporty             # Zakładka 4
 │
-├── kontakt.html            # Strona kontaktowa
+├── kontakt.html            # Strona kontaktowa (formularz + arkusz google)
 │ 
-├── sitemap.xml             # Mapa stron
-├── LICENSE                 # Licencja
-├── README.md               # Informacje o projekcie
-└── struktura-projektu.txt  # Ten plik - opis struktury
+├── sitemap.xml             # Mapa stron (SEO)
+├── LICENSE                 # Licencja (zabezpieczenia prawne)
+├── README.md               # Informacje o projekcie (atrakcyjny opis pod github)
+└── struktura-projektu.txt  # Ten plik - dokładny opis struktury 
